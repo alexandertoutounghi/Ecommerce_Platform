@@ -1,5 +1,4 @@
 *.pyc
-.idea
 bin
 lib
 pyvenv.cfg
