@@ -1,1 +1,5 @@
-/thestars/settings.py
+*.pyc
+.idea
+bin
+lib
+pyvenv.cfg
