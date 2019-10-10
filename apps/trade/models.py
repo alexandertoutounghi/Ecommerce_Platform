@@ -42,7 +42,7 @@ class OrderInfo(models.Model):
     )
     PAY_TYPE = (
         ("PAYPAL", "PayPal"),
-        ("CREDITCARD", "Credit Card")
+        ("CREDIT_CARD", "Credit Card")
     )
 
     user = models.ForeignKey(User, verbose_name="User")
