@@ -5,12 +5,14 @@ System requirement
 pip install .....
 System Requirement:
 * Python 3.6
-* Django 1.11.3 !!!!
+* Django 1.11.6 !!!!
 * djangoframework
 * markdown (for browsable API)
 * django-filter
 * pillow (for picture handling)
 * DjangoUeditor (provided in extra_app folder)
+* coreapi   (for documentation)
+* django-guardian  (object level permission)
 
 xadmin required dependencies:
 * django-crispy-form
