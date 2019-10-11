@@ -5,7 +5,7 @@ System requirement
 pip install .....
 System Requirement:
 * Python 3.6
-* Django 1.11.15
+* Django 1.11.3 !!!!
 * djangoframework
 * markdown (for browsable API)
 * django-filter
