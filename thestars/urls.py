@@ -16,7 +16,11 @@ Including another URLconf
 # from django.contrib import admin
 from django.conf.urls import url
 import xadmin
+from thestars.settings import MEDIA_ROOT
+from django.views.static import serve
 
 urlpatterns = [
-       url('xadmin/', xadmin.site.urls),
+    url('xadmin/', xadmin.site.urls),
+    url('media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
+
 ]

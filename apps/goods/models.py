@@ -43,7 +43,7 @@ class GoodsCategoryBrand(models.Model):
                                  verbose_name="Goods Category")
     name = models.CharField(default="", max_length=30, verbose_name="Brand name", help_text="Brand name")
     desc = models.TextField(default="", max_length=200, verbose_name="Brand desc", help_text="Brand description")
-    image = models.ImageField(max_length=200, upload_to="brands/images/")
+    image = models.ImageField(max_length=200, upload_to="brands/")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="add time")
 
     class Meta:

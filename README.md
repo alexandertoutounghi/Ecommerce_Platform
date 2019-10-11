@@ -32,3 +32,6 @@ use command migrate to execute the changes in MySQL
 2: Before system online, make sure to create a superuser by command: createsuperuser
 (admin: thestars)
 
+
+Changes:
+1: Under GoodsCategoryBrand model, the path of image should be "brands/" instead of "brands/images"
