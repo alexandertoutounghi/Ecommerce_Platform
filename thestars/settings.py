@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DjangoUeditor',
-    "users",
-    "goods",
-    "trade",
-    "user_operation"
+    "users.apps.UsersConfig",
+    "goods.apps.GoodsConfig",
+    "trade.apps.TradeConfig",
+    "user_operation.apps.UserOperationConfig",
+    "crispy_forms",
+    "xadmin",
 ]
 
 MIDDLEWARE = [
@@ -129,7 +131,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False  # Default is true, set to False if local time is used.
 
 
 # Static files (CSS, JavaScript, Images)

@@ -57,7 +57,7 @@ class UserAddress(models.Model):
     user = models.ForeignKey(User, verbose_name="User")
     province = models.CharField(max_length=100, default="", verbose_name="Province")
     city = models.CharField(max_length=100, default="", verbose_name="City")
-    post_code = models.CharField(max_length=100, default="", verbose_name="Post Code")
+    district = models.CharField(max_length=100, default="", verbose_name="District")
     address = models.CharField(max_length=100, default="", verbose_name="Detail Address")
     signer_name = models.CharField(max_length=100, default="", verbose_name="Signer")
     signer_mobile = models.CharField(max_length=10, default="", verbose_name="Phone Number")

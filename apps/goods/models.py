@@ -69,7 +69,7 @@ class Goods(models.Model):
     market_price = models.FloatField(default=0, verbose_name="market price")
     shop_price = models.FloatField(default=0, verbose_name="shop price")
     goods_brief = models.TextField(max_length=500, verbose_name="brief description")
-    goods_desc = UEditorField(verbose_name=u"description", imagePath="goods/images/", width=1000, height=300,
+    goods_desc = UEditorField(verbose_name="description", imagePath="goods/images/", width=1000, height=300,
                               filePath="goods/files/", default='')
     ship_free = models.BooleanField(default=True, verbose_name="is free ship")
     goods_front_image = models.ImageField(upload_to="goods/images/", null=True, blank=True, verbose_name="front page")

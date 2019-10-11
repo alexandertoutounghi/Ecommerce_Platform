@@ -15,7 +15,8 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.conf.urls import url
+import xadmin
 
 urlpatterns = [
-       # url('admin/', admin.site.urls),
+       url('xadmin/', xadmin.site.urls),
 ]
