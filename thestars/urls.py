@@ -19,14 +19,19 @@ import xadmin
 from thestars.settings import MEDIA_ROOT
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
-from goods.views import GoodsListView
+from goods.views import GoodsListViewSet
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+# configure goods url
+router.register('goods', GoodsListViewSet)
 
 urlpatterns = [
     url('xadmin/', xadmin.site.urls),
     url('media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 
-    # Goods List
-    url('goods/$', GoodsListView.as_view(), name="goods_list"),
+    url(r'^', include(router.urls)),
     # Documentation (Remove $ sign!)
     url(r'^api-auth/', include('rest_framework.urls')),
     url('docs/', include_docs_urls(title="TheStars"))
