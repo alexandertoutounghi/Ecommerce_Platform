@@ -13,6 +13,7 @@ System Requirement:
 * DjangoUeditor (provided in extra_app folder)
 * coreapi   (for documentation)
 * django-guardian  (object level permission)
+* django-cors-headers
 
 xadmin required dependencies:
 * django-crispy-form

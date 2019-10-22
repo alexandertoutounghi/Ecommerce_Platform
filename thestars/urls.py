@@ -19,13 +19,15 @@ import xadmin
 from thestars.settings import MEDIA_ROOT
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
-from goods.views import GoodsListViewSet
+from goods.views import GoodsListViewSet, CategoryViewset
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
 # configure goods url
-router.register('goods', GoodsListViewSet)
+router.register('goods', GoodsListViewSet, base_name="goods")
+# configure category url
+router.register('categorys', CategoryViewset, base_name="categorys")
 
 urlpatterns = [
     url('xadmin/', xadmin.site.urls),
