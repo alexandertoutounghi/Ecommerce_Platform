@@ -15,19 +15,26 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.conf.urls import url, include
+from rest_framework_jwt.views import obtain_jwt_token
+
 import xadmin
 from thestars.settings import MEDIA_ROOT
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
 from goods.views import GoodsListViewSet, CategoryViewset
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken import views
+
+from users.views import UserViewset
 
 router = DefaultRouter()
 
 # configure goods url
-router.register('goods', GoodsListViewSet, base_name="goods")
+router.register(r'goods', GoodsListViewSet, base_name="goods")
 # configure category url
-router.register('categorys', CategoryViewset, base_name="categorys")
+router.register(r'categorys', CategoryViewset, base_name="categorys")
+# configure users url
+router.register(r'users', UserViewset, base_name="users")
 
 urlpatterns = [
     url('xadmin/', xadmin.site.urls),
@@ -36,6 +43,10 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     # Documentation (Remove $ sign!)
     url(r'^api-auth/', include('rest_framework.urls')),
-    url('docs/', include_docs_urls(title="TheStars"))
+    url('docs/', include_docs_urls(title="TheStars")),
+    # drf自带的token认证模式
+    url(r'^api-token-auth/', views.obtain_auth_token),
+    # jwt的认证接口
+    url(r'^login/', obtain_jwt_token),
 
 ]

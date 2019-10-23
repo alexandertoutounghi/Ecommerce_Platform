@@ -14,6 +14,7 @@ System Requirement:
 * coreapi   (for documentation)
 * django-guardian  (object level permission)
 * django-cors-headers
+* * djangoframework-jwt
 
 xadmin required dependencies:
 * django-crispy-form
@@ -38,3 +39,6 @@ use command migrate to execute the changes in MySQL
 
 Changes:
 1: Under GoodsCategoryBrand model, the path of image should be "brands/" instead of "brands/images"
+
+* Frontend calls should call "127.0.0.1:8000/api-token-auth/" with username and 
+password in JSON in http header to get auth token.

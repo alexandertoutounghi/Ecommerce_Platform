@@ -25,7 +25,7 @@ class UserFavSerializer(serializers.ModelSerializer):
             UniqueTogetherValidator(
                 queryset=UserFav.objects.all(),
                 fields=('user', 'goods'),
-                message="Already in WishList"
+                message="已经收藏"
             )
         ]
 

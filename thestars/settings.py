@@ -21,7 +21,6 @@ sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -35,7 +34,6 @@ ALLOWED_HOSTS = []
 
 # Substitute Django user models
 AUTH_USER_MODEL = 'users.UserProfile'
-
 
 # Application definition
 
@@ -55,6 +53,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
     "corsheaders",
+    "rest_framework.authtoken"
 ]
 
 MIDDLEWARE = [
@@ -89,7 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'thestars.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -100,10 +98,9 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': "d6N3Z2h8",
         'HOST': "127.0.0.1",
-        'OPTIONS': { 'init_command': 'SET default_storage_engine=INNODB;' }
+        'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -123,7 +120,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -137,7 +133,6 @@ USE_L10N = True
 
 USE_TZ = False  # Default is true, set to False if local time is used.
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -149,4 +144,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 #     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
 #     'PAGE_SIZE': 10
 # }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
+#手机号码正则表达式
+REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
+
+import datetime
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+}
