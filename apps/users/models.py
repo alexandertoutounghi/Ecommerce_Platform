@@ -6,8 +6,9 @@ from django.utils.datetime_safe import datetime
 
 
 class UserProfile(AbstractUser):
-    first_name = models.CharField(max_length=30, null=False, blank=True, verbose_name="first name")
-    last_name = models.CharField(max_length=30, null=False, blank=True, verbose_name="last name")
+    # first_name = models.CharField(max_length=30, null=False, blank=True, verbose_name="first name")
+    # last_name = models.CharField(max_length=30, null=False, blank=True, verbose_name="last name")
+    name = models.CharField(max_length=30, null=True, blank=True, verbose_name="name")
     birthday = models.DateField(null=True, blank=True, verbose_name="birthday")
     gender = models.CharField(max_length=6, choices=(("male", u"male"), ("female", "male")), default="female",
                               verbose_name="gender")

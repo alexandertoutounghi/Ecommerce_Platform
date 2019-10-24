@@ -149,12 +149,14 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema'
 }
 
-#手机号码正则表达式
+# 手机号码正则表达式
 REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
 
 import datetime
+
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
     'JWT_AUTH_HEADER_PREFIX': 'JWT',

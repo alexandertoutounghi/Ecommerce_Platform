@@ -46,7 +46,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     # Documentation (Remove $ sign!)
     url(r'^api-auth/', include('rest_framework.urls')),
-    url('docs/', include_docs_urls(title="TheStars")),
+    url(r'^docs/', include_docs_urls(title="TheStars")),
     # drf自带的token认证模式
     url(r'^api-token-auth/', views.obtain_auth_token),
     # jwt的认证接口
