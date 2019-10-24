@@ -13,8 +13,9 @@ class UserFav(models.Model):
     User Favorite
     """
     user = models.ForeignKey(User, verbose_name="User")
-    goods = models.ForeignKey(Goods, verbose_name="Goods", help_text="Item Id")
-    add_time = models.DateTimeField(default=datetime.now, verbose_name="Add Time")
+    goods = models.ForeignKey(Goods, verbose_name="Goods", help_text="Product Id")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="Add Time",
+                                    help_text="When the item is added in wish list")
 
     class Meta:
         verbose_name = 'User Favorite'

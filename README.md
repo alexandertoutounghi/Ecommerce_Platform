@@ -42,3 +42,5 @@ Changes:
 
 * Frontend calls should call "127.0.0.1:8000/api-token-auth/" with username and 
 password in JSON in http header to get auth token.
+
+* For front end. When using the API which requires auth, use Scheme 'JWT'

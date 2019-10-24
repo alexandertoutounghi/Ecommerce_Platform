@@ -44,7 +44,7 @@ class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 class CategoryViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
     list:
-        List product categories
+        List all categories
     retrieve:
         List category detail
     """

@@ -64,14 +64,15 @@ class Goods(models.Model):
     name = models.CharField(max_length=100, verbose_name="Goods Name")
     click_num = models.IntegerField(default=0, verbose_name="Clicks")
     sold_num = models.IntegerField(default=0, verbose_name="Sales")
-    fav_num = models.IntegerField(default=0, verbose_name="favorite")
+    fav_num = models.IntegerField(default=0, verbose_name="favorite",
+                                  help_text="How many times the product is put in wish list")
     goods_num = models.IntegerField(default=0, verbose_name="stock")
-    market_price = models.FloatField(default=0, verbose_name="market price")
+    market_price = models.FloatField(default=0, verbose_name="market price", help_text="Price in market")
     shop_price = models.FloatField(default=0, verbose_name="shop price")
     goods_brief = models.TextField(max_length=500, verbose_name="brief description")
     goods_desc = UEditorField(verbose_name="description", imagePath="goods/images/", width=1000, height=300,
                               filePath="goods/files/", default='')
-    ship_free = models.BooleanField(default=True, verbose_name="is free ship")
+    ship_free = models.BooleanField(default=True, verbose_name="is free ship", help_text="True for Free shipping")
     goods_front_image = models.ImageField(upload_to="goods/images/", null=True, blank=True, verbose_name="front page")
     is_new = models.BooleanField(default=False, verbose_name="is new arrival")
     is_hot = models.BooleanField(default=False, verbose_name="is hot sales")
@@ -116,4 +117,3 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.goods.name
-
