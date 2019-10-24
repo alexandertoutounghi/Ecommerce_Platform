@@ -25,6 +25,7 @@ from goods.views import GoodsListViewSet, CategoryViewset
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
+from user_operation.views import UserFavViewset
 from users.views import UserViewset
 
 router = DefaultRouter()
@@ -35,6 +36,8 @@ router.register(r'goods', GoodsListViewSet, base_name="goods")
 router.register(r'categorys', CategoryViewset, base_name="categorys")
 # configure users url
 router.register(r'users', UserViewset, base_name="users")
+# Wish list
+router.register(r'userfavs', UserFavViewset, base_name="userfavs")
 
 urlpatterns = [
     url('xadmin/', xadmin.site.urls),
