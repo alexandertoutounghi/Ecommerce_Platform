@@ -44,3 +44,15 @@ Changes:
 password in JSON in http header to get auth token.
 
 * For front end. When using the API which requires auth, use Scheme 'JWT'
+
+* SERVER SETUP
+https://blog.csdn.net/qq_34272964/article/details/79726713
+pip install virtualenv
+virtualenv thestars
+
+* start env:
+cd thestars/
+source bin/activate
+python -V
+
+
