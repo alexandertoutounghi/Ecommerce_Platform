@@ -6,7 +6,7 @@ pip install .....
 System Requirement:
 * Python 3.6
 * Django 1.11.6 !!!!
-* djangoframework
+* djangoframework        ?
 * markdown (for browsable API)
 * django-filter
 * pillow (for picture handling)
@@ -14,7 +14,7 @@ System Requirement:
 * coreapi   (for documentation)
 * django-guardian  (object level permission)
 * django-cors-headers
-* * djangoframework-jwt
+* * djangoframework-jwt      ?
 
 xadmin required dependencies:
 * django-crispy-form
