@@ -3,25 +3,27 @@
     <div class="hd_bar">
         <div class="bd_bar_bd cle">
             <ul class="welcome">
-                <li id="ECS_MEMBERZONE" v-if="userInfo.name">
-                <router-link :to="'/app/home/member/userinfo'">{{userInfo.name}}</router-link>
-                &nbsp;[
-                <a @click="loginOut">退出</a>
-                ]</li>
-                <li id="ECS_MEMBERZONE" v-else>
-                <router-link :to="'/app/login'">请登录</router-link>
+                <li id="ECS_MEMBERZONE" v-if="userInfo.name"> <!-- If user is logged in, show their details -->
+                    <router-link :to="'/app/home/member/userinfo'">{{ userInfo.name }}</router-link>
+                    &nbsp;[
+                    <a @click="loginOut">Logout</a>
+                    ]
+                </li>
+                <li id="ECS_MEMBERZONE" v-else> <!-- Otherwise, show the login/register buttons -->
+                <router-link :to="'/app/login'">Login</router-link>
                 <s>|</s>
-                 <router-link :to="'/app/register'">免费注册</router-link>
+                 <router-link :to="'/app/register'">Register</router-link>
                 </li>
 
             </ul>
             <ul id="userinfo-bar">
-                <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false"> <a>会员中心</a><i class="iconfont arrow"> </i>
-                    <div class="more-bd" :class="{show:isShowVip}">
+                <!-- Probably don't need this, can maybe move login | register to here -->
+                <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false"> <a>Member Centre</a><i class="iconfont arrow"> </i>
+                    <div class="more-bd" :class="{show:isShowVip}"> <!-- On hover of the above li, display drop down -->
                         <div class="list">
-                        <router-link :to="'/app/home/member/order'">我的订单</router-link>
-                        <router-link :to="'/app/home/member/collection'">我的收藏</router-link>
-                        <router-link :to="'/app/home/member/receive'">修改收货地址</router-link>
+                            <router-link :to="'/app/home/member/order'">My Order</router-link>
+                            <router-link :to="'/app/home/member/collection'">My Collection</router-link>
+                            <router-link :to="'/app/home/member/receive'">Modify Shipping Address</router-link>
                         </div>
                     </div>
                 </li>
@@ -31,33 +33,37 @@
     <div class="hd_main cle">
         <div class="logo">
         <router-link to="/app/home/index" class="lizi_logo">
-            <img src="../../static/images/head/logo.gif" alt="慕学生鲜商城">
+            <!-- Original logo is a banner, so we may need to add make one ourselves. For now I'm using what we have and shrinking it -->
+            <img src="../../static/images/head/logobanner.png" alt="354 the Stars Logo">
+            <!-- The original, for reference \/ -->
+            <!-- <img src="../../static/images/head/logo.gif"> -->
         </router-link>
 
         </div>
         <div class="search_box">
-                <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord">
-                <button  class="sea_submit" @click="searchSubmit">搜索</button>
+            <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord">
+            <button class="sea_submit" @click="searchSubmit">Search</button>
         </div>
         <div class="head_search_hot">
-         <span>热搜榜：</span>
+         <span>Trending Searchs: </span>
           <router-link v-for="item in hotSearch" :to="'/app/home/search/'+item.keywords" :key="item.keywords">
             {{item.keywords}}
           </router-link>
         </div>
         <div class="intro">
             <ul>
+                <!-- These are literally Google translated but it shows off key features, which we liked in OneTech -->
                 <li class="no1"><a href="javascript:void(0);" target="_blank">
-                    <h4>正品保障</h4>
-                    <p>100%正品低价</p>
+                    <h4>Genuine Security</h4>
+                    <p>100% Genuine Low Price</p>
                 </a></li>
                 <li class="no2"><a href="javascript:void(0);" target="_blank">
-                    <h4>30天退换货</h4>
-                    <p>购物有保障</p>
+                    <h4>30 Days Return</h4>
+                    <p>Guaranteed</p>
                 </a></li>
                 <li class="no3"><a href="javascript:void(0);" target="_blank">
-                    <h4>满99就包邮</h4>
-                    <p>闪电发货</p>
+                    <h4>Over 99</h4>
+                    <p>Lightning Delivery</p>
                 </a></li>
             </ul>
         </div>
@@ -66,24 +72,28 @@
         <div class="hd_nav_bd cle">
             <div class="main_nav main_nav_hover" id="main_nav">
                 <div class="main_nav_link" @mouseover="overAllmenu" @mouseout="outAllmenu">
-                    <a class="meunAll">全部商品分类
+                    <a class="meunAll">All Categories
                         <i class="iconfont">&#xe643;</i>
                     </a>
                     <div class="main_cata" id="J_mainCata" v-show="showAllmenu">
                         <ul>
-                            <li class="first" v-for="(item,index) in allMenuLabel" @mouseover="overChildrenmenu(index)" @mouseout="outChildrenmenu(index)">
-                              <h3 style="background:url(../images/1449088788518670880.png) 20px center no-repeat;">
-                                <router-link :to="'/app/home/list/'+item.id">{{item.name}}</router-link> </h3>
-                                <div class="J_subCata" id="J_subCata" v-show="showChildrenMenu ===index"  style=" left: 215px; top: 0px;">
+                            <!-- Will list all items in the array allMenuLabel (which is pinging an API) -->
+                            <li class="first" v-for="(item,index) in allMenuLabel" :key="index" @mouseover="overChildrenmenu(index)" @mouseout="outChildrenmenu(index)">
+                                <!-- Each item will be formated in this way (below). Items are like objects -->
+                              <h3>
+                                <router-link :to="'/app/home/list/'+item.id">{{ item.name }}</router-link> </h3>
+                                <div class="J_subCata" id="J_subCata" v-show="showChildrenMenu ===index" style=" left: 215px; top: 0px;">
                                     <div class="J_subView" >
-                                      <div v-for="list in item.sub_cat">
+                                      <div v-for="(list, index) in item.sub_cat" :key="index">
                                         <dl>
                                           <dt>
                                             <router-link :to="'/app/home/list/'+list.id">{{list.name}}</router-link>
                                           </dt>
 
                                           <dd>
-                                            <router-link  v-for="childrenList in list.sub_cat" :key="childrenList.id" :to="'/app/home/list/'+childrenList.id">{{childrenList.name}}</router-link>
+                                            <router-link v-for="childrenList in list.sub_cat" :key="childrenList.id" :to="'/app/home/list/'+childrenList.id">
+                                                {{childrenList.name}}
+                                            </router-link>
                                           </dd>
                                         </dl>
                                         <div class="clear"></div>
@@ -97,39 +107,38 @@
             </div>
             <ul class="sub_nav cle" id="sub_nav">
                 <li>
-                    <router-link to="/app/home/index">首页</router-link>
+                    <router-link to="/app/home/index">Home</router-link> <!-- Might want to add a vif here to hide when already on home page -->
                 </li>
                 <template v-for="(item,index) in allMenuLabel">
-                  <li>
+                  <li :key="index">
                     <div v-if="item.is_tab">
                       <router-link :to="'/app/home/list/'+item.id" >{{item.name}}</router-link>
                     </div>
                   </li>
                 </template>
-
             </ul>
             <div class="hd_cart" id="ECS_CARTINFO"  @mouseover="overShopCar" @mouseout="outShopCar">
              <router-link class="tit" :to="'/app/shoppingcart/cart'" target = _blank>
-
-                    <b class="iconfont">&#xe600;</b>去购物车结算<span><i class="iconfont">&#xe645;</i></span>
-                    <em class="num" id="hd_cartnum" style="visibility: visible;">{{goods_list.goods_list.length}}</em></router-link>
-                        <div class="list" v-show="showShopCar">
-                            <div class="data">
-                               <dl v-for="(item,index) in goods_list.goods_list">
-                                <dt><router-link :to="'/app/home/productDetail/'+item.goods.id" target = _blank><img :src="item.goods.goods_front_image"></router-link></dt>
-                                <dd>
-                                  <h4><router-link :to="'/app/home/productDetail/'+item.goods.id" target = _blank>{{item.goods.name}}</router-link></h4>
-                                  <p><span class="red">{{item.goods.shop_price}}</span>&nbsp;<i>X</i>&nbsp;{{item.nums}}</p>
-                                  <a title="删除" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a></dd>
-                              </dl>
-                            </div>
-                            <div class="count">共<span class="red" id="hd_cart_count">{{goods_list.length}}</span>件商品哦~
-                                  <p>总价:<span class="red"><em id="hd_cart_total">{{goods_list.totalPrice}}</em></span>
-                                  <router-link class="btn" :to="'/app/shoppingcart/cart'" target = _blank>去结算
-                                  </router-link>
-                                  </p>
-                            </div>
+                <b class="iconfont">&#xe600;</b>View Cart<span><i class="iconfont">&#xe645;</i></span>
+                <em class="num" id="hd_cartnum" style="visibility: visible;">{{goods_list.goods_list.length}}</em></router-link>
+                    <div class="list" v-show="showShopCar">
+                        <div class="data">
+                            <dl v-for="(item,index) in goods_list.goods_list" :key="index">
+                            <dt><router-link :to="'/app/home/productDetail/'+item.goods.id" target = _blank><img :src="item.goods.goods_front_image"></router-link></dt>
+                            <dd>
+                                <h4><router-link :to="'/app/home/productDetail/'+item.goods.id" target = _blank>{{item.goods.name}}</router-link></h4>
+                                <p><span class="red">{{item.goods.shop_price}}</span>&nbsp;<i>X</i>&nbsp;{{item.nums}}</p>
+                                <a title="Delete" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a></dd>
+                            </dl>
                         </div>
+                        <div class="count">Total<span class="red" id="hd_cart_count">{{goods_list.length || "0"}}</span>Goods
+                            <p>Total Price:<span class="red"><em id="hd_cart_total">{{goods_list.totalPrice || "no price"}}</em></span>
+                            <router-link class="btn" :to="'/app/shoppingcart/cart'" target = _blank>
+                                Checkout
+                            </router-link>
+                            </p>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -142,12 +151,12 @@ import { getHotSearch, getCategory ,deleteShopCart } from  '../../api/api'
 export default {
     data(){
         return {
-            hotSearch:[],//热词
-            searchWord:'',//搜索词
-            showAllmenu:false,//菜单显示控制
-            allMenuLabel:[],//菜单
-            showChildrenMenu:-1,//菜单显示控制
-            showShopCar:false,//购物车显示控制
+            hotSearch:[],//Popular searches
+            searchWord:'',//User's inputted search term
+            showAllmenu:false, // Categories toggle display
+            allMenuLabel:[],// Array of categories
+            showChildrenMenu:-1,// Subcategories toggle display
+            showShopCar:false,//Shopping cart toggle display
             isShowVip:false,
         }
     },
@@ -161,7 +170,7 @@ export default {
         loginOut(){
           cookie.delCookie('token');
           cookie.delCookie('name');
-          //跳转到登录
+          //Brings user to login page after logging out
           this.$router.push({name: 'login'})
             // this.$http.get('/getMenu')
             //     .then((response)=> {
@@ -181,16 +190,16 @@ export default {
         },
         searchSubmit(){
             if(this.searchWord){
-                //跳转到登录
+                // When the user clicks submit and they entered a searchWord, redirect them to the search result page
                 this.$router.push({ name: 'search', params: { keyword: this.searchWord }});
             }
         },
-        deleteGoods(index,id) { //移除购物车
+        deleteGoods(index,id) { // Handles removing items from shopping cart
             deleteShopCart(id).then((response)=> {
                 console.log(response.data);
                 this.goods_list.splice(index,1);
 
-                // 更新store数据
+                // Updates their shopping list after removing an item 
                 this.$store.dispatch('setShopList');
 
             }).catch(function (error) {
@@ -199,7 +208,7 @@ export default {
         },
         clickHotWord(word){
             this.searchWord = word;
-            //跳转搜索结果页
+            /// Set searchWord to the clicked-on popular search suggestion, which will take them to that page
         },
         overChildrenmenu(index){
             this.showChildrenMenu = index;
@@ -213,7 +222,7 @@ export default {
         outShopCar(){
             this.showShopCar = false;
         },
-        getMenu(){//获取菜单
+        getMenu(){ // Displays the categories in a drop-down menu
           getCategory({
             params:{}
           }).then((response)=> {
@@ -224,7 +233,7 @@ export default {
                   console.log(error);
                 });
         },
-        getHotSearch(){//获取热搜
+        getHotSearch(){//Gets the trending/popular searches
           getHotSearch()
                 .then((response)=> {
                     this.hotSearch = response.data
@@ -234,11 +243,12 @@ export default {
                 });
         }
     },
+    // On first start of this page, call these functions to get their data
     created(){
-        this.getMenu()//获取菜单
-        this.getHotSearch()//获取热词
-        // 更新store数据
-        this.$store.dispatch('setShopList');//获取购物车数据
+        this.getMenu()
+        this.getHotSearch()
+        this.$store.dispatch('setShopList');// Gets the current user's shoppping cart data from $store
+        // $store is kinda like a website-wide state (like a state in reach, but across the whole thing)
     },
 
 }

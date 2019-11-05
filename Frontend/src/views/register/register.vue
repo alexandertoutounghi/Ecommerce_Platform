@@ -2,7 +2,7 @@
 
 <div style="margin-top:0px;background: url(../../static/images/register/loginBg1.jpg)no-repeat">
 <div class="c-box bg-box" >
-    <div class="login-box clearfix"style="margin-top:10px">
+    <div class="login-box clearfix" style="margin-top:10px">
 
         <div class="fr form-box">
             <div class="tab">
