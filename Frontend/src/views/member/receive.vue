@@ -4,12 +4,12 @@
             <div class="box">
                 <div class="box_1">
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-                        <h5><span>收货人信息</span></h5>
+                        <h5><span>Recipient Information</span></h5>
                         <div class="blank"></div>
-                        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" v-for="(item, index) in receiveInfoArr">
+                        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" v-for="(item, index) in receiveInfoArr" :key="index">
                             <tbody>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">配送区域：</td>
+                                    <td align="right" bgcolor="#ffffff">Delivery Location: </td>
                                     <td colspan="3" align="left" bgcolor="#ffffff">
                                         <div class="addr" @click="bubble(index)">
                                             <v-distpicker :province="item.province" :city="item.city" :area="item.district" @province="updateProvince"  @city="updateCity" @area="updateArea"></v-distpicker>
@@ -17,29 +17,29 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">收货人姓名：</td>
+                                    <td align="right" bgcolor="#ffffff">Consignee Name: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="consignee" type="text" class="inputBg" id="consignee_0" value="ssss" v-model="item.signer_name">
-                                        <span :class = "{error:item.signer_name==''}">(必填)</span>
+                                        <span :class = "{error:item.signer_name==''}">(Required)</span>
                                         </td>
 
                                 </tr>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">详细地址：</td>
+                                    <td align="right" bgcolor="#ffffff">Address: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="address" type="text" class="inputBg" id="address_0" v-model="item.address">
-                                        <span :class = "{error:item.address==''}">(必填)</span></td>
+                                        <span :class = "{error:item.address==''}">(Required)</span></td>
                                 </tr>
                                 <tr>
 
-                                    <td align="right" bgcolor="#ffffff">手机：</td>
-                                    <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" v-model="item.signer_mobile"><span :class = "{error:item.signer_mobile==''}">(必填)</span></td>
+                                    <td align="right" bgcolor="#ffffff">Cell Phone: </td>
+                                    <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" v-model="item.signer_mobile"><span :class = "{error:item.signer_mobile==''}">(Required)</span></td>
                                 </tr>
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">&nbsp;</td>
                                     <td colspan="3" align="center" bgcolor="#ffffff">
                                     <!-- <input type="submit" name="submit" class="bnt_blue_2" value="新增收货地址"> -->
 
-                                    <button class="bnt_blue_2" @click="confirmUpdate(item.id, index)">确定修改</button>
-                                    <button class="bnt_blue_2" @click="deleteInfo(item.id)">删除</button>
+                                    <button class="bnt_blue_2" @click="confirmUpdate(item.id, index)">Confirm Modification</button>
+                                    <button class="bnt_blue_2" @click="deleteInfo(item.id)">Delete</button>
                                     <!-- <input type="hidden" name="act" value="act_edit_address">
                                     <input name="address_id" type="hidden" value="320"> -->
                                     </td>
@@ -50,7 +50,7 @@
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                             <tbody>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">配送区域：</td>
+                                    <td align="right" bgcolor="#ffffff">Delivery Area: </td>
                                     <td colspan="3" align="left" bgcolor="#ffffff">
                                         <div class="addr">
                                             <!-- <v-distpicker :placeholder="newInfo.dist" @province="getProvince" @city="getCity" @selected="getArea"></v-distpicker> -->
@@ -59,26 +59,26 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">收货人姓名：</td>
+                                    <td align="right" bgcolor="#ffffff">Consignee Name: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="consignee" type="text" class="inputBg" id="consignee_0" value="ssss" v-model="newInfo.signer_name">
-                                        <span :class = "{error:newInfo.signer_name==''}">(必填)</span> </td>
+                                        <span :class = "{error:newInfo.signer_name==''}">(Required)</span> </td>
 
                                 </tr>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">详细地址：</td>
+                                    <td align="right" bgcolor="#ffffff">Address: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="address" type="text" class="inputBg" id="address_0" v-model="newInfo.address">
-                                       <span :class = "{error:newInfo.address==''}">(必填)</span></td>
+                                       <span :class = "{error:newInfo.address==''}">(Required)</span></td>
                                 </tr>
                                 <tr>
 
-                                    <td align="right" bgcolor="#ffffff">手机：</td>
-                                    <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" v-model="newInfo.signer_mobile"><span :class = "{error:newInfo.signer_mobile==''}">(必填)</span></td>
+                                    <td align="right" bgcolor="#ffffff">Cell Phone: </td>
+                                    <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" v-model="newInfo.signer_mobile"><span :class = "{error:newInfo.signer_mobile==''}">(Required)</span></td>
                                 </tr>
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">&nbsp;</td>
                                     <td colspan="3" align="center" bgcolor="#ffffff">
                                     <!-- <input type="submit" name="submit" class="bnt_blue_2" value="新增收货地址"> -->
-                                    <button class="bnt_blue_2" @click="addReceive">新增收货地址</button>
+                                    <button class="bnt_blue_2" @click="addReceive">New Shipping Address</button>
 
                                     <!-- <input type="hidden" name="act" value="act_edit_address">
                                     <input name="address_id" type="hidden" value="320"> -->
@@ -101,18 +101,18 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
             return {
                 updateIndex: '',
                 newInfoEmpty: {
-                    province: '', //省
-                    city: '', // 市
-                    area: '', // 区
-                    receiveName: '', // 收件人姓名
-                    addr: '', // 详细地址
+                    province: '',
+                    city: '',
+                    area: '',
+                    receiveName: '',
+                    addr: '',
                 },
                 newInfo: {
-                    province: '', //省
-                    city: '', // 市
-                    area: '', // 区
-                    receiveName: '', // 收件人姓名
-                    addr: '', // 详细地址
+                    province: '',
+                    city: '',
+                    area: '',
+                    receiveName: '',
+                    addr: '',
                     phone:''
                 },
                 receiveInfoArr: [
@@ -168,7 +168,7 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
             getArea (data) {
                 this.newInfo.district = data.value;
             },
-            getReceiveInfo() { //获取收件人信息
+            getReceiveInfo() {
                 getAddress().then((response)=> {
                     console.log(response.data);
                     this.receiveInfoArr = response.data;
@@ -179,10 +179,10 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
 
             },
 
-            addReceive () { //提交收获信息
+            addReceive () {
                 addAddress(this.newInfo).then((response)=> {
-                    alert('添加成功');
-                    // 重置新的
+                    alert('Added Sucessfully');
+                    // Reset 
                     this.getReceiveInfo();
                     this.newInfo = Object.assign({}, this.newInfoEmpty);
 
@@ -190,18 +190,18 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                     console.log(error);
                 });
             },
-            confirmUpdate (id, index) { // 更新收获信息
+            confirmUpdate (id, index) {
                 updateAddress(id, this.receiveInfoArr[index]).then((response)=> {
-                    alert('修改成功');
+                    alert('Modified Successfully');
                     this.getReceiveInfo();
                 }).catch(function (error) {
                     console.log(error);
                 });
 
             },
-            deleteInfo (id, index) { // 删除收获人信息
+            deleteInfo (id, index) { 
                 delAddress(id).then((response)=> {
-                    alert('删除成功');
+                    alert('Deleted Successfully');
                     this.getReceiveInfo();
                 }).catch(function (error) {
                     console.log(error);

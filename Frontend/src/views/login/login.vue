@@ -1,21 +1,21 @@
 <template>
   <div>
     <div class="c-box bg-box" >
-      <div class="login-box clearfix"style="margin-top:10px">
+      <div class="login-box clearfix" style="margin-top:10px">
         <div class="fr form-box">
-          <h2>帐号登录</h2>
+          <h2>Account Login</h2>
           <form id="jsLoginForm" autocomplete="off">
 
             <input type="hidden" name="csrfmiddlewaretoken" value="ywSlOHdiGsK6VFB6iyhnB1B30khmz8SU">
 
             <div class="form-group marb20">
-              <label>用&nbsp;户&nbsp;名</label>
-              <input name="account_l" id="account_l" type="text" v-model="userName" @focus="errorUnshow" placeholder="手机号/账号">
+              <label>Username</label>
+              <input name="account_l" id="account_l" type="text" v-model="userName" @focus="errorUnshow" placeholder="Phone Number / Account Number">
             </div>
              <p class="error-text" v-show="userNameError">{{userNameError}}</p>
             <div class="form-group marb8">
-              <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-              <input name="password_l" id="password_l" type="password" v-model="parseWord" @focus="errorUnshow" placeholder="请输入您的密码">
+              <label>Password</label>
+              <input name="password_l" id="password_l" type="password" v-model="parseWord" @focus="errorUnshow" placeholder="Please enter your password">
             </div>
             <p class="error-text" v-show="parseWordError">{{parseWordError}}</p>
      <!--        <div class="error btns login-form-tips" id="jsLoginTips" v-show="error"><p>用户名或密码错误</p></div> -->
@@ -26,7 +26,7 @@
           </form>
           <ul class="form other-form">
             <li>
-              <h5>使用第三方帐号登录</h5>
+              <h5>Sign in with a third-party account</h5>
             </li>
             <li class="other-login">
               <a class="qq" href="http://shop.projectsedu.com:8001/login/qq/"></a>
@@ -35,8 +35,8 @@
             </li>
           </ul>
           <p class="form-p">
-            没有帐号？
-            <router-link :to="'/app/register/'" target = _blank>[立即注册]</router-link>
+            No Account?
+            <router-link :to="'/app/register/'" target = _blank>[Sign Up Now]</router-link>
           </p>
         </div>
 
@@ -66,20 +66,20 @@
         // }
         var that = this;
       login({
-          username:this.userName, //当前页码
+          username:this.userName,
           password:this.parseWord
       }).then((response)=> {
             console.log(response);
-            //本地存储用户信息
+            //Stores the user information locally
             cookie.setCookie('name',this.userName,7);
             cookie.setCookie('token',response.data.token,7)
-            //存储在store
-            // 更新store数据
+            // Add to the store for easier referencing in different parts of the site
             that.$store.dispatch('setInfo');
-            //跳转到首页页面
+            //Go to homepage after they've logged in successfully
             this.$router.push({ name: 'index'})
           })
           .catch(function (error) {
+            // Display error if they couldn't login
             if("non_field_errors" in error){
               that.error = error.non_field_errors[0];
             }
@@ -119,11 +119,9 @@
       }
     },
     created(){
-      //清除缓存
+      //Clear cache as soon as they reach this page
       cookie.delCookie('token');
       cookie.delCookie('name');
-      //重新触发store
-      //更新store数据
       this.$store.dispatch('setInfo');
     }
   }

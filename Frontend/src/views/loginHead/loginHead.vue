@@ -4,10 +4,10 @@
         <div class="hd_bar" id="userinfo-bar">
             <div class="bd">
                 <div class="logo">
-                    <router-link :to="'/app/home/index'" >慕学生鲜商城</router-link>
+                    <router-link :to="'/app/home/index'" >354 The Stars</router-link> <!-- This link appears behind the logo -->
                 </div>
                 <div class="hd_lbar" style="display: block;" id="ECS_MEMBERZONE">
-                     <router-link :to="'/app/home/index'"> 网站首页</router-link>
+                     <router-link :to="'/app/home/index'">Home Page</router-link>
                 </div>
             </div>
         </div>

@@ -1,15 +1,15 @@
 <template>
 <div class="z-detail-right">
     <div class="tabs_bar_right">
-        <div class="tabs_bar2">热卖商品</div>
+        <div class="tabs_bar2">Trending Items</div>
     </div>
     <div class="hot_box">
         <ul>
-            <li v-for="item in hotProduct">
+            <li v-for="item in hotProduct" :key="item.id">
               <router-link :to="'/app/home/productDetail/'+item.id">
                 <img width="194px" height="194px" :src="item.goods_front_image">
                 <p>{{item.goods_brief}}</p>
-                <p class="hot_price">￥{{item.shop_price}}元</p>
+                <p class="hot_price">${{item.shop_price}}</p>
               </router-link>
             </li>
         </ul>
@@ -38,7 +38,7 @@
 
         },
         methods: {
-            getHotSales() { //请求热卖商品
+            getHotSales() {
               getGoods({
                 is_hot:true
               })

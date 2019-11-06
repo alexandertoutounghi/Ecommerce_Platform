@@ -18,7 +18,7 @@
                         <div class="bd">
                             <div class="tempWrap" style="overflow:hidden; position:relative; width:330px">
                                 <ul class="cle" style="width: 330px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-                                    <li v-for="(item,index) in proDetail.images" :class="{'current': index===curIndex}" @click="replaceShow(index,item)">
+                                    <li v-for="(item,index) in proDetail.images" :class="{'current': index===curIndex}" @click="replaceShow(index,item)" :key="index">
                                         <a>
                                             <img :src="item.image" alt="">
                                         </a>
@@ -37,39 +37,39 @@
                         </dt>
                         <dd class="property">
                             <ul>
-                                <li v-if="proDetail.ship_free">此商品为免运费商品，计算配送金额时将不计入配送费用 </li>
+                                <li v-if="proDetail.ship_free">This item has free shipping and won't be included in the shippping cost of your order!</li>
                                 <li>
-                                    <span class="lbl">市场价</span> <em class="cancel">￥{{proDetail.market_price}}元</em></li>
+                                    <span class="lbl">Market Price</span> <em class="cancel">${{proDetail.market_price}}</em></li>
                                 <li>
-                                    <span class="icon_promo">抢购</span> <span class="lbl">促销价</span><span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">￥{{proDetail.shop_price}}元</strong> </span>  <span class="timedown" id="timedown"></span>
+                                    <span class="icon_promo">FLASH SALE</span> <span class="lbl">Sale Price</span><span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">${{proDetail.shop_price}}</strong> </span>  <span class="timedown" id="timedown"></span>
                                 </li>
                                 <li>
-                                    <span class="lbl">销&nbsp;&nbsp;&nbsp;量</span><span>最近售出<em class="red">{{proDetail.sold_num}}</em>件</span></li>
+                                    <span class="lbl">Quantity Sold</span><span>Recently Sold<em class="red">{{proDetail.sold_num}}</em> Units</span></li>
                             </ul>
                         </dd>
                         <dd class="tobuy-box cle">
                             <ul class="sku">
                                 <li class="skunum_li cle">
-                                    <span class="lbl">数&nbsp;&nbsp;&nbsp;量</span>
-                                    <div class="skunum" id="skunum"> <span class="minus" title="减少1个数量" @click="reduceNum"><i class="iconfont">-</i></span>
+                                    <span class="lbl">Quantity</span>
+                                    <div class="skunum" id="skunum"> <span class="minus" title="Reduce 1 Quantity" @click="reduceNum"><i class="iconfont">-</i></span>
                                         <input id="number" name="number" type="text" min="1" v-model="buyNum"  onchange="countNum(0)">
-                                        <span class="add" title="增加1个数量" @click="addNum"><i class="iconfont">+</i></span> <cite class="storage"> 件 </cite>
+                                        <span class="add" title="Increase 1 Quantity" @click="addNum"><i class="iconfont">+</i></span> <cite class="storage"> Units</cite>
                                     </div>
                                     <div class="skunum" id="skunum">
 
-                                        <cite class="storage">(<font id="shows_number">{{proDetail.goods_num}}件</font>)</cite>
+                                        <cite class="storage">(<font id="shows_number">{{proDetail.goods_num}} Units</font>)</cite>
 
                                     </div>
                                 </li>
                                 <li class="add_cart_li">
                                     <a class="btn" id="buy_btn" @click="addShoppingCart">
                                         <i class="iconfont">&#xe600;</i>
-                                        加入购物车</a>
+                                        Add to Shopping Cart</a>
 
                                     <a v-if="hasFav" id="fav-btn" class="graybtn" @click="deleteCollect">
-                                        <i class="iconfont">&#xe613;</i>已收藏</a>
+                                        <i class="iconfont">&#xe613;</i>Collected</a>
                                   <a v-else class="graybtn" @click="addCollect">
-                                    <i class="iconfont">&#xe613;</i>收藏</a>
+                                    <i class="iconfont">&#xe613;</i>Collection</a>
                                 </li>
                             </ul>
                         </dd>
@@ -92,7 +92,7 @@
                                             <table>
                                                 <tbody>
                                                 <tr>
-                                                    <td width="20%" class="th"> 产品名称 :</td>
+                                                    <td width="20%" class="th"> Product Name :</td>
                                                     <td width="80%"> {{proDetail.name}}</td>
                                                 </tr>
                                                 </tbody>
@@ -109,7 +109,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 热卖商品 -->
                 <hot-sales></hot-sales>
             </div>
         </div>
@@ -126,10 +125,10 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
   export default {
     data () {
         return {
-            productId: '', //当前商品id
-            curIndex: 1, //当前选中的图片序号
-            curShow: { //当前显示的图片
-                desc: '第一张细节图',
+            productId: '',
+            curIndex: 1, 
+            curShow: {
+                desc: 'First detail',
                 src: './images/1(1).jpg'
             },
             hasFav: false,
@@ -164,7 +163,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     computed: {
     },
     methods: {
-        getDetails () { //  请求商品详情
+        getDetails () {
           getGoodsDetail(this.productId)
             .then((response)=> {
                 console.log(response.data);
@@ -174,7 +173,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
                 console.log(error);
             });
         },
-        // 减少数量
         reduceNum () {
             this.buyNum = this.buyNum === 1 ? 1 : this.buyNum - 1;
         },
@@ -183,18 +181,16 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 
         },
 
-        // 增加数量
         addNum () {
             this.buyNum = this.buyNum + 1;
 
         },
-        addShoppingCart () { //加入购物车
+        addShoppingCart () { 
             addShopCart({
-                goods: this.productId, // 商品id
-                nums: this.buyNum, // 购买数量
+                goods: this.productId,
+                nums: this.buyNum,
             }).then((response)=> {
                 this.$refs.model.setShow();
-                // 更新store数据
                 this.$store.dispatch('setShopList');
 
             }).catch(function (error) {
@@ -216,20 +212,19 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
             //     console.log(error);
             // });
         },
-        addCollect () { //加入收藏
+        addCollect () {
           addFav({
               goods: this.productId
           }).then((response)=> {
                 console.log(response.data);
                 this.hasFav = true
-                alert('已成功加入收藏夹');
+                alert('Successfully Added to Favourites');
             }).catch(function (error) {
                 console.log(error);
             });
         },
 
         deleteCollect () {
-            //删除收藏
           delFav(this.productId).then((response)=> {
             console.log(response.data);
             this.hasFav = false

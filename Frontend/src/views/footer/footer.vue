@@ -22,8 +22,8 @@
         <div class="ft_main">
             </div>
             <div class="ft_txt">
-                <p class="ft_contact"> <span>服务时间：09:00-23:00</span>
-                    <span class="ft_phone">客服热线: <em>010-88888888</em></span>
+                <p class="ft_contact"> <span>Service Hours：09:00-23:00</span>
+                    <span class="ft_phone">Customer Service Hotline: <em>010-88888888</em></span>
                 </p>
             </div>
         </div>

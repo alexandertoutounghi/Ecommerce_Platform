@@ -18,7 +18,6 @@
             var thisId = this.id;
            // var data = this.data;
            // this.$nextTick(function(){
-                //加载vps信息
                 Highcharts.chart(thisId,{
                            chart: {
                                 plotBackgroundColor: null,
@@ -31,7 +30,7 @@
                                 pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
                             },
                             credits:{
-                                 enabled:false // 禁用版权信息
+                                 enabled:false // Copywrite info
                             },
                             plotOptions: {
                                 pie: {

@@ -1,6 +1,6 @@
 <template>
     <div class="associate-file">
-        <Modal v-model="modalShow" title="云协作" @on-ok="ok" @on-cancel="cancel">
+        <Modal v-model="modalShow" title="Cloud Collaboration" @on-ok="ok" @on-cancel="cancel">
             <div class="wrap">
                 
             </div>

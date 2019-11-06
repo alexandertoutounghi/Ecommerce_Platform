@@ -5,7 +5,6 @@ import Vue from 'vue'
             oDiv.onmousedown=function(ev){
                 var disX=ev.clientX-oDiv.getBoundingClientRect().left;
                 var disY=ev.clientY-oDiv.getBoundingClientRect().top;
-                //克隆
                 var newOdiv = oDiv.cloneNode(true);
                 newOdiv.style.position = 'absolute';
                 newOdiv.id = 'drag-box';
@@ -27,7 +26,7 @@ import Vue from 'vue'
                     var t = oy-disY;
                     newOdiv.style.left=l+'px';
                     newOdiv.style.top=t+'px';
-                    //循环判断到达了哪一个目标的上面
+                    // The loop judges which target has reached the top of the target
                     for(var j=0;j<targets.length;j++){
                         if(oy>xy[j].top&&oy<xy[j].top+xy[j].height&&ox>xy[j].left&&ox<xy[j].left+xy[j].width){  
                             //console.log(targets[j].getAttribute('id'))  
