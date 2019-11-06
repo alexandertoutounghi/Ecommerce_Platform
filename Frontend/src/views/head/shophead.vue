@@ -5,24 +5,24 @@
             <div class="bd">
                 <div class="hd_lbar" style="display: block;" id="ECS_MEMBERZONE">
                     <template v-if="userInfo.name">
-                      <router-link :to="'/app/home/index'"> 网站首页</router-link>
+                      <router-link :to="'/app/home/index'">Home</router-link>
                       <router-link v-if="userInfo.name" :to="'/app/home/member/userinfo'">{{userInfo.name}}</router-link>
                       &nbsp;[
-                      <a @click="loginOut">退出</a>
+                      <a @click="loginOut">Logout</a>
                       ]
                     </template>
                     <template v-else>
-                      <router-link :to="'/app/login'"> 登录</router-link>
-                      <router-link :to="'/app/register'"> 注册</router-link>
+                      <router-link :to="'/app/login'"> Login</router-link>
+                      <router-link :to="'/app/register'"> Register</router-link>
                     </template>
 
                 </div>
                 <ul class="hd-step">
-                    <li class="first on"><em>1</em>我的购物车<i></i></li>
+                    <li class="first on"><em>1</em>Shopping Cart<i></i></li>
                     <li class="jt">&nbsp;</li>
-                    <li class="on"><em>2</em>确认订单信息<i></i></li>
+                    <li class="on"><em>2</em>Confirm Order Info<i></i></li>
                     <li class="jt">&nbsp;</li>
-                    <li><em>3</em>支付<i></i></li>
+                    <li><em>3</em>Pay<i></i></li>
                 </ul>
             </div>
         </div>
@@ -42,10 +42,7 @@
       loginOut(){
         cookie.delCookie('token');
         cookie.delCookie('name');
-        //重新触发store
-        //更新store数据
         this.$store.dispatch('setInfo');
-        //跳转到登录
         this.$router.push({name: 'login'})
       },
     }

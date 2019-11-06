@@ -32,7 +32,6 @@
         swiperOption: {
           pagination: '.swiper-pagination',
           paginationClickable: true,
-          autoplay: 2500,
           autoplayDisableOnInteraction: false,
         },
         banners:[]
@@ -45,7 +44,6 @@
         bannerGoods()
           .then((response)=> {
             console.log(response)
-            //跳转到首页页response.body面
             this.banners = response.data
           })
           .catch(function (error) {

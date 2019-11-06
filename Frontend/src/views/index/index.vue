@@ -6,11 +6,9 @@
     </div>
 </template>
 <script>
-//新品
+//New Product
 import newP from './new';
-//list
 import seriesList from './series-list';
-//banner
 import banner from './banners';
 
 export default {

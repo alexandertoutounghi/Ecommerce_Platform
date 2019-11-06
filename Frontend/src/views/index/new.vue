@@ -6,14 +6,15 @@
         </div>
         <div class="newopro-r fr">
             <h2 class="index-tt">
-                <em class="ft18 c000">刚出炉新品</em>
-                <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">更多&gt;&gt;</a></router-link>
+                <em class="ft18 c000">Just Released New Products</em>
+                <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">More&gt;&gt;</a></router-link>
             </h2>
             <ul class="newgoods_fastbuy">
-                <li class="prolist-cent clearfix have_num" v-for="item in newopro">
+                <li class="prolist-cent clearfix have_num" v-for="(item, index) in newopro" :key="index">
                     <div class="prolist-l fl">
                     <router-link :to="'/app/home/productDetail/'+item.id"  target = _blank> <a  :title="item.name" class="imgBox">
-                    <img :src="item.goods_front_image" style="height: 158px;width: 158px;" class="zom" :alt="item.name">
+                    <img :src="item.goods_front_image" style="height: 158px;width: 158px;" class="zom"> 
+                    <!-- removed alt text so it would display properly while we have no images -->
                     </a></router-link>
                     </div>
                     <div class="prolist-r fl">
@@ -21,9 +22,9 @@
                         <router-link :to="'/app/home/productDetail/'+item.id"  :title="item.name" target = _blank>{{item.name}}</router-link>
                         </h3>
                         <p><em class="c333"></em>{{item.goods_brief}}</p><div>
-                        <span class="p-price"><em class="fastbuy_price">￥{{item.shop_price}}元</em><del>原价:￥{{item.market_price}}元</del></span>
-                        <a href="" class="p-buy fr ibg">立即抢购</a>
-                        <span class="p-time fr">销量：{{item.sold_num}}件</span>
+                        <span class="p-price"><em class="fastbuy_price">${{item.shop_price}}</em><del>Original Price:${{item.market_price}}</del></span>
+                        <a href="" class="p-buy fr ibg">Buy Now</a>
+                        <span class="p-time fr">Sales: {{item.sold_num}} Cases</span>
                     </div>
                     </div>
                 </li>
@@ -31,9 +32,6 @@
         </div>
     </div>
 </div>
-
-</div>
-
 </template>
 <script>
   import { getGoods } from '../../api/api';
@@ -49,7 +47,6 @@ export default{
             "is_new":"true"
           })
             .then((response)=> {
-               //跳转到首页页response.body面
                 this.newopro = response.data.results
             })
             .catch(function (error) {
