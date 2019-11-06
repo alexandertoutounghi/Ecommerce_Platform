@@ -37,23 +37,30 @@
       <div class="logo">
         <router-link to="/app/home/index" class="lizi_logo">
           <!-- Original logo is a banner, so we may need to add make one ourselves. For now I'm using what we have and shrinking it -->
-          <img src="../../static/images/head/logobanner.png" alt="354 the Stars Logo" />
+          <img
+            src="../../static/images/head/logosmaller.png"
+            alt="354 the Stars Logo"
+            class="logo-wrapper"
+          />
           <!-- The original, for reference \/ -->
           <!-- <img src="../../static/images/head/logo.gif"> -->
         </router-link>
       </div>
-      <div class="search_box">
-        <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord" />
-        <button class="sea_submit" @click="searchSubmit">Search</button>
+      <div class="search_box--wrapper">
+        <div class="search_box">
+          <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord" />
+          <button class="sea_submit" @click="searchSubmit">Search</button>
+        </div>
+        <div class="head_search_hot">
+          <span>Trending Searches:</span>
+          <router-link
+            v-for="item in hotSearch"
+            :to="'/app/home/search/'+item.keywords"
+            :key="item.keywords"
+          >{{item.keywords}}</router-link>
+        </div>
       </div>
-      <div class="head_search_hot">
-        <span>Trending Searches:</span>
-        <router-link
-          v-for="item in hotSearch"
-          :to="'/app/home/search/'+item.keywords"
-          :key="item.keywords"
-        >{{item.keywords}}</router-link>
-      </div>
+
       <div class="intro">
         <ul>
           <!-- These are literally Google translated but it shows off key features, which we liked in OneTech -->
@@ -467,15 +474,17 @@ img {
   transform: rotate(90deg);
 }
 #header.new_header .hd_main {
+  display: flex;
+  align-items: center;
   margin-top: 20px;
   height: 90px;
   padding-bottom: 5px;
 }
 .new_header .hd_main .intro {
   margin: 0;
-  position: absolute;
   right: 0;
   width: 352px;
+  margin-left: auto;
 }
 .new_header .hd_main .intro li {
   width: 125px;
@@ -652,14 +661,15 @@ img {
 }
 
 .logo {
-  position: absolute;
-  left: 10px;
-  top: 5px;
+  padding-bottom: 10px;
   z-index: 2;
 }
 
+.logo-wrapper {
+  height: 100px;
+}
+
 .search_box {
-  position: absolute;
   right: 0;
   top: 0;
   width: 300px;
@@ -669,6 +679,12 @@ img {
   background-color: #fff;
   overflow: hidden;
   box-shadow: 2px 1px 1px rgba(200, 200, 200, 0.5) inset;
+}
+
+.search_box--wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
 }
 .sea_input {
   float: left;
@@ -699,7 +715,6 @@ img {
 }
 
 .head_search_hot {
-  position: absolute;
   top: 58px;
   right: 404px;
   width: 450px;
@@ -721,7 +736,6 @@ img {
 .intro {
   height: 58px;
   margin: 0 190px 0 240px;
-  padding-top: 20px;
 }
 
 .hd_main .intro ul {
@@ -733,7 +747,6 @@ img {
   width: 150px;
   height: 46px;
   background: url(../../static/images/head/webintro-ico.png) 0 -9999px no-repeat;
-  overflow: hidden;
 }
 .hd_main .intro li a {
   display: block;
