@@ -12,12 +12,12 @@ row_data = [
         ],
         'categorys': [
             'Home',
-            'Seafood',
+            'Fresh Food',
             'Vegetable'
         ],
         'market_price': '$232',
-        'name': '新鲜水果甜蜜香脆单果约800克',
-        'desc': '食用百香果可以增加胃部饱腹感，减少余热量的摄入，还可以吸附胆固醇和胆汁之类有机分子，抑制人体对脂肪的吸收。因此，长期食用有利于改善人体营养吸收结构，降低体内脂肪，塑造健康优美体态。',
+        'name': 'Fresh fruit and crisp single fruit for 800 grams',
+        'desc': 'Eating passion fruit can increase the stomach fullness, reduce the intake of residual calories, and also absorb organic molecules such as cholesterol and bile to inhibit the body\'s absorption of fat. Therefore, long-term consumption is beneficial to improve the body\'s nutrient absorption structure, reduce body fat, and create a healthy and beautiful posture.',
         'sale_price': '$156',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
@@ -27,13 +27,13 @@ row_data = [
             'goods/images/2_P_1448945810814.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '海鲜水产'
+            'Home',
+            'Fresh Food',
+            'Seafood'
         ],
         'market_price': '$106',
-        'name': '田然牛肉大黄瓜条生鲜牛肉冷冻真空黄牛',
-        'desc': '前腿+后腿+羊排共8斤，原生态大山放牧羊羔，曾经的皇室贡品，央视推荐，2005年北京招待全球财金首脑。五层专用包装箱+真空包装+冰袋+保鲜箱+顺丰冷链发货，路途保质期8天',
+        'name': 'Fresh beef',
+        'desc': 'The front leg + hind leg + lamb chops total 8 pounds, the original ecological mountain grazing lamb, once the royal tribute, CCTV recommended, in 2005 Beijing hosted the global financial leaders. Five-layer special packaging box + vacuum packaging + ice bag + fresh box + SF cold chain delivery, road shelf life of 8 days',
         'sale_price': '$88',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
@@ -43,9 +43,9 @@ row_data = [
             'goods/images/7_P_1448945104734.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '叶菜类'
+            'Home',
+            'Fresh Food',
+            'Vegetable'
         ],
         'market_price': '$286',
         'name': '酣畅家庭菲力牛排10片澳洲生鲜牛肉团购套餐',
@@ -59,8 +59,8 @@ row_data = [
             'goods/images/47_P_1448946213157.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '根茎类'
         ],
         'market_price': '$156',
@@ -76,9 +76,9 @@ row_data = [
             'goods/images/10_P_1448944572872.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '海鲜水产'
+            'Home',
+            'Fresh Food',
+            'Seafood'
         ],
         'market_price': '$106',
         'name': '内蒙新鲜牛肉1斤清真生鲜牛肉火锅食材',
@@ -92,8 +92,8 @@ row_data = [
             'goods/images/4_P_1448945381013.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '茄果类'
         ],
         'market_price': '$90',
@@ -108,8 +108,8 @@ row_data = [
             'goods/images/8_P_1448945032646.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '进口生鲜'
         ],
         'market_price': '$150',
@@ -125,9 +125,9 @@ row_data = [
             'goods/images/11_P_1448944388201.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '海鲜水产'
+            'Home',
+            'Fresh Food',
+            'Seafood'
         ],
         'market_price': '$31',
         'name': '澳洲进口120天谷饲牛仔骨4份原味生鲜',
@@ -141,8 +141,8 @@ row_data = [
             'goods/images/6_P_1448945167015.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '菌菇类'
         ],
         'market_price': '$239',
@@ -159,8 +159,8 @@ row_data = [
             'goods/images/9_P_1448944791229.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '根茎类'
         ],
         'market_price': '$202',
@@ -175,8 +175,8 @@ row_data = [
             'goods/images/3_P_1448945490084.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '精品肉类'
         ],
         'market_price': '$306',
@@ -192,9 +192,9 @@ row_data = [
             'goods/images/48_P_1448943988439.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '海鲜水产'
+            'Home',
+            'Fresh Food',
+            'Seafood'
         ],
         'market_price': '$126',
         'name': '新疆巴尔鲁克生鲜牛排眼肉牛扒1200g',
@@ -209,8 +209,8 @@ row_data = [
             'goods/images/5_P_1448945270432.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '蛋制品'
         ],
         'market_price': '$144',
@@ -224,8 +224,8 @@ row_data = [
             'images/201705/goods_img/53_P_1495068879687.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
+            'Home',
+            'Fresh Food',
             '茄果类'
         ],
         'market_price': '$120',
@@ -239,8 +239,8 @@ row_data = [
             'goods/images/16_P_1448947194687.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '红酒'
         ],
         'market_price': '$23',
@@ -255,9 +255,9 @@ row_data = [
             'goods/images/14_P_1448947354433.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
-            '饮料/水'
+            'Home',
+            'Beverage',
+            'Drink/Water'
         ],
         'market_price': '$43',
         'name': '52度水井坊臻酿八號500ml',
@@ -270,8 +270,8 @@ row_data = [
             'goods/images/12_P_1448947547989.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '其他酒品'
         ],
         'market_price': '$190',
@@ -286,8 +286,8 @@ row_data = [
             'goods/images/46_P_1448946598301.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '葡萄酒'
         ],
         'market_price': '$38',
@@ -302,9 +302,9 @@ row_data = [
             'goods/images/21_P_1448946793153.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
-            '饮料/水'
+            'Home',
+            'Beverage',
+            'Drink/Water'
         ],
         'market_price': '$55',
         'name': '西夫拉姆进口洋酒小酒版',
@@ -318,8 +318,8 @@ row_data = [
             'goods/images/15_P_1448947257580.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '洋酒'
         ],
         'market_price': '$22',
@@ -335,8 +335,8 @@ row_data = [
             'goods/images/13_P_1448947460353.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '葡萄酒'
         ],
         'market_price': '$42',
@@ -351,9 +351,9 @@ row_data = [
             'goods/images/50_P_1448946542182.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
-            '饮料/水'
+            'Home',
+            'Beverage',
+            'Drink/Water'
         ],
         'market_price': '$24',
         'name': 'JohnnieWalker尊尼获加黑牌威士忌',
@@ -367,8 +367,8 @@ row_data = [
             'goods/images/51_P_1448946466208.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '洋酒'
         ],
         'market_price': '$31',
@@ -382,8 +382,8 @@ row_data = [
             'goods/images/17_P_1448947102246.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '啤酒'
         ],
         'market_price': '$54',
@@ -397,8 +397,8 @@ row_data = [
             'goods/images/20_P_1448946850602.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '葡萄酒'
         ],
         'market_price': '$46',
@@ -413,8 +413,8 @@ row_data = [
             'goods/images/19_P_1448946951726.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '白酒'
         ],
         'market_price': '$82',
@@ -428,8 +428,8 @@ row_data = [
             'goods/images/18_P_1448947011435.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '白酒'
         ],
         'market_price': '$67',
@@ -443,8 +443,8 @@ row_data = [
             'goods/images/22_P_1448946729629.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
+            'Home',
+            'Beverage',
             '洋酒'
         ],
         'market_price': '$71',
@@ -458,9 +458,9 @@ row_data = [
             'goods/images/45_P_1448946661303.jpg'
         ],
         'categorys': [
-            '首页',
-            '酒水饮料',
-            '饮料/水'
+            'Home',
+            'Beverage',
+            'Drink/Water'
         ],
         'market_price': '$31',
         'name': '深蓝伏特加巴维兰利口酒送预调酒',
@@ -473,9 +473,9 @@ row_data = [
             'goods/images/32_P_1448948525620.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '精选蔬菜'
+            'Home',
+            'vegetable/fruit',
+            'vegetables'
         ],
         'market_price': '$43',
         'name': '赣南脐橙特级果10斤装',
@@ -490,9 +490,9 @@ row_data = [
             'goods/images/30_P_1448948663221.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '进口水果'
+            'Home',
+            'vegetable/fruit',
+            'Imported fruit'
         ],
         'market_price': '$11',
         'name': '泰国菠萝蜜16-18斤1个装',
@@ -506,9 +506,9 @@ row_data = [
             'goods/images/31_P_1448948598475.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '国产水果'
+            'Home',
+            'vegetable/fruit',
+            'Homemade fruit'
         ],
         'market_price': '$22',
         'name': '四川双流草莓新鲜水果礼盒2盒',
@@ -522,9 +522,9 @@ row_data = [
             'goods/images/35_P_1448948333313.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '有机蔬菜'
+            'Home',
+            'vegetable/fruit',
+            'Organic vegetables'
         ],
         'market_price': '$67',
         'name': '新鲜头茬非洲冰草冰菜',
@@ -538,12 +538,12 @@ row_data = [
             'goods/images/36_P_1448948234250.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '有机蔬菜'
+            'Home',
+            'vegetable/fruit',
+            'Organic vegetables'
         ],
         'market_price': '$6',
-        'name': '仿真蔬菜水果果蔬菜模型',
+        'name': '仿真vegetable/fruit果蔬菜模型',
         'desc': None,
         'sale_price': '$5',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
@@ -554,9 +554,9 @@ row_data = [
             'goods/images/33_P_1448948479886.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '精选蔬菜'
+            'Home',
+            'vegetable/fruit',
+            'vegetables'
         ],
         'market_price': '$28',
         'name': '现摘芭乐番石榴台湾珍珠芭乐',
@@ -579,9 +579,9 @@ row_data = [
             'goods/images/34_P_1448948399009.jpg'
         ],
         'categorys': [
-            '首页',
-            '蔬菜水果',
-            '国产水果'
+            'Home',
+            'vegetable/fruit',
+            'Homemade fruit'
         ],
         'market_price': '$46',
         'name': '潍坊萝卜5斤/箱礼盒',
@@ -594,8 +594,8 @@ row_data = [
             'goods/images/43_P_1448948762645.jpg'
         ],
         'categorys': [
-            '首页',
-            '休闲食品'
+            'Home',
+            'Fast Food'
         ],
         'market_price': '$154',
         'name': '休闲零食膨化食品焦糖/奶油/椒麻味',
@@ -608,9 +608,9 @@ row_data = [
             'goods/images/38_P_1448949220255.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '奶粉'
+            'Home',
+            'dairy product',
+            'milk powder'
         ],
         'market_price': '$84',
         'name': '蒙牛未来星儿童成长牛奶骨力型190ml*15盒',
@@ -623,9 +623,9 @@ row_data = [
             'goods/images/44_P_1448948850187.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '进口奶品'
+            'Home',
+            'dairy product',
+            'Imported Dairy Product'
         ],
         'market_price': '$70',
         'name': '蒙牛特仑苏有机奶250ml×12盒',
@@ -638,8 +638,8 @@ row_data = [
             'images/201511/goods_img/49_P_1448162819889.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品'
+            'Home',
+            'dairy product'
         ],
         'market_price': '$1',
         'name': '1支付测试商品',
@@ -652,9 +652,9 @@ row_data = [
             'goods/images/40_P_1448949038702.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '进口奶品'
+            'Home',
+            'dairy product',
+            'Imported Dairy Milk'
         ],
         'market_price': '$70',
         'name': '德运全脂新鲜纯牛奶1L*10盒装整箱',
@@ -667,9 +667,9 @@ row_data = [
             'goods/images/39_P_1448949115481.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '有机奶'
+            'Home',
+            'dairy product',
+            'Organic Milk'
         ],
         'market_price': '$38',
         'name': '木糖醇红枣早餐奶即食豆奶粉538g',
@@ -682,9 +682,9 @@ row_data = [
             'goods/images/41_P_1448948980358.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '原料奶'
+            'Home',
+            'dairy product',
+            'Raw milk'
         ],
         'market_price': '$26',
         'name': '高钙液体奶200ml*24盒',
@@ -697,9 +697,9 @@ row_data = [
             'goods/images/37_P_1448949284365.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '国产奶品'
+            'Home',
+            'dairy product',
+            'local dairy product'
         ],
         'market_price': '$720',
         'name': '新西兰进口全脂奶粉900g',
@@ -712,9 +712,9 @@ row_data = [
             'goods/images/42_P_1448948895193.jpg'
         ],
         'categorys': [
-            '首页',
-            '奶类食品',
-            '进口奶品'
+            'Home',
+            'dairy product',
+            'Imported dairy product'
         ],
         'market_price': '$43',
         'name': '伊利官方直营全脂营养舒化奶250ml*12盒*2提',
@@ -729,9 +729,9 @@ row_data = [
         ],
         'market_price': '$187',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '厨房调料'
+            'Home',
+            'Non-staple food',
+            'Kitchen seasoning'
         ],
         'desc': None,
         'name': '维纳斯橄榄菜籽油5L/桶',
@@ -744,9 +744,9 @@ row_data = [
         ],
         'market_price': '$18',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '食用油'
+            'Home',
+            'Non-staple food',
+            'Oil'
         ],
         'desc': None,
         'name': '糙米450gx3包粮油米面',
@@ -759,12 +759,12 @@ row_data = [
         ],
         'market_price': '$54',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '调味品'
+            'Home',
+            'Non-staple food',
+            'condiment'
         ],
         'desc': None,
-        'name': '精炼一级大豆油5L色拉油粮油食用油',
+        'name': 'Refined first grade soybean oil 5L salad oil, oil, edible oil',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
     {
@@ -775,12 +775,12 @@ row_data = [
         ],
         'market_price': '$31',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '南北干货'
+            'Home',
+            'Non-staple food',
+            'Dry Food'
         ],
         'desc': None,
-        'name': '橄榄玉米油5L*2桶',
+        'name': 'Olive corn oil 5L*2 barrel',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
     {
@@ -791,12 +791,12 @@ row_data = [
         ],
         'market_price': '$11',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '方便速食'
+            'Home',
+            'Non-staple food',
+            'Fast Food'
         ],
         'desc': None,
-        'name': '山西黑米农家黑米4斤',
+        'name': 'farmer black rice 4 kg',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
     {
@@ -806,12 +806,12 @@ row_data = [
         ],
         'market_price': '$14',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '米面杂粮'
+            'Home',
+            'Non-staple food',
+            'Rice/noodle'
         ],
         'desc': None,
-        'name': '稻园牌稻米油粮油米糠油绿色植物油',
+        'name': 'Green vegetable oil',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     },
     {
@@ -821,12 +821,12 @@ row_data = [
         ],
         'market_price': '$14',
         'categorys': [
-            '首页',
-            '粮油副食',
-            '食用油'
+            'Home',
+            'Non-staple food',
+            'Oil'
         ],
         'desc': None,
-        'name': '融氏纯玉米胚芽油5l桶',
+        'name': 'Rong\'s pure corn oil',
         'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
     }
 ]
