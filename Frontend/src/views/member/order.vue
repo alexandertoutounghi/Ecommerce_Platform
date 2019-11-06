@@ -4,24 +4,24 @@
             <div class="box">
                 <div class="box_1">
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-                        <h5><span>我的订单</span></h5>
+                        <h5><span>My Order</span></h5>
                         <div class="blank"></div>
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                             <tbody>
                                 <tr align="center">
-                                    <td bgcolor="#ffffff">订单号</td>
-                                    <td bgcolor="#ffffff">下单时间</td>
-                                    <td bgcolor="#ffffff">订单总金额</td>
-                                    <td bgcolor="#ffffff">订单状态</td>
-                                    <td bgcolor="#ffffff">操作</td>
+                                    <td bgcolor="#ffffff">Order Number</td>
+                                    <td bgcolor="#ffffff">Order Time</td>
+                                    <td bgcolor="#ffffff">Total Order Amount</td>
+                                    <td bgcolor="#ffffff">Order Status</td>
+                                    <td bgcolor="#ffffff">Operation</td>
                                 </tr>
-                                <tr v-for="item in orders">
+                                <tr v-for="item in orders" :key="item.id">
                                     <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
                                     <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
-                                    <td align="right" bgcolor="#ffffff">￥{{item.order_mount}}元</td>
-                                    <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">待支付</td>
-                                    <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">已支付</td>
-                                    <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">取消订单</a></font></td>
+                                    <td align="right" bgcolor="#ffffff">${{item.order_mount}}</td>
+                                    <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">Pending Payment</td>
+                                    <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">Paid</td>
+                                    <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">Cancel Order</a></font></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -86,9 +86,9 @@
                 });
             },
             cancelOrder (id) {
-                alert('您确认要取消该订单吗？取消后此订单将视为无效订单');
+                alert('Are you sure you want to cancel the order? This order will be considered invalid afterwards');
                 delOrder(id).then((response)=> {
-                  alert('订单删除成功')
+                  alert('Order deleted successfully')
                 }).catch(function (error) {
                     console.log(error);
                 });
