@@ -46,13 +46,16 @@ password in JSON in http header to get auth token.
 * For front end. When using the API which requires auth, use Scheme 'JWT'
 
 * SERVER SETUP
-https://blog.csdn.net/qq_34272964/article/details/79726713
-pip install virtualenv
-virtualenv thestars
+https://www.lizenghai.com/archives/23484.html
+nohup python3 manage.py runserver 0.0.0.0:443 &
+
+
+-----> http://173.249.5.177:443/
 
 * start env:
 cd thestars/
 source bin/activate
+deactivate
 python -V
 
 
