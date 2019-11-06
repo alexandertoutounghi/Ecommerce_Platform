@@ -1,620 +1,1240 @@
 #!/usr/bin/env python
+
 # encoding: utf-8
 
-row_data = [
+ 
+
+Row_data = [
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'yr',
-                        'name': '羊肉'
+
+                        'name': 'Meat'
+
                     },
+
                     {
+
                         'code': 'ql',
-                        'name': '禽类'
+
+                        'name': 'Avians'
+
                     },
+
                     {
+
                         'code': 'zr',
-                        'name': '猪肉'
+
+                        'name': 'pork'
+
                     },
+
                     {
+
                         'code': 'nr',
-                        'name': '牛肉'
+
+                        'name': 'Beef'
+
                     }
+
                 ],
+
                 'code': 'jprl',
-                'name': '精品肉类'
+
+                'name': 'Boutique meat'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'cb',
-                        'name': '参鲍'
+
+                        'name': 'Abalone'
+
                     },
+
                     {
+
                         'code': 'yu',
-                        'name': '鱼'
+
+                        'name': 'fish'
+
                     },
+
                     {
+
                         'code': 'xia',
-                        'name': '虾'
+
+                        'name': 'shrimp'
+
                     },
+
                     {
+
                         'code': 'xb',
-                        'name': '蟹/贝'
+
+                        'name': 'crab/shell'
+
                     }
+
                 ],
+
                 'code': 'hxsc',
-                'name': '海鲜水产'
+
+                'name': 'Seafood Aquatic'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'xhd_xyd',
-                        'name': '松花蛋/咸鸭蛋'
+
+                        'name': 'Pine egg / salted egg'
+
                     },
+
                     {
+
                         'code': 'jd',
-                        'name': '鸡蛋'
+
+                        'name': 'egg'
+
                     }
+
                 ],
+
                 'code': 'dzp',
-                'name': '蛋制品'
+
+                'name': 'Egg products'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'sc',
-                        'name': '生菜'
+
+                        'name': 'Vegetable'
+
                     },
+
                     {
+
                         'code': 'bc',
-                        'name': '菠菜'
+
+                        'name': 'Spinach'
+
                     },
+
                     {
+
                         'code': 'yj',
-                        'name': '圆椒'
+
+                        'name': 'Boon pepper'
+
                     },
+
                     {
+
                         'code': 'xlh',
-                        'name': '西兰花'
+
+                        'name': 'broccoli'
+
                     }
+
                 ],
+
                 'code': 'ycl',
-                'name': '叶菜类'
+
+                'name': 'Leaf vegetables'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'gjl',
-                'name': '根茎类'
+
+                'name': 'root stems'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'qgl',
-                'name': '茄果类'
+
+                'name': 'solanthine'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'jgl',
-                'name': '菌菇类'
+
+                'name': 'bacteria'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'jksx',
-                'name': '进口生鲜'
+
+                'name': 'Imported fresh'
+
             }
+
         ],
+
         'code': 'sxsp',
-        'name': '生鲜食品'
+
+        'name': 'Fresh food'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'wly',
-                        'name': '五粮液'
+
+                        'name': 'Wuliangye'
+
                     },
+
                     {
+
                         'code': 'lzlj',
-                        'name': '泸州老窖'
+
+                        'name': 'Luzhou Laojiao'
+
                     },
+
                     {
+
                         'code': 'mt',
-                        'name': '茅台'
+
+                        'name': 'Moutai'
+
                     }
+
                 ],
+
                 'code': 'bk',
-                'name': '白酒'
+
+                'name': 'Liquor'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'ptj',
-                'name': '葡萄酒'
+
+                'name': 'wine'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'yj',
-                'name': '洋酒'
+
+                'name': 'Wine'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'pj',
-                'name': '啤酒'
+
+                'name': 'Beer'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'qtpp',
-                        'name': '其他品牌'
+
+                        'name': 'Other brands'
+
                     },
+
                     {
+
                         'code': 'hj',
-                        'name': '黄酒'
+
+                        'name': 'Yellow wine'
+
                     },
+
                     {
+
                         'code': 'ysj',
-                        'name': '养生酒'
+
+                        'name': 'Healthy wine'
+
                     }
+
                 ],
+
                 'code': 'qtjp',
-                'name': '其他酒品'
+
+                'name': 'Other wines'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
+
                 'code': 'yls',
-                'name': '饮料/水'
+
+                'name': 'Beverage/Water'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
+
                         'code': 'bld',
-                        'name': '白兰地'
+
+                        'name': 'Brandy'
+
                     },
+
                     {
+
                         'code': 'wsj',
-                        'name': '威士忌'
+
+                        'name': 'whiskey'
+
                     }
+
                 ],
+
                 'code': 'hj',
-                'name': '红酒'
+
+                'name': 'Red wine'
+
             }
+
         ],
+
         'code': 'jsyl',
-        'name': '酒水饮料'
+
+        'name': 'Liquor/Drinks'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
-                'sub_categorys': [
-                    {
-                        'code': '其他食用油',
-                        'name': '其他食用油'
-                    },
-                    {
-                        'code': '菜仔油',
-                        'name': '菜仔油'
-                    },
-                    {
-                        'code': '花生油',
-                        'name': '花生油'
-                    },
-                    {
-                        'code': '橄榄油',
-                        'name': '橄榄油'
-                    },
-                    {
-                        'code': '礼盒',
-                        'name': '礼盒'
-                    }
-                ],
-                'code': '食用油',
-                'name': '食用油'
-            },
-            {
-                'sub_categorys': [
-                    {
-                        'code': '面粉/面条',
-                        'name': '面粉/面条'
-                    },
-                    {
-                        'code': '大米',
-                        'name': '大米'
-                    },
-                    {
-                        'code': '意大利面',
-                        'name': '意大利面'
-                    }
-                ],
-                'code': '米面杂粮',
-                'name': '米面杂粮'
-            },
-            {
-                'sub_categorys': [
-                    {
-                        'code': '调味油/汁',
-                        'name': '调味油/汁'
-                    },
-                    {
-                        'code': '酱油/醋',
-                        'name': '酱油/醋'
-                    }
-                ],
-                'code': '厨房调料',
-                'name': '厨房调料'
-            },
-            {
+
                 'sub_categorys': [
 
-                ],
-                'code': '南北干货',
-                'name': '南北干货'
-            },
-            {
-                'sub_categorys': [
+                    {
+
+                        'code': 'Other edible oil',
+
+                        'name': 'Other edible oil'
+
+                    },
+
+                    {
+
+                        'code': 'Vegetable oil',
+
+                        'name': 'Vegetable oil'
+
+                    },
+
+                    {
+
+                        'code': 'Peanut oil',
+
+                        'name': 'Peanut oil'
+
+                    },
+
+                    {
+
+                        'code': 'Olive oil',
+
+                        'name': 'Olive oil'
+
+                    },
+
+                    {
+
+                        'code': 'Gift box',
+
+                        'name': 'Gift box'
+
+                    }
 
                 ],
-                'code': '方便速食',
-                'name': '方便速食'
+
+                'code': 'edible oil',
+
+                'name': 'edible oil'
+
             },
+
             {
+
                 'sub_categorys': [
 
+                    {
+
+                        'code': 'Flour/noodle',
+
+                        'name': 'Flour/noodle'
+
+                    },
+
+                    {
+
+                        'code': 'rice',
+
+                        'name': 'rice'
+
+                    },
+
+                    {
+
+                        'code': 'spaghetti',
+
+                        'name': 'spaghetti'
+
+                    }
+
                 ],
-                'code': '调味品',
-                'name': '调味品'
+
+                'code': 'Rice noodles',
+
+                'name': 'Rice noodles'
+
+            },
+
+            {
+
+                'sub_categorys': [
+
+                    {
+
+                        'code': 'flavored oil/juice',
+
+                        'name': 'flavored oil/juice'
+
+                    },
+
+                    {
+
+                        'code': 'soy sauce/vinegar',
+
+                        'name': 'soy sauce/vinegar'
+
+                    }
+
+                ],
+
+                'code': 'kitchen seasoning',
+
+                'name': 'Kitchen seasoning'
+
+            },
+
+            {
+
+                'sub_categorys': [
+
+ 
+
+                ],
+
+                'code': 'North and South dry goods',
+
+                'name': 'North and South dry goods'
+
+            },
+
+            {
+
+                'sub_categorys': [
+
+ 
+
+                ],
+
+                'code': 'convenient fast food',
+
+                'name': 'convenient fast food'
+
+            },
+
+            {
+
+                'sub_categorys': [
+
+ 
+
+                ],
+
+                'code': 'Condiment',
+
+                'name': 'Condiment'
+
             }
+
         ],
-        'code': '粮油副食',
-        'name': '粮油副食'
+
+        'code': 'Grain and oil non-staple food',
+
+        'name': 'grain and oil non-staple food'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '西红柿',
-                        'name': '西红柿'
+
+                        'code': 'tomato',
+
+                        'name': 'tomato'
+
                     },
+
                     {
-                        'code': '韭菜',
-                        'name': '韭菜'
+
+                        'code': 'Chives',
+
+                        'name': 'Chives'
+
                     },
+
                     {
-                        'code': '青菜',
-                        'name': '青菜'
+
+                        'code': 'vegetables',
+
+                        'name': 'vegetables'
+
                     }
+
                 ],
-                'code': '有机蔬菜',
-                'name': '有机蔬菜'
+
+                'code': 'Organic vegetables',
+
+                'name': 'Organic vegetables'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '甘蓝',
-                        'name': '甘蓝'
+
+                        'code': 'Brown Blue',
+
+                        'name': 'Cabbage'
+
                     },
+
                     {
-                        'code': '胡萝卜',
-                        'name': '胡萝卜'
+
+                        'code': 'carrot',
+
+                        'name': 'carrot'
+
                     },
+
                     {
-                        'code': '黄瓜',
-                        'name': '黄瓜'
+
+                        'code': 'cucumber',
+
+                        'name': 'cucumber'
+
                     }
+
                 ],
-                'code': '精选蔬菜',
-                'name': '精选蔬菜'
+
+                'code': 'Selected vegetables',
+
+                'name': 'Selected vegetables'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '火龙果',
-                        'name': '火龙果'
+
+                        'code': 'Fire Dragon Fruit',
+
+                        'name': 'Fire Dragon Fruit'
+
                     },
+
                     {
-                        'code': '菠萝蜜',
-                        'name': '菠萝蜜'
+
+                        'code': 'jackfruit',
+
+                        'name': 'jackfruit'
+
                     },
+
                     {
-                        'code': '奇异果',
-                        'name': '奇异果'
+
+                        'code': 'kiwifruit',
+
+                        'name': 'kiwifruit'
+
                     }
+
                 ],
-                'code': '进口水果',
-                'name': '进口水果'
+
+                'code': 'Imported fruit',
+
+                'name': 'Imported fruit'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '水果礼盒',
-                        'name': '水果礼盒'
+
+                        'code': 'fruit gift box',
+
+                        'name': 'fruit gift box'
+
                     },
+
                     {
-                        'code': '苹果',
-                        'name': '苹果'
+
+                        'code': 'Apple',
+
+                        'name': 'Apple'
+
                     },
+
                     {
-                        'code': '雪梨',
-                        'name': '雪梨'
+
+                        'code': 'Sydney',
+
+                        'name': 'Sydney'
+
                     }
+
                 ],
-                'code': '国产水果',
-                'name': '国产水果'
+
+                'code': 'Domestic fruit',
+
+                'name': 'Domestic fruit'
+
             }
+
         ],
-        'code': '蔬菜水果',
-        'name': '蔬菜水果'
+
+        'code': 'vegetable fruit',
+
+        'name': 'vegetable fruit'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '果冻',
-                        'name': '果冻'
+
+                        'code': 'Jelly',
+
+                        'name': 'Jelly'
+
                     },
+
                     {
-                        'code': '枣类',
-                        'name': '枣类'
+
+                        'code': 'jujube',
+
+                        'name': 'jujube'
+
                     },
+
                     {
-                        'code': '蜜饯',
-                        'name': '蜜饯'
+
+                        'code': 'Candied fruit',
+
+                        'name': 'Candied fruit'
+
                     },
+
                     {
-                        'code': '肉类零食',
-                        'name': '肉类零食'
+
+                        'code': 'Meat snacks',
+
+                        'name': 'Meat snacks'
+
                     },
+
                     {
-                        'code': '坚果炒货',
-                        'name': '坚果炒货'
+
+                        'code': 'nut roasted seeds',
+
+                        'name': 'nut roasted seeds'
+
                     }
+
                 ],
-                'code': '休闲零食',
-                'name': '休闲零食'
+
+                'code': 'Casual snacks',
+
+                'name': 'casual snacks'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '创意喜糖',
-                        'name': '创意喜糖'
+
+                        'code': 'Creative candy',
+
+                        'name': 'Creative candy'
+
                     },
+
                     {
-                        'code': '口香糖',
-                        'name': '口香糖'
+
+                        'code': 'Chewing gum',
+
+                        'name': 'Chewing gum'
+
                     },
+
                     {
-                        'code': '软糖',
-                        'name': '软糖'
+
+                        'code': 'gummy candy',
+
+                        'name': 'gummy candy'
+
                     },
+
                     {
-                        'code': '棒棒糖',
-                        'name': '棒棒糖'
+
+                        'code': 'Lollipop',
+
+                        'name': 'lollipop'
+
                     }
+
                 ],
-                'code': '糖果',
-                'name': '糖果'
+
+                'code': 'Candy',
+
+                'name': 'candy'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '夹心巧克力',
-                        'name': '夹心巧克力'
+
+                        'code': 'Sandwich',
+
+                        'name': 'Sandwich'
+
                     },
+
                     {
-                        'code': '白巧克力',
-                        'name': '白巧克力'
+
+                        'code': 'White Chocolate',
+
+                        'name': 'White Chocolate'
+
                     },
+
                     {
-                        'code': '松露巧克力',
-                        'name': '松露巧克力'
+
+                        'code': 'Truffle chocolate',
+
+                        'name': 'Truffle chocolate'
+
                     },
+
                     {
-                        'code': '黑巧克力',
-                        'name': '黑巧克力'
+
+                        'code': 'Dark Chocolate',
+
+                        'name': 'Dark Chocolate'
+
                     }
+
                 ],
-                'code': '巧克力',
-                'name': '巧克力'
+
+                'code': 'Chocolate',
+
+                'name': 'Chocolate'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '牛肉干',
-                        'name': '牛肉干'
+
+                        'code': 'Beef jerky',
+
+                        'name': 'Beef jerky'
+
                     },
+
                     {
-                        'code': '猪肉脯',
-                        'name': '猪肉脯'
+
+                        'code': 'Pork Slices',
+
+                        'name': 'Pork Slices'
+
                     },
+
                     {
-                        'code': '牛肉粒',
-                        'name': '牛肉粒'
+
+                        'code': 'Beef granules',
+
+                        'name': 'Beef granules'
+
                     },
+
                     {
-                        'code': '猪肉干',
-                        'name': '猪肉干'
+
+                        'code': 'Pork dried',
+
+                        'name': 'dry pork'
+
                     }
+
                 ],
-                'code': '肉干肉脯/豆干',
-                'name': '肉干肉脯/豆干'
+
+                'code': 'Meat dried meat / dried beans',
+
+                'name': 'Meat dried meat / dried beans'
+
             },
+
             {
+
                 'sub_categorys': [
+
                     {
-                        'code': '鱿鱼足',
-                        'name': '鱿鱼足'
+
+                        'code': 'Squid foot',
+
+                        'name': 'Squid foot'
+
                     },
+
                     {
-                        'code': '鱿鱼丝',
-                        'name': '鱿鱼丝'
+
+                        'code': 'Squid silk',
+
+                        'name': 'Squid silk'
+
                     },
+
                     {
-                        'code': '墨鱼/乌贼',
-                        'name': '墨鱼/乌贼'
+
+                        'code': 'Cartfish/Squid',
+
+                        'name': 'cuttlefish/squid'
+
                     },
+
                     {
-                        'code': '鱿鱼仔',
-                        'name': '鱿鱼仔'
+
+                        'code': 'Squid',
+
+                        'name': 'Squid'
+
                     },
+
                     {
-                        'code': '鱿鱼片',
-                        'name': '鱿鱼片'
+
+                        'code': 'Squid slices',
+
+                        'name': 'Squid slices'
+
                     }
+
                 ],
-                'code': '鱿鱼丝/鱼干',
-                'name': '鱿鱼丝/鱼干'
+
+                'code': 'Squid / dried fish',
+
+                'name': 'Squid / dried fish'
+
             }
+
         ],
-        'code': '休闲食品',
-        'name': '休闲食品'
+
+        'code': 'casual food',
+
+        'name': 'casual food'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '进口奶品',
-                'name': '进口奶品'
+
+                'code': 'Imported milk',
+
+                'name': 'Imported milk'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '国产奶品',
-                'name': '国产奶品'
+
+                'code': 'Domestic milk',
+
+                'name': 'Domestic milk'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '奶粉',
-                'name': '奶粉'
+
+                'code': 'Milk powder',
+
+                'name': 'milk powder'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '有机奶',
-                'name': '有机奶'
+
+                'code': 'Organic milk',
+
+                'name': 'Organic milk'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '原料奶',
-                'name': '原料奶'
+
+                'code': 'raw milk',
+
+                'name': 'raw milk'
+
             }
+
         ],
-        'code': '奶类食品',
-        'name': '奶类食品'
+
+        'code': 'Milk food',
+
+        'name': 'Milk food'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '菌菇类',
-                'name': '菌菇类'
+
+                'code': 'bacteria',
+
+                'name': 'bacteria'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '腌干海产',
-                'name': '腌干海产'
+
+                'code': 'salted dried seafood',
+
+                'name': 'salted dried seafood'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '汤料',
-                'name': '汤料'
+
+                'code': 'Soup',
+
+                'name': 'Soup'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '豆类',
-                'name': '豆类'
+
+                'code': 'Beans',
+
+                'name': 'Beans'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '干菜/菜干',
-                'name': '干菜/菜干'
+
+                'code': 'Dried vegetables / dried vegetables',
+
+                'name': 'Dried vegetables / dried vegetables'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '干果/果干',
-                'name': '干果/果干'
+
+                'code': 'Dry fruit/fruit dried',
+
+                'name': 'Dry fruit / dried fruit'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '豆制品',
-                'name': '豆制品'
+
+                'code': 'so products',
+
+                'name': 'so products'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '腊味',
-                'name': '腊味'
+
+                'code': 'Lam',
+
+                'name': 'Spicy'
+
             }
+
         ],
-        'code': '天然干货',
-        'name': '天然干货'
+
+        'code': 'natural dry goods',
+
+        'name': 'natural dry goods'
+
     },
+
     {
+
         'sub_categorys': [
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '白茶',
-                'name': '白茶'
+
+                'code': 'White tea',
+
+                'name': 'White tea'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '红茶',
-                'name': '红茶'
+
+                'code': 'Black tea',
+
+                'name': 'Black tea'
+
             },
+
             {
+
                 'sub_categorys': [
 
+ 
+
                 ],
-                'code': '绿茶',
-                'name': '绿茶'
+
+                'code': 'Green Tea',
+
+                'name': 'Green Tea'
+
             }
+
         ],
-        'code': '精选茗茶',
-        'name': '精选茗茶'
+
+        'code': 'Selected tea',
+
+        'name': 'Selected tea'
+
     }
+
 ]
+
