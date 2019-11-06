@@ -11,9 +11,9 @@ row_data = [
             'goods/images/1_P_1449024889287.jpg'
         ],
         'categorys': [
-            '首页',
-            '生鲜食品',
-            '根茎类'
+            'Home',
+            'Seafood',
+            'Vegetable'
         ],
         'market_price': '$232',
         'name': '新鲜水果甜蜜香脆单果约800克',
