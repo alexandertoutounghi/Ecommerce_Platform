@@ -64,12 +64,12 @@
                                 <li class="add_cart_li">
                                     <a class="btn" id="buy_btn" @click="addShoppingCart">
                                         <i class="iconfont">&#xe600;</i>
-                                        Add to Shopping Cart</a>
+                                        Add to Cart</a>
 
-                                    <a v-if="hasFav" id="fav-btn" class="graybtn" @click="deleteCollect">
-                                        <i class="iconfont">&#xe613;</i>Collected</a>
-                                  <a v-else class="graybtn" @click="addCollect">
-                                    <i class="iconfont">&#xe613;</i>Collection</a>
+                                    <a v-if="hasFav" id="fav-btn" class="wishlistbtn" @click="deleteCollect">
+                                        <i class="iconfont">&#xe613;</i>Added!</a>
+                                  <a v-else class="wishlistbtn" @click="addCollect">
+                                    <i class="iconfont">&#xe613;</i>Add to Wishlist</a>
                                 </li>
                             </ul>
                         </dd>
@@ -324,7 +324,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 .tabs_bar li.tab-buy a.btn:hover {
     background:#1e9246
 }
-.tabs_bar li.tab-buy a.graybtn {
+.tabs_bar li.tab-buy a.wishlistbtn {
     position:absolute;
     right:8px;
     top:8px;
@@ -336,7 +336,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     border-color:#ddd;
     box-shadow:none
 }
-.tabs_bar li.tab-buy a.graybtn:hover {
+.tabs_bar li.tab-buy a.wishlistbtn:hover {
     background:#e5e5e5
 }
 /*.sectionbox h2.tit {*/
@@ -914,11 +914,11 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 .tobuy-box .add_cart_li p {
     margin-bottom:5px
 }
-.tobuy-box .add_cart_li .btn,.tobuy-box .add_cart_li .graybtn {
+.tobuy-box .add_cart_li .btn,.tobuy-box .add_cart_li .wishlistbtn {
     font-size:16px;
     padding:10px 20px 12px
 }
-.tobuy-box .add_cart_li .graybtn {
+.tobuy-box .add_cart_li .wishlistbtn {
     margin-left:12px;
     font-size:14px
 }
@@ -944,19 +944,19 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     border-radius:3px;
     font-size:100%;
     color:#fff;
-    background-color:#09c762;
+    background-color:#2462ff;
     overflow:hidden;
     vertical-align:middle
 }
 .btn:hover,.btn-css3:hover {
     text-decoration:none;
     color:#fff;
-    background:#1e9246
+    background:#4d7fff;
 }
 .btn img,.btn-css3 img {
     vertical-align:middle
 }
-.graybtn {
+.wishlistbtn {
     display:inline-block;
     padding:5px 12px;
     height:16px;
@@ -964,18 +964,15 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     border:1px solid #c4c4c4;
     border-radius:2px;
     font-size:100%;
-    color:#666;
-    background-color:#efefef;
-    background-image:-webkit-linear-gradient(#f8f8f8,#e5e5e5);
-    background-image:-moz-linear-gradient(#f8f8f8,#e5e5e5);
-    background-image:linear-gradient(#f8f8f8,#e5e5e5);
+    color:#ffffff;
+    background-color:#e67d22;
     background-repeat:repeat-x;
     vertical-align:middle
 }
-.graybtn:hover {
+.wishlistbtn:hover {
     text-decoration:none;
-    color:#666;
-    background:#e5e5e5
+    color:#ffffff;
+    background:#f19e56;
 }
 
 
