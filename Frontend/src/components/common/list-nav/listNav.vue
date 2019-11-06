@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
-            <h3><a href=""><strong>生鲜食品</strong><i id="total_count">商品共14件</i></a></h3>
+            <h3><a href=""><strong>Fresh food</strong><i id="total_count">14 products in total</i></a></h3>
 <!--             <dl>
                 <dt>精品肉类</dt>
                 <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=64">羊肉</a> </dd>
@@ -22,7 +22,7 @@
             </dl> -->
             <dl>
                 <template v-for="item in cateMenu">
-                    <dt>{{ item.name }}</dt>
+                    <dt :key="item.id">{{ item.name }}</dt>
                     <dd v-for="subItem in item.children">
                         <a href="http://sx.web51.youxueshop.com/category.php?id=64">{{ subItem.name}}</a>
                     </dd>

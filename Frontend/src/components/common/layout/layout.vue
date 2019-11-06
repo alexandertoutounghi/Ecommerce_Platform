@@ -60,7 +60,7 @@
                 </div>
             </div>
         </slot>
-        <div class="layout-content-box":class="{'page-false':!total,'page-true':total}" >
+        <div class="layout-content-box" :class="{'page-false':!total,'page-true':total}" >
               <div class="full-height full-width content-reSet">
                     <slot name="content"></slot>  
               </div>  

@@ -2,13 +2,13 @@
     <div class="current-loc">
         <div class="breadcrumbs cle">
           <div class="menus">
-            <a href="http://sx.web51.youxueshop.com/">首页</a>
+            <a href="http://sx.web51.youxueshop.com/">Home</a>
             <code>&gt;</code>
-            <a href="http://sx.web51.youxueshop.com/category.php?id=2">生鲜食品</a>
+            <a href="http://sx.web51.youxueshop.com/category.php?id=2">Fresh Food</a>
             <code>&gt;</code>
-            <a href="http://sx.web51.youxueshop.com/category.php?id=19">根茎类</a>
+            <a href="http://sx.web51.youxueshop.com/category.php?id=19">Rhizomes</a>
             <code>&gt;</code>
-            新鲜水果甜蜜香脆单果约800克
+            Fresh fruit sweet and crisp single fruit about 800 grams
           </div>
       </div>
     
