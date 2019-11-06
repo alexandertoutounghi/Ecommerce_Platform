@@ -24,7 +24,7 @@
                         <p><em class="c333"></em>{{item.goods_brief}}</p><div>
                         <span class="p-price"><em class="fastbuy_price">${{item.shop_price}}</em><del>Original Price:${{item.market_price}}</del></span>
                         <a href="" class="p-buy fr ibg">Buy Now</a>
-                        <span class="p-time fr">Sales: {{item.sold_num}} Cases</span>
+                        <span class="p-time fr">Sales: {{item.sold_num}} Units</span>
                     </div>
                     </div>
                 </li>

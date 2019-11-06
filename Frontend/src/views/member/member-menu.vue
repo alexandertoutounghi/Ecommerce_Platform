@@ -2,25 +2,25 @@
 
 <div class="slidebar">
     <h3 class="my_nala">
-        <a @click="member">会员中心</a>
+        <a @click="member">Member Centre</a>
     </h3>
     <ul class="slide_item">
         <li class="item">
-            <div class="root_node"><i class="iconfont">&#xe645;</i>订单中心</div>
+            <div class="root_node"><i class="iconfont">&#xe645;</i>Order Centre</div>
             <ul>
                 <li>
-                    <a :class="{on: current==='order'}" @click="toOrder">我的订单</a>
-                    <a :class="{on: current==='receive'}"  @click="toReceive">收货地址</a>
+                    <a :class="{on: current==='order'}" @click="toOrder">My Order</a>
+                    <a :class="{on: current==='receive'}"  @click="toReceive">Shipping Address</a>
                 </li>
             </ul>
         </li>
         <li class="item">
-            <div class="root_node"><i class="iconfont">&#xe645;</i>会员中心</div>
+            <div class="root_node"><i class="iconfont">&#xe645;</i>Member Centre</div>
             <ul>
                 <li>
-                    <a :class="{on: current==='userinfo'}" @click="toUserInfo">用户信息</a>
-                    <a :class="{on: current==='collection'}" @click="toCollection">我的收藏</a>
-                    <a :class="{on: current==='message'}" @click="toMessage">我的留言</a>
+                    <a :class="{on: current==='userinfo'}" @click="toUserInfo">User Info</a>
+                    <a :class="{on: current==='collection'}" @click="toCollection">My Collection</a>
+                    <a :class="{on: current==='message'}" @click="toMessage">My Message</a>
                 </li>
             </ul>
         </li>
@@ -39,11 +39,8 @@
             
         },
         created () {
-
             var temp = this.$route.path.split('/');
             this.current = temp[temp.length - 1];
-
-
         },
         watch: {
             
@@ -51,27 +48,28 @@
         computed: {
 
         },
+        // navigation
         methods: {
-            member () { // 会员中心
+            member () {
                 this.$router.push({name: 'member'});
             },
-            toOrder () {  // 我的订单
+            toOrder () {
                 this.current = 'order';
                 this.$router.push({name: 'order'});
             },
-            toReceive () { // 收货地址
+            toReceive () {
                 this.current = 'receive';
                 this.$router.push({name: 'receive'});
             },
-            toUserInfo () { // 用户信息
+            toUserInfo () { 
                 this.current = 'userinfo';
                 this.$router.push({name: 'userinfo'});
             },
-            toCollection () { //我的收藏
+            toCollection () {
                 this.current = 'collection';
                 this.$router.push({name: 'collection'});
             },
-            toMessage () { //我的留言
+            toMessage () {
                 this.current = 'message';
                 this.$router.push({name: 'message'});
             }

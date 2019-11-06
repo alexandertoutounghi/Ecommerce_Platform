@@ -4,8 +4,8 @@
             <form name="listform">
                 <!-- <a title="销量" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=sales_volume_base&amp;order=ASC#goods_list" class="curr" rel="nofollow"><span class="search_DESC">销量</span></a>
                 <a title="价格" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=shop_price&amp;order=ASC#goods_list" rel="nofollow"><span class="">价格</span></a> -->
-                <a title="销量" class="curr" rel="nofollow" @click="sortType('-sold_num')"><span :class="{search_DESC: cur==='-sold_num'}">销量</span></a>
-                <a title="价格" class="curr" rel="nofollow" @click="sortType('-shop_price')"><span :class="{search_DESC: cur==='-shop_price'}">价格</span></a>
+                <a title="Quantity Sold" class="curr" rel="nofollow" @click="sortType('-sold_num')"><span :class="{search_DESC: cur==='-sold_num'}">Quantity Sold</span></a>
+                <a title="Price" class="curr" rel="nofollow" @click="sortType('-shop_price')"><span :class="{search_DESC: cur==='-shop_price'}">Price</span></a>
                 <!-- <input type="hidden" name="category" value="2">
                 <input type="hidden" name="display" value="grid" id="display">
                 <input type="hidden" name="brand" value="0">
@@ -31,7 +31,7 @@
     components: {
     },
     props: {
-        proNum: { //商品数量
+        proNum: { //Numeber of Products
             type: Number,
             default: 0
         }
@@ -46,7 +46,7 @@
 
     },
     methods: {
-        // 排序方式
+        // "Sort By""
         sortType (type) {
             this.cur = type;
             this.$emit('on-sort', type);

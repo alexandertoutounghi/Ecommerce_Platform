@@ -3,10 +3,10 @@
         <div class="breadcrumbs cle">
           <div class="menus">
             <template v-for="(item,index) in curLoc">
-                <router-link :to="{name: 'index'}" v-if="index===0">{{item.name}}</router-link>
-                <router-link :to="{name: 'list', params:{id: item.id}}" v-else>{{item.name}}</router-link>
+                <router-link :to="{name: 'index'}" v-if="index===0" :key="index">{{item.name}}</router-link>
+                <router-link :to="{name: 'list', params:{id: item.id}}" :key="index + item.id" v-else >{{item.name}}</router-link>
                 <!-- <a @click="changeMenu(item.id)">{{item.name}}</a> -->
-                <code v-if="index!==curLoc.length-1">&gt;</code>
+                <code v-if="index!==curLoc.length-1" :key="item.id">&gt;</code> 
             </template>
             
             <!-- <a href="http://sx.web51.youxueshop.com/category.php?id=2">生鲜食品</a>

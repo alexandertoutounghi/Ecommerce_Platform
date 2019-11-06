@@ -1,9 +1,11 @@
 <template>
 <div>
+  <!-- This is the pagination for a category's item listing
+  For example, at the bottom of http://localhost:3000/#/app/home/list/26 -->
     <footer class="footer" style="margin-top:30px;">
         <div class="footerK">
             <div class="pageNav" >
-                <span v-for="page in apages" @click="pageCallback(page.page)" class="page"  :class="[page.active?'cPageNum':'pageNum']" >
+                <span v-for="page in apages" :key="page.id" @click="pageCallback(page.page)" class="page" :class="[page.active?'cPageNum':'pageNum']" >
                 {{page.text}}
                 </span>
             </div>
@@ -17,11 +19,11 @@
     props:{
       preText:{
         type:String,
-        default:'上一页'
+        default:'Previous'
       },
       nextText:{
          type:String,
-         default:'下一页'
+         default:'Next'
       },
       endShow:{
         type:String,

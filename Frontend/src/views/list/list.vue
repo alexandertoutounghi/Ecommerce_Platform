@@ -8,7 +8,7 @@
                 <list-sort @on-sort="changeSort" :proNum="proNum"></list-sort>
                 <div class="list-detail">
                     <product-list  :listData="listData"></product-list>
-                    <Page pre-text="上一页" next-text="下一页" end-show="false" :page="curPage" :total-page='totalPage' @pagefn="pagefn"></Page>
+                    <Page pre-text="Previous" next-text="Next" end-show="false" :page="curPage" :total-page='totalPage' @pagefn="pagefn"></Page>
                 </div>
             </div>
         </div>

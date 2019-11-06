@@ -5,23 +5,23 @@
             <div class="box_1">
                 <div class="userCenterBox boxCenterList clearfix" style="_height:1%; font-size:14px;">
 
-                    <h5><span>我的收藏</span></h5>
+                    <h5><span>My Collection</span></h5>
                     <div class="blank"></div>
                     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                       <tbody>
                         <tr align="center">
-                            <th width="35%" bgcolor="#ffffff">商品名称</th>
-                            <th width="30%" bgcolor="#ffffff">价格</th>
-                            <th width="35%" bgcolor="#ffffff">操作</th>
+                            <th width="35%" bgcolor="#ffffff">Product Name</th>
+                            <th width="30%" bgcolor="#ffffff">Price</th>
+                            <th width="35%" bgcolor="#ffffff">Operating</th>
                         </tr>
-                        <tr v-for="(item,index) in collections">
+                        <tr v-for="(item,index) in collections" :key="index">
                             <td bgcolor="#ffffff">
                                 <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6" target="_blank">{{item.goods.name}}</router-link>
                             </td>
-                            <td bgcolor="#ffffff">本店价<span class="goods-price">￥{{item.goods.shop_price}}元</span>
+                            <td bgcolor="#ffffff">Shop Price<span class="goods-price">${{item.goods.shop_price}}</span>
                             </td>
                             <td align="center" bgcolor="#ffffff">
-                                <a class="f6" @click="deletePro(index, item.goods.id)">删除</a>
+                                <a class="f6" @click="deletePro(index, item.goods.id)">Delete</a>
                             </td>
                         </tr>
                         <!-- <tr>
@@ -101,7 +101,7 @@
 
         },
         methods: {
-            getCollection () { //获取收藏列表
+            getCollection () {
               getAllFavs().then((response)=> {
                     this.collections = response.data;
                 }).catch(function (error) {
@@ -111,38 +111,38 @@
             // toProductionDetail (id) { //商品详情页
             //     this.$router.push({name:'productDetail', params: {productId: id}});
             // },
-            concern (id) { //加入关注
+            concern (id) { //"Join attention" - I think this might be alerts?
                 this.$http.post('/addConcern', {
                     params: {
-                        productId: id, // 商品id
+                        productId: id,
                     }
                 }).then((response)=> {
                     console.log(response.data);
-                    alert('已加入关注');
+                    alert('"Has Joined the Attention" aka... added to alert list?');
                 }).catch(function (error) {
                     console.log(error);
                 });
             },
-            addToCart (id) { //加入购物车
+            addToCart (id) {
                 this.$http.post('/product/addShoppingCart', {
                     params: {
-                        productId: id, // 商品id
-                        num: this.proDetail.purNum, // 购买数量
+                        productId: id,
+                        num: this.proDetail.purNum,
                     }
                 }).then((response)=> {
                     console.log(response.data);
-                    alert('已成功加入购物车');
+                    alert('Added to Cart!');
                 }).catch(function (error) {
                     console.log(error);
                 });
 
 
             },
-            deletePro (index, id) { //删除收藏商品
-                alert('您确定要从收藏夹中删除选定的商品吗？');
+            deletePro (index, id) { //Delete favourites item
+                alert('Are you sure you want to remove the selected item from your favourites?');
                 delFav(id).then((response)=> {
                     this.collections.splice(index,1);
-                    alert('已删除商品');
+                    alert('Deleted Item!');
                 }).catch(function (error) {
                     console.log(error);
                 });

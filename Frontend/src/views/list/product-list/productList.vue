@@ -1,20 +1,20 @@
 <template>
     <div class="productlist">
         <ul class="cle">
-            <li v-for="item in listData" >
+            <li v-for="item in listData" :key="item.id" >
                 <router-link :to="'/app/home/productDetail/'+item.id" target="_blank" class="productitem">
                     <span class="productimg">
                         <img width="150" height="150" :title="item.productname" :alt="item.productname" :src="item.goods_front_image" style="display: block;">
                     </span>
                     <span class="nalaprice xszk">
                         <b>
-                        ￥{{item.shop_price}}元
+                        ${{item.shop_price}}
                         </b>
                     </span>
                     <span class="productname">{{item.name}}</span>
                     <span class="description">{{item.goods_brief}}</span>
                     <!-- <span class="price">{{item.price}}</span> -->
-                    <span class="salerow">销量：<span class="sales">{{item.sold_num}}</span>件 </span>
+                    <span class="salerow">Units Sold: <span class="sales">{{item.sold_num}}</span></span>
                 </router-link>
                 <!--<a class="addcart" target="_blank" rel="nofollow" @click="addShoppingCart">加入购物车</a>-->
             </li>
@@ -52,12 +52,12 @@
 
                 this.$http.post('/product/addShoppingCart', {
                     params: {
-                        productId: this.productId, // 商品id
-                        num: this.proDetail.purNum, // 购买数量
+                        productId: this.productId,
+                        num: this.proDetail.purNum,
                     }
                 }).then((response)=> {
                     console.log(response.data);
-                    alert('已成功加入购物车');
+                    alert('Successfully added to shopping cart!');
                 }).catch(function (error) {
                     console.log(error);
                 });
