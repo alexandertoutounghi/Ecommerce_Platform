@@ -16,7 +16,6 @@
                 var thisId = this.id;
                 //var data = this.data;
                 //this.$nextTick(function(){
-                //加载vps信息
                 Highcharts.chart(thisId,{
                     chart: {
                                 type: 'bar'
@@ -35,7 +34,7 @@
                         color:'#4690cd'
                     }],
                     credits:{
-                         enabled:false // 禁用版权信息
+                         enabled:false // Copywrite info
                     },
                     legend:false,
                     plotOptions: {

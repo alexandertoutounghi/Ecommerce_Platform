@@ -8,7 +8,7 @@
                 <i class="iconfont right" v-if="m.items">&#xe665;</i>
             </div>
                 <ul class="contextMenuPlugin" v-if='m.items' v-show="index == isShowChildIndex">
-                    <li v-for="(j,k) in m.items" @click.stop="rightClick(j.action)">
+                    <li v-for="(j,k) in m.items" @click.stop="rightClick(j.action)" :key="k">
                         <div class="ellipsis">
                              <i class="iconfont" v-if="j.icon" v-html="j.icon"></i>
                              <span>{{j.label}}</span>

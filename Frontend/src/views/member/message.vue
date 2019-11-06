@@ -1,21 +1,22 @@
 <template>
+    <!-- I think "message" are comments/reviews but I'm not sure -->
   <div class="my_nala_centre ilizi_centre">
     <div class="ilizi cle">
         <div class="box">
             <div class="box_1">
                 <div class="userCenterBox boxCenterList clearfix" style="_height:1%; font-size:14px;">
-                    <h5><span>我的留言</span></h5>
+                    <h5><span>My Message</span></h5>
                     <div class="blank"></div>
                     <div class="blank"></div>
                     <div class="message-all">
                         <ul>
-                            <li v-for="(item,index) in messageAll">
+                            <li v-for="(item,index) in messageAll" :key="index">
                                 <div>
-                                    <span v-if="item.message_type===1">留言：</span>
-                                    <span v-if="item.message_type===2">投诉：</span>
-                                    <span v-if="item.message_type===3">询问：</span>
-                                    <span v-if="item.message_type===4">售后：</span>
-                                    <span v-if="item.message_type===5">求购：</span>
+                                    <span v-if="item.message_type===1">Leave a Message</span>
+                                    <span v-if="item.message_type===2">Complaint: </span>
+                                    <span v-if="item.message_type===3">Ask: </span>
+                                    <span v-if="item.message_type===4">After Sales: </span>
+                                    <span v-if="item.message_type===5">Buying: </span>
                                     <span>{{item.subject}}</span>
                                     <span>（{{item.add_time}}）</span>
                                 </div>
@@ -23,8 +24,8 @@
                                   {{item.message}}
                                 </div>
                                 <div>
-                                    <a @click="deleteMessage(index, item.id)">删除</a>
-                                    <a :href="(item.file)">查看上传的文件</a>
+                                    <a @click="deleteMessage(index, item.id)">Delete</a>
+                                    <a :href="(item.file)">View Uploaded Files</a>
 
                                 </div>
 
@@ -34,18 +35,18 @@
                     <form action="" method="post" enctype="multipart/form-data" name="formMsg">
                         <table width="100%" border="0" cellpadding="3">
                             <tbody><tr>
-                                <td align="right">留言类型：</td>
+                                <td align="right">Message Type: </td>
                                 <td>
                                     <input type="radio" id="one" value="1" v-model="message_type">
-                                    <label for="one">留言</label>
+                                    <label for="one">Leave a Message</label>
                                     <input type="radio" id="two" value="2" v-model="message_type">
-                                    <label for="two">投诉</label>
+                                    <label for="two">Complaint</label>
                                     <input type="radio" id="three" value="3" v-model="message_type">
-                                    <label for="three">询问</label>
+                                    <label for="three">Ask</label>
                                     <input type="radio" id="four" value="4" v-model="message_type">
-                                    <label for="four">售后</label>
+                                    <label for="four">After Sale</label>
                                     <input type="radio" id="five" value="5" v-model="message_type">
-                                    <label for="five">求购</label>
+                                    <label for="five">Buying</label>
 
                                     <!-- <input name="msg_type" type="radio" value="0" checked="checked">
                                     留言                        <input type="radio" name="msg_type" value="1">
@@ -56,29 +57,29 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">主题：</td>
+                                <td align="right">Subject: </td>
                                 <td><input name="msg_title" type="text" size="30" class="inputBg" v-model="subject"></td>
                             </tr>
                             <tr>
-                                <td align="right" valign="top">留言内容：</td>
+                                <td align="right" valign="top">Message: </td>
                                 <td><textarea name="msg_content" cols="50" rows="4" wrap="virtual" class="B_blue" v-model="message"></textarea></td>
                             </tr>
                             <tr>
-                                <td align="right">上传文件：</td>
+                                <td align="right">Upload Files</td>
                                 <td><input type="file" name="message_img" size="45" class="inputBg" @change="preview"></td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td><input type="hidden" name="act" value="act_add_message">
                                     <!-- <input type="submit" value="提 交" class="bnt_bonus"> -->
-                                    <a class="btn_blue_1" @click="submitMessage">提交</a>
+                                    <a class="btn_blue_1" @click="submitMessage">Submit</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <font color="red">小提示：</font><br>
-                                    您可以上传以下格式的文件：<br>gif、jpg、png、word、excel、txt、zip、ppt、pdf                      </td>
+                                    <font color="red">Info: </font><br>
+                                    You can upload files in the following formats: <br>gif、jpg、png、word、excel、txt、zip、ppt、pdf                      </td>
                             </tr>
                             </tbody></table>
                     </form>
@@ -96,11 +97,11 @@
     export default {
         data () {
             return {
-                message_type: '', // 留言类型
-                subject: '', // 留言主题
-                message: '', // 留言内容
+                message_type: '', 
+                subject: '',
+                message: '',
                 file: '',
-                // 上传文件没做
+                // DOES NOT SUPPORT FILE UPLOAD CURRENTLY
                 messageAll: [
                     // {
                     //     id: 1234,
@@ -136,11 +137,11 @@
         },
         methods: {
             preview (e) {
-                this.file = e.target.files[0]; //获取文件资源
+                this.file = e.target.files[0]; //file info
                 console.log(this.file);
 
             },
-            submitMessage () { //提交留言
+            submitMessage () {
                 const formData = new FormData();
                 formData.append('file',this.file);
                 formData.append('subject',this.subject);
@@ -153,7 +154,7 @@
                     console.log(error);
                 });
             },
-            getMessage () { //获取留言
+            getMessage () { 
               getMessages().then((response)=> {
                     console.log(response.data);
                     this.messageAll = response.data;
@@ -161,9 +162,9 @@
                     console.log(error);
                 });
             },
-            deleteMessage (index, id) { // 删除留言
+            deleteMessage (index, id) {
                 delMessages(id).then((response)=> {
-                  alert("删除成功")
+                  alert("Successfully Deleted Message")
                   this.messageAll.splice(index,1);
                 }).catch(function (error) {
                     console.log(error);

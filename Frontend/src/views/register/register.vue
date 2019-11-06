@@ -6,7 +6,7 @@
 
         <div class="fr form-box">
             <div class="tab">
-                <h2 class="active">手机注册</h2>
+                <h2 class="active">Register your Phone</h2>
 
             </div>
             <div class="tab-form">
@@ -14,34 +14,34 @@
                     <input type="hidden" name="csrfmiddlewaretoken" value="ywSlOHdiGsK6VFB6iyhnB1B30khmz8SU">
 
                     <div class="form-group marb8">
-                        <label>手&nbsp;机&nbsp;号</label>
-                        <input id="jsRegMobile" name="account" v-model="mobile" type="text" placeholder="请输入您的手机号码">
+                        <label>Phone Number:</label>
+                        <input id="jsRegMobile" name="account" v-model="mobile" type="text" placeholder="Please enter your phone number">
                     </div>
                     <p class="error-text marb8" v-show="error.mobile">{{error.mobile}}</p>
 
                     <div class="clearfix">
                         <div class="form-group marb8 verify-code">
-                            <label>短信验证码</label>
-                            <input id="jsPhoneRegCaptcha" v-model="code" type="text" placeholder="输入手机验证码">
+                            <label>SMS Verification Code</label>
+                            <input id="jsPhoneRegCaptcha" v-model="code" type="text" placeholder="Enter your phone verification code">
                         </div>
                         <input class="verify-code-btn sendcode" type="button" id="jsSendCode" @click="seedMessage" :value="getMessageText">
                     </div>
                      <p class="error-text marb8" v-show="error.code">{{error.code}}</p>
 
                     <div class="form-group marb8">
-                        <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-                        <input id="jsPhoneRegPwd" name="password_m" type="password" v-model="password" placeholder="请输入6-20位非中文字符密码">
+                        <label>Password</label>
+                        <input id="jsPhoneRegPwd" name="password_m" type="password" v-model="password" placeholder="Please enter a 6-20 character password">
                     </div>
                      <p class="error-text marb8" v-show="error.password">{{error.password}}</p>
                     <div class="error btns" id="jsMobileTips"></div>
                     <div class="auto-box marb8">
 
                     </div>
-                    <input class="btn btn-green" id="jsMobileRegBtn" @click="isRegister" type="button" value="注册并登录">
+                    <input class="btn btn-green" id="jsMobileRegBtn" @click="isRegister" type="button" value="Register and Login">
                 </form>
             </div>
 
-            <p class="form-p">已有账号？ <router-link :to="'/app/login'">[立即登录]</router-link></p>
+            <p class="form-p">Already have an account? <router-link :to="'/app/login'">[Login!]</router-link></p>
         </div>
     </div>
 </div>
@@ -53,7 +53,7 @@ import cookie from '../../static/js/cookie';
 export default{
     data(){
         return{
-            getMessageText:"免费获取验证码",
+            getMessageText:"Get the verfication code for free",
             mobile:'',
             password:'',
             username:'' ,
@@ -76,10 +76,7 @@ export default{
             }).then((response)=> {
               cookie.setCookie('name',response.data.username,7);
               cookie.setCookie('token',response.data.token,7)
-              //存储在store
-              // 更新store数据
               that.$store.dispatch('setInfo');
-              //跳转到首页页面
               this.$router.push({ name: 'index'})
 
           })
@@ -92,16 +89,15 @@ export default{
         },
         seedMessage(){
             var that = this;
-            //开启倒计时
             var countdown=60;
              settime()
             function settime() {
                 if (countdown == 0) {
-                    that.getMessageText="免费获取验证码";
+                    that.getMessageText="Get the verification code for free";
                     countdown = 60;
                     return;
                 } else {
-                    that.getMessageText="重新发送(" + countdown + ")";
+                    that.getMessageText="Resend(" + countdown + ")";
                     countdown--;
                 }
                 setTimeout(function() {

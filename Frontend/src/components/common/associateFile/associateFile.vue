@@ -1,33 +1,33 @@
 <template>
     <div class="associate-file">
-        <Modal v-model="modalShow" title="关联档案" @on-ok="ok" @on-cancel="cancel">
+        <Modal v-model="modalShow" title="Associated File" @on-ok="ok" @on-cancel="cancel">
             <div class="wrap">
                 <div class="selected-box border-bottom" >
                     <div class="selected-box" ref="selectedBox" :style
 
                     ="{height: height}">
-                        <!--选择的内容-->
+                        <!--Selected Content -->
                         <slot name="selectList"></slot>
                     </div>
                     <div @click="spread" class="bottom-state">
                         <span class="state">{{state}}</span>
                         <span class="control" v-if="isSpread">
-                            <span>收起</span>
+                            <span>Collapse</span>
                             <i class="iconfont">&#xe664;</i>
                         </span>
                         <span class="control" v-else>
-                            <span>展开</span>
+                            <span>Expand</span>
                             <i class="iconfont">&#xe63b;</i>
                         </span>
                     </div>
                 </div>
-                <Input placeholder="请输入搜索内容" ><i class="iconfont" slot="append">&#xe64a;</i></Input>
+                <Input placeholder="Enter Search Content" ><i class="iconfont" slot="append">&#xe64a;</i></Input>
                 <ul>
-                    <li v-for="item in fileAll" class="fileItem border-bottom">
+                    <li v-for="item in fileAll" class="fileItem border-bottom" :key="item.id">
                         <img src="../../../static/images/file.png"  class="float-left">
                         <p>Jackspace King</p>
                         <i class="iconfont">&#xe719;</i>
-                        <Button type="ghost" class="associate-btn">取消关联</Button>
+                        <Button type="ghost" class="associate-btn">Unlink</Button>
                     </li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@
 
         },
         methods: {
-            spread() { //是否展开
+            spread() { //Handles expand/collapse
                 if (!this.isSpread) {
                     this.$refs.selectedBox.style.overflow = 'auto'
                     this.$refs.selectedBox.style.height = 'inherit';

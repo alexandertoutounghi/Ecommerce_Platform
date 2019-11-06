@@ -1,24 +1,24 @@
 <template>
     <div class="control-bar">
         <Checkbox @on-change="selectAll" v-model="isSelect"></Checkbox>
-        <!-- 未选中的时候显示 -->
+        <!-- Display when unchecked -->
         <div v-if="!isSelect" class="slot sort-type">
             <span class="item-slot">
                 <slot name="item-slot"></slot>
             </span>
-            <span class="sort-item" v-for="(item,index) in sortArr">
+            <span class="sort-item" v-for="(item,index) in sortArr" :key="index">
                 <label>{{item}}</label>
                 <span class="sort"><i class="iconfont icon-arrow-up" :class="{'icon-clicked':iconIndex === index && iconType === 'up'}" @click="sort(index, 'up')">&#xe664;</i><i class="iconfont icon-arrow-down" :class="{'icon-clicked':iconIndex === index && iconType === 'down'}" @click="sort(index, 'down')">&#xe63b;</i></span>
             </span>
         </div>
         <div v-if="!isSelect" class="right">
-            <Checkbox @on-change="">只显示分组</Checkbox>
-            <span>共{{resultCount}}条搜索结果</span>
+            <Checkbox @on-change="">Show only groupings</Checkbox>
+            <span>Total {{resultCount}} search results</span>
         </div>
-        <!-- 选中的时候显示 -->
+        <!-- Displayed when selected -->
         <div v-if="isSelect" class="slot">
-            <span>已选中{{selectCount}}条结果</span>
-            <Button type="ghost" class="main-color cancle-btn" @click="cancel">取消</Button>
+            <span>Selected {{selectCount}} Resuilts</span>
+            <Button type="ghost" class="main-color cancle-btn" @click="cancel">Cancel</Button>
         </div>
         <div v-if="isSelect" class="bar-operate">
             <slot name="bar-operate"></slot>

@@ -1,8 +1,9 @@
 import * as types from './mutation-types';
 import cookie from '../static/js/cookie';
 import {getShopCarts} from '../api/api'
-// 类似于事件 每个mutation都有字符类型的事件类型和回调函数
-//全局引入vue
+// Each mutation has a character type event and a callback function
+
+//Global declaration for vue
 import Vue from 'vue';
 import Axios from 'axios';
 Vue.prototype.$http = Axios
@@ -16,11 +17,10 @@ export default {
         }
         console.log(state.userInfo);
     },
-    [types.SET_SHOPLIST] (state) { //设置购物车数据
+    [types.SET_SHOPLIST] (state) { //Sets shopping cart data
         // token = cookie.getCookie('token')
         if(cookie.getCookie('token') != null){
           getShopCarts().then((response)=> {
-            // 更新store数据
             state.goods_list.goods_list = response.data;
             console.log(response.data)
             var totalPrice = 0

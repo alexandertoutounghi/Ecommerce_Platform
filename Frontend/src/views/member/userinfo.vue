@@ -5,23 +5,23 @@
             <div class="box">
                 <div class="box_1">
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-                        <h5><span>个人资料</span></h5>
+                        <h5><span>Personal Information</span></h5>
                         <div class="blank"></div>
                         <form name="formEdit" action="" method="post" >
                             <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                                 <tbody>
                                     <tr>
-                                      <td width="28%" align="right" bgcolor="#FFFFFF">姓名： </td>
+                                      <td width="28%" align="right" bgcolor="#FFFFFF">Name: </td>
                                       <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
                                     </tr>
                                     <tr>
-                                        <td width="28%" align="right" bgcolor="#FFFFFF">出生日期： </td>
+                                        <td width="28%" align="right" bgcolor="#FFFFFF">Date of Birth: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
                                             <datepicker language="ch"  v-model="userInfo.birthday"></datepicker>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="28%" align="right" bgcolor="#FFFFFF">性　别： </td>
+                                        <td width="28%" align="right" bgcolor="#FFFFFF">Gender: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
                                             <input type="radio" id="male" value="male" v-model="userInfo.gender">
                                             <label for="male">男</label>
@@ -30,11 +30,11 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width="28%" align="right" bgcolor="#FFFFFF">电子邮件地址： </td>
+                                        <td width="28%" align="right" bgcolor="#FFFFFF">Email: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="xxxx@xx.com" size="25" class="inputBg" v-model="userInfo.email"></td>
                                     </tr>
                                     <tr>
-                                        <td width="28%" align="right" bgcolor="#FFFFFF" id="extend_field5i">手机：</td>
+                                        <td width="28%" align="right" bgcolor="#FFFFFF" id="extend_field5i">Phone: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
                                             <input disabled name="extend_field5" type="text" class="inputBg" v-model="userInfo.mobile"><span style="color:#FF0000"> *</span>
                                         </td>
@@ -42,7 +42,7 @@
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
                                             <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
-                                            <button class="btn_blue_1" style="border:none;" @click="confirmModify">确认修改</button>
+                                            <button class="btn_blue_1" style="border:none;" @click="confirmModify">Confirm Changes</button>
                                             <!-- <input name="submit" type="submit" value="确认修改" class="btn_blue_1" style="border:none;"> -->
                                         </td>
                                     </tr>
@@ -85,16 +85,16 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
 
         },
         methods: {
-            getUserInfo () { //请求用户信息
+            getUserInfo () {
               getUserDetail().then((response)=> {
                     this.userInfo = response.data;
                 }).catch(function (error) {
                     console.log(error);
                 });
             },
-            confirmModify () { // 确认修改
+            confirmModify () {
                 updateUserInfo(this.userInfo).then((response)=> {
-                    alert('修改成功');
+                    alert('Successfully Modified');
                 }).catch(function (error) {
                     console.log(error);
                 });

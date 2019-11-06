@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
-            <h3 v-if="isObject"><a href=""><strong>{{currentCategoryName}}</strong><i id="total_count">商品共{{proNum}}件</i></a></h3>
+            <h3 v-if="isObject"><a href=""><strong>{{currentCategoryName}}</strong><i id="total_count">Total Count: {{proNum}} Units</i></a></h3>
             <dl>
                 <template v-for="item in cateMenu">
-                    <dt>{{ item.name }}</dt>
-                    <dd v-for="subItem in item.sub_cat">
+                    <dt :key="item.id">{{ item.name }}</dt>
+                    <dd v-for="subItem in item.sub_cat"> <!-- Just ignore for now, it's being a pain -->
                         <a @click="changeMenu(subItem.id)">{{ subItem.name}}</a>
                     </dd>
                 </template>
@@ -19,7 +19,7 @@
   export default {
     data () {
         return {
-            cateType: '', //类别
+            cateType: '', //category
         };
     },
     components: {
@@ -31,7 +31,7 @@
                 return {};
             }
         },
-        proNum: { //商品数量
+        proNum: { //number of products
             type: Number,
             default: 0
         },

@@ -22,14 +22,14 @@ import '../../common/contextmenu/contextmenu.css'
         }
 })
 
-//根据数据得到dom结构
+//Get DOM structure
 function gitContextmenuDom(items){
     var Dom=document.createElement("ul");
     for(var i=0 ;i<items.length;i++){
         var node = document.createElement('li'); 
         var icon = document.createElement('i'); 
         icon.className = "iconfont";
-        //添加icon
+        //Add icon
         if(items[i].icon){
             //var iconFont = document.createTextNode(items[i].icon); 
             //icon.appendChild(iconFont)    
@@ -38,10 +38,10 @@ function gitContextmenuDom(items){
         node.appendChild(icon);
         var title = document.createElement('span'); 
         var label = document.createTextNode(items[i].label);
-        //添加标题
+        //Add title
         title.appendChild(label);
         node.appendChild(title);
-        //判断当前有无子级
+        //Determine if there are any children at the moment
         if(items[i].items){
             var childDom = gitContextmenuDom(items[i].items);
             node.appendChild(childDom);

@@ -1,9 +1,9 @@
 <template>
     <div id="wrapper" class="cle">
         <div class="here cle">
-            <a href="" @click="toIndex">首页</a>
+            <a href="" @click="toIndex">Home</a>
             <code>></code>
-            用户中心
+            User Centre
         </div>
         <div class="my_nala_main">
             <member-menu></member-menu>
@@ -36,7 +36,7 @@ import memberMenu from './member-menu';
 
         },
         methods: {
-            toIndex () { //回到首页
+            toIndex () { //Back to the homepage
                 this.$router.push({name: 'index'});
             }
         }
