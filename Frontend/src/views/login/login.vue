@@ -38,7 +38,7 @@
             <!--        <div class="error btns login-form-tips" id="jsLoginTips" v-show="error"><p>用户名或密码错误</p></div> -->
             <div class="auto-box marb38"></div>
             <p class="error-text" v-show="error">{{error}}</p>
-            <input class="btn btn-green" id="jsLoginBtn" type="button" @click="login" value="Login" />
+            <input class="btn btn-login" id="jsLoginBtn" type="button" @click="login" value="Login" />
           </form>
 
           <p class="form-p">
@@ -413,10 +413,10 @@ export default {
   border: 0;
   cursor: pointer;
 }
-.btn-green {
+.btn-login {
   background: #2462ff;
 }
-.btn-green:hover {
+.btn-login:hover {
   background: #4e7ef5;
 }
 .form-p {

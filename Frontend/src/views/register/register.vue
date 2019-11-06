@@ -58,7 +58,7 @@
               <div class="error btns" id="jsMobileTips"></div>
               <div class="auto-box marb8"></div>
               <input
-                class="btn btn-green"
+                class="btn btn-register"
                 id="jsMobileRegBtn"
                 @click="isRegister"
                 type="button"
@@ -398,10 +398,10 @@ export default {
   border: 0;
   cursor: pointer;
 }
-.btn-green {
+.btn-register {
   background: #2462ff;
 }
-.btn-green:hover {
+.btn-register:hover {
   background: #4e7ef5;
 }
 .hide {
