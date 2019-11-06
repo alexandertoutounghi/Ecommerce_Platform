@@ -3,6 +3,7 @@ import axios from 'axios';
 
 let host = 'http://shop.projectsedu.com';
 // let host = 'http://127.0.0.1:8000';
+let host354 = 'http://173.249.5.177:443';
 
 //获取商品类别信息
 export const queryCategorygoods = params => { return axios.get(`${host}/indexgoods/`) }
@@ -16,10 +17,10 @@ export const bannerGoods = params => { return axios.get(`${host}/banners/`) }
 //获取商品类别信息
 export const getCategory = params => {
   if('id' in params){
-    return axios.get(`${host}/categorys/`+params.id+'/');
+    return axios.get(`${host354}/categorys/`+params.id+'/');
   }
   else {
-    return axios.get(`${host}/categorys/`, params);
+    return axios.get(`${host354}/categorys/`, params);
   }
 };
 
@@ -43,15 +44,15 @@ export const updateShopCart = (goodsId, params) => { return axios.patch(`${host}
 export const deleteShopCart = goodsId => { return axios.delete(`${host}/shopcarts/`+goodsId+'/') }
 
 //收藏
-export const addFav = params => { return axios.post(`${host}/userfavs/`, params) }
+export const addFav = params => { return axios.post(`${host354}/userfavs/`, params) }
 
 //取消收藏
-export const delFav = goodsId => { return axios.delete(`${host}/userfavs/`+goodsId+'/') }
+export const delFav = goodsId => { return axios.delete(`${host354}/userfavs/`+goodsId+'/') }
 
-export const getAllFavs = () => { return axios.get(`${host}/userfavs/`) }
+export const getAllFavs = () => { return axios.get(`${host354}/userfavs/`) }
 
 //判断是否收藏
-export const getFav = goodsId => { return axios.get(`${host}/userfavs/`+goodsId+'/') }
+export const getFav = goodsId => { return axios.get(`${host354}/userfavs/`+goodsId+'/') }
 
 //登录
 export const login = params => {
@@ -60,17 +61,17 @@ export const login = params => {
 
 //注册
 
-export const register = parmas => { return axios.post(`${host}/users/`, parmas) }
+export const register = parmas => { return axios.post(`${host354}/users/`, parmas) }
 
 //短信
 export const getMessage = parmas => { return axios.post(`${host}/code/`, parmas) }
 
 
 //获取用户信息
-export const getUserDetail = () => { return axios.get(`${host}/users/1/`) }
+export const getUserDetail = () => { return axios.get(`${host354}/users/1/`) }
 
 //修改用户信息
-export const updateUserInfo = params => { return axios.patch(`${host}/users/1/`, params) }
+export const updateUserInfo = params => { return axios.patch(`${host354}/users/1/`, params) }
 
 
 //获取订单

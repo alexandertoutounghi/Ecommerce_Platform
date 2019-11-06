@@ -305,7 +305,7 @@ fieldset,img {
     z-index:2001
 }
 
-/*需要---------整理*/
+
 .new_header .search_result {
     margin:27px 0 0 -9px;
     width:380px
@@ -417,9 +417,6 @@ fieldset,img {
     z-index:2002
 }
 
-
-/*hd_bar ul*/
-
 .hd_bar ul {
     padding-top:4px;
     float:left
@@ -438,7 +435,6 @@ fieldset,img {
 .hd_bar ul#userinfo-bar li .vipico {
     width:12px;
     height:17px;
-   /*background:url(../../static/images/head/wap.png) no-repeat;*/
     float:left;
     margin-right:4px;
     font-size:18px
@@ -548,7 +544,6 @@ fieldset,img {
     visibility:visible
 }
 
-/*cle*/
 .cle:after {
     visibility:hidden;
     display:block;
@@ -561,8 +556,6 @@ fieldset,img {
     *zoom:1
 }
 
-
-/*hd-main*/
 .logo {
     position:absolute;
     left:10px;
@@ -610,8 +603,6 @@ fieldset,img {
     color:#ffd736
 }
 
-
-/*热搜榜*/
 .head_search_hot {
     position:absolute;
     top:58px;
@@ -630,7 +621,7 @@ fieldset,img {
 .head_search_hot a.red,.head_search_hot a:hover {
     color:#09c762
 }
-/*hd-main   .intro*/
+
 .intro {
     height:58px;
     margin:0 190px 0 240px;
@@ -804,9 +795,6 @@ fieldset,img {
     color:#09c762
 }
 
-
-
-
 .J_subCata {
     position:absolute;
     top:35px;
@@ -884,8 +872,6 @@ fieldset,img {
     border-color:#09c762
 }
 
-
-
 .clear {
     clear:both;
     height:0;
@@ -934,8 +920,6 @@ fieldset,img {
 .new_header .hd_cart .tit span {
     background-color:#1e9246
 }
-
-
 
 .hd_cart .tit {
     display:block;
