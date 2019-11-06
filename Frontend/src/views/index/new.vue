@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
-        <div class="newopro-l fl">
+        <div class="newopro-l fl"> <!-- TREASURE TEST BANNER AD -->
           <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a>
         </div>
         <div class="newopro-r fr">
