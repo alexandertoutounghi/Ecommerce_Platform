@@ -1,832 +1,1664 @@
 #!/usr/bin/env python
+
 # encoding: utf-8
 
-row_data = [
+ 
+
+Row_data = [
+
     {
+
         'images': [
+
             'goods/images/1_P_1449024889889.jpg',
+
             'goods/images/1_P_1449024889264.jpg',
+
             'goods/images/1_P_1449024889726.jpg',
+
             'goods/images/1_P_1449024889018.jpg',
+
             'goods/images/1_P_1449024889287.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Vegetable'
+
         ],
+
         'market_price': '$232',
+
         'name': 'Fresh fruit and crisp single fruit for 800 grams',
-        'desc': 'Eating passion fruit can increase the stomach fullness, reduce the intake of residual calories, and also absorb organic molecules such as cholesterol and bile to inhibit the body\'s absorption of fat. Therefore, long-term consumption is beneficial to improve the body\'s nutrient absorption structure, reduce body fat, and create a healthy and beautiful posture.',
+
+        'desc': 'Eating passion fruit can increase the stomach fullness, reduce the intake of residual calories, and also absorb organic molecules such as cholesterol and bile to inhibit the body\'s absorption of fat. To improve the body\'s nutrient absorption structure, reduce body fat, and create a healthy and beautiful posture.',
+
         'sale_price': '$156',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/2_P_1448945810202.jpg',
+
             'goods/images/2_P_1448945810814.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Seafood'
+
         ],
+
         'market_price': '$106',
+
         'name': 'Fresh beef',
-        'desc': 'The front leg + hind leg + lamb chops total 8 pounds, the original ecological mountain grazing lamb, once the royal tribute, CCTV recommended, in 2005 Beijing hosted the global financial leaders. Five-layer special packaging box + vacuum packaging + ice bag + fresh box + SF cold chain delivery, road shelf life of 8 days',
+
+        'desc': 'The front leg + hind leg + lamb chops total 8 pounds, the original ecological mountain grazing lamb, once the royal tribute, CCTV recommended, in 2005 Beijing hosted the global financial leaders. Five-layer special packaging box + vacuum Packaging + ice bag + fresh box + SF cold chain delivery, road shelf life of 8 days',
+
         'sale_price': '$88',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/7_P_1448945104883.jpg',
+
             'goods/images/7_P_1448945104734.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Vegetable'
+
         ],
+
         'market_price': '$286',
-        'name': '酣畅家庭菲力牛排10片澳洲生鲜牛肉团购套餐',
+
+        'name': 'Australian fresh beef group purchase package',
+
         'desc': None,
+
         'sale_price': '$238',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/47_P_1448946213263.jpg',
+
             'goods/images/47_P_1448946213157.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '根茎类'
+
+            'root stems'
+
         ],
+
         'market_price': '$156',
-        'name': '日本蒜蓉粉丝扇贝270克6只装',
+
+        'name': 'Japanese garlic fan scallop 270 g 6 packs',
+
         'desc': None,
+
         'sale_price': '$108',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/10_P_1448944572085.jpg',
+
             'goods/images/10_P_1448944572532.jpg',
+
             'goods/images/10_P_1448944572872.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Seafood'
+
         ],
+
         'market_price': '$106',
-        'name': '内蒙新鲜牛肉1斤清真生鲜牛肉火锅食材',
+
+        'name': 'Inner Mongolian fresh beef 1 kg halal fresh beef hot pot ingredients',
+
         'desc': None,
+
         'sale_price': '$88',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/4_P_1448945381985.jpg',
+
             'goods/images/4_P_1448945381013.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '茄果类'
+
+            'Lungberry fruit'
+
         ],
+
         'market_price': '$90',
-        'name': '乌拉圭进口牛肉卷特级肥牛卷',
+
+        'name': 'Uruguay imported beef roll premium beef roll',
+
         'desc': None,
+
         'sale_price': '$75',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/8_P_1448945032810.jpg',
+
             'goods/images/8_P_1448945032646.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '进口生鲜'
+
+            'Imported fresh'
+
         ],
+
         'market_price': '$150',
-        'name': '五星眼肉牛排套餐8片装原味原切生鲜牛肉',
+
+        'name': 'Five Star Steak Steak Set 8 pieces of original raw cut fresh beef',
+
         'desc': None,
+
         'sale_price': '$125',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/11_P_1448944388277.jpg',
+
             'goods/images/11_P_1448944388034.jpg',
+
             'goods/images/11_P_1448944388201.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Seafood'
+
         ],
+
         'market_price': '$31',
-        'name': '澳洲进口120天谷饲牛仔骨4份原味生鲜',
+
+        'name': 'Australian imports 120 days of grain-feeding cowboy bones 4 original fresh',
+
         'desc': None,
+
         'sale_price': '$26',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/6_P_1448945167279.jpg',
+
             'goods/images/6_P_1448945167015.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '菌菇类'
+
+            'mushroom'
+
         ],
+
         'market_price': '$239',
-        'name': '潮香村澳洲进口牛排家庭团购套餐20片',
+
+        'name': 'Chaoxiang Village Aussie Steak Family Group Package 20 pieces',
+
         'desc': None,
+
         'sale_price': '$199',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/9_P_1448944791617.jpg',
+
             'goods/images/9_P_1448944791129.jpg',
+
             'goods/images/9_P_1448944791077.jpg',
+
             'goods/images/9_P_1448944791229.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '根茎类'
+
+            'root stems'
+
         ],
+
         'market_price': '$202',
-        'name': '爱食派内蒙古呼伦贝尔冷冻生鲜牛腱子肉1000g',
+
+        'name': 'Love food, Inner Mongolia Hulunbeier frozen fresh beef scorpion meat 1000g',
+
         'desc': None,
+
         'sale_price': '$168',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/3_P_1448945490837.jpg',
+
             'goods/images/3_P_1448945490084.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '精品肉类'
+
+            'Boutique meat'
+
         ],
+
         'market_price': '$306',
-        'name': '澳洲进口牛尾巴300g新鲜肥牛肉',
-        'desc': '新鲜羊羔肉整只共15斤，原生态大山放牧羊羔，曾经的皇室贡品，央视推荐，2005年北京招待全球财金首脑。五层专用包装箱+真空包装+冰袋+保鲜箱+顺丰冷链发货，路途保质期8天',
+
+        'name': 'Australian imported beef tail 300g fresh fat beef',
+
+        'desc': 'The fresh lamb meat is only 15 kg in total. The original ecological mountain grazing lamb, once the royal tribute, recommended by CCTV, Beijing hosted the global financial leader in 2005. Five-layer special packaging box + vacuum packaging + ice bag + fresh-keeping box + SF cold chain delivery, the road shelf life is 8 days',
+
         'sale_price': '$255',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/48_P_1448943988970.jpg',
+
             'goods/images/48_P_1448943988898.jpg',
+
             'goods/images/48_P_1448943988439.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             'Seafood'
+
         ],
+
         'market_price': '$126',
-        'name': '新疆巴尔鲁克生鲜牛排眼肉牛扒1200g',
+
+        'name': 'Xinjiang Barluk raw steak beef sirloin 1200g',
+
         'desc': None,
+
         'sale_price': '$88',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/5_P_1448945270390.jpg',
+
             'goods/images/5_P_1448945270067.jpg',
+
             'goods/images/5_P_1448945270432.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
+
             '蛋制品'
+
         ],
+
         'market_price': '$144',
-        'name': '澳洲进口安格斯牛切片上脑牛排1000g',
-        'desc': '澳大利亚是国际公认的没有疯牛病和口蹄疫的国家。为了保持澳大利亚产品的高标准，澳大利亚牛肉业和各级政府共同努力简历了严格的标准和体系，以保证生产的整体化和产品的可追溯性',
+
+        'name': 'Australian Angus cattle sliced ​​upper brain steak 1000g',
+
+        'desc': 'Australia is internationally recognized as a country without mad cow disease and foot and mouth disease. In order to maintain the high standards of Australian products, the Australian beef industry and governments at all levels have worked together to rigorously rigorous standards and systems to ensure the integrity of production and product traceability',
+
         'sale_price': '$120',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'images/201705/goods_img/53_P_1495068879687.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fresh Food',
-            '茄果类'
+
+            'Lungberry fruit'
+
         ],
+
         'market_price': '$120',
-        'name': '帐篷出租',
+
+        'name': 'Tent rental',
+
         'desc': None,
+
         'sale_price': '$100',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/16_P_1448947194687.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '红酒'
+
+            'Red wine'
+
         ],
+
         'market_price': '$23',
-        'name': '52度茅台集团国隆双喜酒500mlx6',
-        'desc': '贵州茅台酒厂（集团）保健酒业有限公司生产，是以“龙”字打头的酒水。中国龙文化上下8000年，源远而流长，龙的形象是一种符号、一种意绪、一种血肉相联的情感。',
+
+        'name': '52 degree Maotai Group Guolong Double Happiness 500mlx6',
+
+        'desc': 'Guizhou Maotai Distillery (Group) Health Wine Co., Ltd. produces the wine with the word "Dragon". The Chinese dragon culture has been in the 8000 years, and the source is far and long. The image of the dragon is a symbol, a kind of meaning, and a flesh-and-blood emotion. ',
+
         'sale_price': '$19',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/14_P_1448947354031.jpg',
+
             'goods/images/14_P_1448947354433.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
+
             'Drink/Water'
+
         ],
+
         'market_price': '$43',
-        'name': '52度水井坊臻酿八號500ml',
+
+        'name': '52 degree Shuijingfang brewing No. 8 500ml',
+
         'desc': None,
+
         'sale_price': '$36',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/12_P_1448947547989.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '其他酒品'
+
+            'Other wines'
+
         ],
+
         'market_price': '$190',
-        'name': '53度茅台仁酒500ml',
+
+        'name': '53 degrees Maotai Renji 500ml',
+
         'desc': None,
+
         'sale_price': '$158',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/46_P_1448946598711.jpg',
+
             'goods/images/46_P_1448946598301.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '葡萄酒'
+
+            'wine'
+
         ],
+
         'market_price': '$38',
-        'name': '双响炮洋酒JimBeamwhiskey美国白占边',
+
+        'name': 'Double Cannon Wine JimBeamwhiskey American White Occupy',
+
         'desc': None,
+
         'sale_price': '$28',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/21_P_1448946793276.jpg',
+
             'goods/images/21_P_1448946793153.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
+
             'Drink/Water'
+
         ],
+
         'market_price': '$55',
-        'name': '西夫拉姆进口洋酒小酒版',
+
+        'name': 'Sifram imported wine wine version',
+
         'desc': None,
+
         'sale_price': '$46',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/15_P_1448947257324.jpg',
+
             'goods/images/15_P_1448947257580.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '洋酒'
+
+            'Wine'
+
         ],
+
         'market_price': '$22',
-        'name': '茅台53度飞天茅台500ml',
+
+        'name': 'Moutai 53 degree flying Maotai 500ml',
+
         'desc': None,
+
         'sale_price': '$18',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/13_P_1448947460386.jpg',
+
             'goods/images/13_P_1448947460276.jpg',
+
             'goods/images/13_P_1448947460353.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '葡萄酒'
+
+            'wine'
+
         ],
+
         'market_price': '$42',
-        'name': '52度兰陵·紫气东来1600mL山东名酒',
+
+        'name': '52 degree Lanling·Ziqidong to 1600mL Shandong famous wine',
+
         'desc': None,
+
         'sale_price': '$35',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/50_P_1448946543091.jpg',
+
             'goods/images/50_P_1448946542182.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
+
             'Drink/Water'
+
         ],
+
         'market_price': '$24',
-        'name': 'JohnnieWalker尊尼获加黑牌威士忌',
+
+        'name': 'JohnnieWalker Johnny gets a black whiskey',
+
         'desc': None,
+
         'sale_price': '$20',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/51_P_1448946466595.jpg',
+
             'goods/images/51_P_1448946466208.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '洋酒'
+
+            'Wine'
+
         ],
+
         'market_price': '$31',
-        'name': '人头马CLUB特优香槟干邑350ml',
+
+        'name': 'Human head CLUB premium champagne cognac 350ml',
+
         'desc': None,
+
         'sale_price': '$26',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/17_P_1448947102246.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '啤酒'
+
+            'beer'
+
         ],
+
         'market_price': '$54',
-        'name': '张裕干红葡萄酒750ml*6支',
+
+        'name': 'Zhang Yugan red wine 750ml*6',
+
         'desc': None,
+
         'sale_price': '$45',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/20_P_1448946850602.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '葡萄酒'
+
+            'wine'
+
         ],
+
         'market_price': '$46',
-        'name': '原瓶原装进口洋酒烈酒法国云鹿XO白兰地',
+
+        'name': 'Original bottle of imported wine spirits French Yunlu XO brandy',
+
         'desc': None,
+
         'sale_price': '$38',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/19_P_1448946951581.jpg',
+
             'goods/images/19_P_1448946951726.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '白酒'
+
+            'Liquor'
+
         ],
+
         'market_price': '$82',
-        'name': '法国原装进口圣贝克干红葡萄酒750ml',
+
+        'name': 'French imported Saint Baker dry red wine 750ml',
+
         'desc': None,
+
         'sale_price': '$68',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/18_P_1448947011435.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '白酒'
+
+            'Liquor'
+
         ],
+
         'market_price': '$67',
-        'name': '法国百利威干红葡萄酒AOP级6支装',
+
+        'name': 'French Pailey Dry Red Wine AOP Grade 6 Pack',
+
         'desc': None,
+
         'sale_price': '$56',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/22_P_1448946729629.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
-            '洋酒'
+
+            'Wine'
+
         ],
+
         'market_price': '$71',
-        'name': '芝华士12年苏格兰威士忌700ml',
+
+        'name': 'Chivas Regal 12 Years Scotch Whisky 700ml',
+
         'desc': None,
+
         'sale_price': '$59',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/45_P_1448946661303.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Beverage',
+
             'Drink/Water'
+
         ],
+
         'market_price': '$31',
-        'name': '深蓝伏特加巴维兰利口酒送预调酒',
+
+        'name': 'Deep blue vodka Baviran liqueur to pre-drink wine',
+
         'desc': None,
+
         'sale_price': '$18',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/32_P_1448948525620.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'vegetables'
+
         ],
+
         'market_price': '$43',
-        'name': '赣南脐橙特级果10斤装',
+
+        'name': 'Oringe',
+
         'desc': None,
+
         'sale_price': '$36',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/30_P_1448948663450.jpg',
+
             'goods/images/30_P_1448948662571.jpg',
+
             'goods/images/30_P_1448948663221.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'Imported fruit'
+
         ],
+
         'market_price': '$11',
-        'name': '泰国菠萝蜜16-18斤1个装',
-        'desc': '【懒人吃法】菠萝蜜果肉，冰袋保鲜，收货就吃，冰爽Q脆甜，2斤装，全国顺丰空运包邮，发出后48小时内可达，一线城市基本隔天可达',
+
+        'name': 'Thai pineapple 16-18 kg 1 pack',
+
+        'desc': '[lazy people eat] jackfruit pulp, ice pack preservation, receipt of food, iced Q crispy, 2 kg loaded, national SF air transport, can be reached within 48 hours after the issuance, the first-tier cities are basically separated Days can',
+
         'sale_price': '$9',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/31_P_1448948598947.jpg',
+
             'goods/images/31_P_1448948598475.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'Homemade fruit'
+
         ],
+
         'market_price': '$22',
-        'name': '四川双流草莓新鲜水果礼盒2盒',
+
+        'name': 'Sichuan Shuangliu Strawberry Fresh Fruit Gift Box 2 boxes',
+
         'desc': None,
+
         'sale_price': '$18',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/35_P_1448948333610.jpg',
+
             'goods/images/35_P_1448948333313.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'Organic vegetables'
+
         ],
+
         'market_price': '$67',
-        'name': '新鲜头茬非洲冰草冰菜',
+
+        'name': 'Fresh head African ice grass iced',
+
         'desc': None,
+
         'sale_price': '$56',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/36_P_1448948234405.jpg',
+
             'goods/images/36_P_1448948234250.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'Organic vegetables'
+
         ],
+
         'market_price': '$6',
-        'name': '仿真vegetable/fruit果蔬菜模型',
+
+        'name': 'Simulation vegetable/fruit fruit vegetable model',
+
         'desc': None,
+
         'sale_price': '$5',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/33_P_1448948479966.jpg',
+
             'goods/images/33_P_1448948479886.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'vegetables'
+
         ],
+
         'market_price': '$28',
-        'name': '现摘芭乐番石榴台湾珍珠芭乐',
-        'desc': '''海南产精品释迦果,
-        释迦是水果中的贵族,
-        产量少,
-        味道很甜,
-        奶香十足,
-        非常可口,
-        果裹果园顺丰空运,
-        保证新鲜.果子个大,
-        一斤1-2个左右,
-        大个头的果子更尽兴!
+
+        'name': 'Currently picking guava guava Taiwan pearl guava',
+
+        'desc': '''Hainan boutique Sakyamuni,
+
+        Sakyamuni is an aristocrat in the fruit.
+
+        Low production,
+
+        It tastes very sweet,
+
+        Full of milk,
+
+        Very tasty,
+
+        Fruit wrapped in orchard SF air,
+
+        Keep it fresh. The fruit is big,
+
+        1-2 or so,
+
+        Big fruit is more fun!
+
         ''',
+
         'sale_price': '$23',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/34_P_1448948399009.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'vegetable/fruit',
+
             'Homemade fruit'
+
         ],
+
         'market_price': '$46',
-        'name': '潍坊萝卜5斤/箱礼盒',
-        'desc': '脐橙规格是65-90MM左右（标准果果径平均70MM左右，精品果果径平均80MM左右），一斤大概有2-4个左右，脐橙产自江西省赣州市信丰县安西镇，全过程都是采用农家有机肥种植，生态天然',
+
+        'name': 'Weifang radish 5 kg / box gift box',
+
+        'desc': 'The navel orange size is about 65-90MM (the average fruit diameter is about 70MM, the average fruit diameter is about 80MM), and about 2-4 is about one kilogram. The navel orange is produced in Anxi, Xinfeng County, Ganzhou City, Jiangxi Province. In the town, the whole process is planted with farmland organic fertilizer, ecologically natural,
+
         'sale_price': '$38',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/43_P_1448948762645.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'Fast Food'
+
         ],
+
         'market_price': '$154',
-        'name': '休闲零食膨化食品焦糖/奶油/椒麻味',
+
+        'name': 'casual snack puffed food caramel / cream / peppery taste',
+
         'desc': None,
+
         'sale_price': '$99',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/38_P_1448949220255.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'milk powder'
+
         ],
+
         'market_price': '$84',
-        'name': '蒙牛未来星儿童成长牛奶骨力型190ml*15盒',
+
+        'name': 'Mengniu Future Star Children\'s Growth Milk Bone Type 190ml*15 Box',
+
         'desc': None,
+
         'sale_price': '$70',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/44_P_1448948850187.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'Imported Dairy Product'
+
         ],
+
         'market_price': '$70',
-        'name': '蒙牛特仑苏有机奶250ml×12盒',
+
+        'name': 'Meng Niu Tuan Lu Su organic milk 250ml × 12 boxes',
+
         'desc': None,
+
         'sale_price': '$32',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'images/201511/goods_img/49_P_1448162819889.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product'
+
         ],
+
         'market_price': '$1',
-        'name': '1支付测试商品',
+
+        'name': '1 payment test item',
+
         'desc': None,
+
         'sale_price': '$1',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/40_P_1448949038702.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'Imported Dairy Milk'
+
         ],
+
         'market_price': '$70',
-        'name': '德运全脂新鲜纯牛奶1L*10盒装整箱',
+
+        'name': 'Deyun full fat fresh pure milk 1L*10 boxed full box',
+
         'desc': None,
+
         'sale_price': '$58',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/39_P_1448949115481.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'Organic Milk'
+
         ],
+
         'market_price': '$38',
-        'name': '木糖醇红枣早餐奶即食豆奶粉538g',
+
+        'name': 'Xylitol red jujube breakfast milk ready to eat soy milk powder 538g',
+
         'desc': None,
+
         'sale_price': '$32',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/41_P_1448948980358.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'Raw milk'
+
         ],
+
         'market_price': '$26',
-        'name': '高钙液体奶200ml*24盒',
+
+        'name': 'High calcium liquid milk 200ml*24 box',
+
         'desc': None,
+
         'sale_price': '$22',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/37_P_1448949284365.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'local dairy product'
+
         ],
+
         'market_price': '$720',
-        'name': '新西兰进口全脂奶粉900g',
+
+        'name': 'New Zealand imported whole milk powder 900g',
+
         'desc': None,
+
         'sale_price': '$600',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'images': [
+
             'goods/images/42_P_1448948895193.jpg'
+
         ],
+
         'categorys': [
+
             'Home',
+
             'dairy product',
+
             'Imported dairy product'
+
         ],
+
         'market_price': '$43',
-        'name': '伊利官方直营全脂营养舒化奶250ml*12盒*2提',
+
+        'name': 'Ili official direct full-fat soothing milk 250ml*12 box * 2 mention',
+
         'desc': None,
+
         'sale_price': '$36',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
 {
+
         'sale_price': '$156',
+
         'images': [
+
             'goods/images/27_P_1448947771805.jpg'
+
         ],
+
         'market_price': '$187',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Kitchen seasoning'
+
         ],
+
         'desc': None,
-        'name': '维纳斯橄榄菜籽油5L/桶',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'name': 'Venus olive seed oil 5L / barrel',
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$15',
+
         'images': [
+
             'goods/images/23_P_1448948070348.jpg'
+
         ],
+
         'market_price': '$18',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Oil'
+
         ],
+
         'desc': None,
-        'name': '糙米450gx3包粮油米面',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'name': 'Brown rice 450gx3 wrapped grain rice noodles',
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$45',
+
         'images': [
+
             'goods/images/26_P_1448947825754.jpg'
+
         ],
+
         'market_price': '$54',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'condiment'
+
         ],
+
         'desc': None,
+
         'name': 'Refined first grade soybean oil 5L salad oil, oil, edible oil',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$26',
+
         'images': [
+
             'goods/images/28_P_1448947699948.jpg',
+
             'goods/images/28_P_1448947699777.jpg'
+
         ],
+
         'market_price': '$31',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Dry Food'
+
         ],
+
         'desc': None,
+
         'name': 'Olive corn oil 5L*2 barrel',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$9',
+
         'images': [
+
             'goods/images/24_P_1448948023823.jpg',
+
             'goods/images/24_P_1448948023977.jpg'
+
         ],
+
         'market_price': '$11',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Fast Food'
+
         ],
+
         'desc': None,
+
         'name': 'farmer black rice 4 kg',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$12',
+
         'images': [
+
             'goods/images/25_P_1448947875346.jpg'
+
         ],
+
         'market_price': '$14',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Rice/noodle'
+
         ],
+
         'desc': None,
+
         'name': 'Green vegetable oil',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     },
+
     {
+
         'sale_price': '$12',
+
         'images': [
+
             'goods/images/29_P_1448947631994.jpg'
+
         ],
+
         'market_price': '$14',
+
         'categorys': [
+
             'Home',
+
             'Non-staple food',
+
             'Oil'
+
         ],
+
         'desc': None,
+
         'name': 'Rong\'s pure corn oil',
-        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" alt="2.jpg"/></p>'
+
+        'goods_desc':'<p><img src="/media/goods/images/2_20170719161405_249.jpg" title="" alt="2.jpg"/></p><p><img src="/ Media/goods/images/2_20170719161414_628.jpg" title="" alt="2.jpg"/></p><p><img src="/media/goods/images/2_20170719161435_381.jpg" title="" Alt="2.jpg"/></p>'
+
     }
+
 ]
+
