@@ -1,11 +1,11 @@
 <template>
   <div class="banner-warp">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item in banners" :key="item.goods">
-        <router-link :to="'/app/home/productDetail/'+item.goods" target = _blank> <img :src="item.image" alt="" /></router-link>
-      </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+    <!-- <swiper :options="swiperOption">
+      <swiper-slide v-for="item in banners" :key="item.goods"> -->
+        <router-link v-if="banners[0] && banners[0].goods" :to="'/app/home/productDetail/'+banners[0].goods" target = _blank> <img :src="banners[0].image" alt="" /></router-link>
+      <!-- </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div> -->
+    <!-- </swiper> -->
   </div>
 </template>
 <style>
