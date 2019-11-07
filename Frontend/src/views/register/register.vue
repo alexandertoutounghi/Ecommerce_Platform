@@ -11,20 +11,18 @@
                 name="csrfmiddlewaretoken"
                 value="ywSlOHdiGsK6VFB6iyhnB1B30khmz8SU"
               />
-
-              <p>Please enter your email and a password of 6 to 12 characters</p><br/>
+              <p>Please enter a username and a password of 6 to 12 characters</p><br/>
               <div class="form-group marb8">
-                <label>Email:</label>
+                <label>Username:</label>
                 <input
                   id="jsRegMobile"
-                  name="account"
-                  v-model="mobile"
+                  name="username"
+                  v-model="username"
                   type="text"
                   placeholder=""
                 />
               </div>
-              <p class="error-text marb8" v-show="error.mobile">{{error.mobile}}</p>
-
+              <p class="error-text marb8" v-show="error.mobile">{{error.username}}</p>
               <div class="form-group marb8">
                 <label>Password</label>
                 <input
@@ -63,16 +61,12 @@ import cookie from "../../static/js/cookie";
 export default {
   data() {
     return {
-      getMessageText: "Get the verfication code for free",
-      mobile: "",
       password: "",
       username: "",
       code: "",
       error: {
-        mobile: "",
         password: "",
         username: "",
-        code: ""
       }
     };
   },
@@ -81,8 +75,7 @@ export default {
       var that = this;
       register({
         password: that.password,
-        username: that.mobile,
-        code: that.code
+        username: that.username,
       })
         .then(response => {
           cookie.setCookie("name", response.data.username, 7);
@@ -93,33 +86,8 @@ export default {
         .catch(function(error) {
           that.error.mobile = error.username ? error.username[0] : "";
           that.error.password = error.password ? error.password[0] : "";
-          that.error.username = error.mobile ? error.mobile[0] : "";
-          that.error.code = error.code ? error.code[0] : "";
         });
     },
-    seedMessage() {
-      var that = this;
-      var countdown = 60;
-      settime();
-      function settime() {
-        if (countdown == 0) {
-          that.getMessageText = "Get the verification code for free";
-          countdown = 60;
-          return;
-        } else {
-          that.getMessageText = "Resend(" + countdown + ")";
-          countdown--;
-        }
-        setTimeout(function() {
-          settime();
-        }, 1000);
-      }
-      getMessage({
-        mobile: that.mobile
-      })
-        .then(response => {})
-        .catch(function(error) {});
-    }
   }
 };
 </script>
