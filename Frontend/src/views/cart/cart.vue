@@ -1,12 +1,12 @@
 <template>
   <div id="main">
     <div class="top-next cle">
-      <div class="fr"> <a class="graybtn" @click="continueShopping">继续购物</a>
-        <a  class="btn" id="checkout-top" @click="balanceCount">&nbsp;去结算&nbsp;</a> </div>
+      <div class="fr"> <a class="graybtn" @click="continueShopping">Continue Shopping</a>
+        <a  class="btn" id="checkout-top" @click="balanceCount">&nbsp;Checkout&nbsp;</a> </div>
     </div>
     <div class="cart-box" id="cart-box">
-      <div class="hd"> <span class="no2" id="itemsnum-top">{{goods.goods_list.length}}件商品</span>
-        <span class="no4">单价</span> <span>数量</span> <span>小计</span>
+      <div class="hd"> <span class="no2" id="itemsnum-top">{{goods.goods_list.length}}Items</span>
+        <span class="no4">Unit Price</span> <span>Quantity</span> <span>Subtotal</span>
       </div>
       <div class="goods-list">
         <ul>
@@ -19,18 +19,18 @@
               <p></p>
             </div>
             <div class="price-xj">
-              <p><em>￥{{item.goods.shop_price}}元</em></p>
+              <p><em>${{item.goods.shop_price}}</em></p>
             </div>
             <div class="nums" id="nums">
-              <span class="minus" title="减少1个数量" @click="reduceCartNum(index, item.goods.id);">-</span>
+              <span class="minus" title="Reduce 1 Quantity" @click="reduceCartNum(index, item.goods.id);">-</span>
               <input type="text"  v-model="item.nums" >
-              <span class="add" title="增加1个数量" @click="addCartNum(index, item.goods.id);">+</span>
+              <span class="add" title="Increase 1 Quantity" @click="addCartNum(index, item.goods.id);">+</span>
             </div>
             <div class="price-xj"><span></span>
-              <em id="total_items_3137">￥{{item.goods.shop_price * item.nums}}元</em>
+              <em id="total_items_3137">${{item.goods.shop_price * item.nums}}</em>
             </div>
             <div class="del">
-              <a class="btn-del" @click="deleteGoods(index, item.goods.id)">删除</a>
+              <a class="btn-del" @click="deleteGoods(index, item.goods.id)">Delete</a>
             </div>
           </li>
         </ul>
@@ -38,36 +38,36 @@
 
       <div class="fd cle">
         <div class="fl">
-          <p class="no1"> <a id="del-all" @click="delAll">清空购物车</a> </p>
-          <p><a class="graybtn" @click="continueShopping">继续购物</a></p>
+          <p class="no1"> <a id="del-all" @click="delAll">Empty Shopping Cart</a> </p>
+          <p><a class="graybtn" @click="continueShopping">Continue Shopping</a></p>
         </div>
         <div class="fr" id="price-total">
-          <p><span id="selectedCount">{{goods.goods_list.length}}</span>件商品，总价：<span class="red"><strong id="totalSkuPrice">￥{{totalPrice}}元</strong></span></p>
+          <p><span id="selectedCount">{{goods.goods_list.length}}</span>Items, Total Price: <span class="red"><strong id="totalSkuPrice">${{totalPrice}}</strong></span></p>
         </div>
         <div class="extr">
           <div class="address">
-            <p class="title">配送地址</p>
+            <p class="title">Shipping Address</p>
             <ul>
               <li class="add" @click="addAddr">
                 <router-link :to="'/app/home/member/receive'" target = _blank>
                   +
-                  点击添加地址</router-link>
+                  Click to Add Address</router-link>
               </li>
-              <li v-for="item in addrInfo" :class="{'addressActive':addressActive==item.id}" @click="selectAddr(item.id)">
-                <p class="item">地址：{{item.province}} {{item.city}} {{item.district}} {{item.address}}</p>
-                <p class="item">电话：{{item.signer_mobile}}</p>
-                <p class="item">姓名：{{item.signer_name}}</p>
+              <li v-for="item in addrInfo" :class="{'addressActive':addressActive==item.id}" @click="selectAddr(item.id)" :key="item.id">
+                <p class="item">Address: {{item.province}} {{item.city}} {{item.district}} {{item.address}}</p>
+                <p class="item">Phone: {{item.signer_mobile}}</p>
+                <p class="item">Name: {{item.signer_name}}</p>
               </li>
             </ul>
           </div>
           <div class="pay">
-            <p class="title">选择支付方式</p>
-            <p class="payWrap"><img v-for="item in payWrapList" src="../../static/images/alipay.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)"></p>
+            <p class="title">Select Payment Method</p>
+            <p class="payWrap"><img v-for="item in payWrapList" :key="item.id" src="../../static/images/alipay.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)"></p>
           </div>
         </div>
-        <textarea type="text" v-model="post_script" placeholder="请输入留言" style="margin-top: 10px; height:50px;width: 100%;">
+        <textarea type="text" v-model="post_script" placeholder="Please enter a message" style="margin-top: 10px; height:50px;width: 100%;">
         </textarea>
-        <p class="sumup"><a class="btn" @click="balanceCount">去结算</a></p>
+        <p class="sumup"><a class="btn" @click="balanceCount">Checkout</a></p>
       </div>
     </div>
   </div>
@@ -107,11 +107,8 @@
 
     },
     created () {
-      // 请求购物车商品
       getShopCarts().then((response)=> {
         console.log(response.data)
-        // 更新store数据
-        //this.goods_list = response.data;
         var totalPrice = 0
         this.goods.goods_list = response.data;
         response.data.forEach(function(entry) {
@@ -133,14 +130,12 @@
 
     },
     methods: {
-      addCartNum(index, id) { //添加数量
+      addCartNum(index, id) {
         updateShopCart(id,{
           nums: this.goods.goods_list[index].nums+1
         }).then((response)=> {
           this.goods.goods_list[index].nums = this.goods.goods_list[index].nums + 1;
-          // 更新store数据
           this.$store.dispatch('setShopList');
-          //更新总价
           this.setTotalPrice();
 
         }).catch(function (error) {
@@ -155,20 +150,18 @@
         }
         this.totalPrice = totalPrice;
       },
-      deleteGoods(index,id) { //移除购物车
-        alert('您确定把该商品移除购物车吗');
+      deleteGoods(index,id) {
+        alert('Are you sure you want to remove this item from your shopping cart?');
         deleteShopCart(id).then((response)=> {
           console.log(response.data);
           this.goods.goods_list.splice(index,1);
-
-          // 更新store数据
           this.$store.dispatch('setShopList');
 
         }).catch(function (error) {
           console.log(error);
         });
       },
-      reduceCartNum(index, id) { //删除数量
+      reduceCartNum(index, id) {
         if(this.goods.goods_list[index].nums<=1){
           this.deleteGoods(index, id)
         }else{
@@ -176,9 +169,7 @@
             nums: this.goods.goods_list[index].nums-1
           }).then((response)=> {
             this.goods.goods_list[index].nums = this.goods.goods_list[index].nums - 1;
-            // 更新store数据
             this.$store.dispatch('setShopList');
-            //更新总价
             this.setTotalPrice();
 
           }).catch(function (error) {
@@ -188,17 +179,16 @@
 
 
       },
-      continueShopping () { // 继续购物
+      continueShopping () {
         this.$router.push({name: 'index'});
       },
-      delAll () { //清空购物车
+      delAll () { 
 
         this.$http.post('/shoppingCart/clear', {
 
         }).then((response)=> {
           console.log(response.data);
           this.goods.goods_list.splice(0, this.goods.goods_list.length);
-          // 更新store数据
           this.$store.dispatch('setShopList');
 
         }).catch(function (error) {
@@ -208,17 +198,17 @@
       selectPay(id){
         this.payWrapActive = id;
       },
-      getAllAddr () { //获得所有配送地址
+      getAllAddr () {
         getAddress().then((response)=> {
           this.addrInfo = response.data;
         }).catch(function (error) {
           console.log(error);
         });
       },
-      addAddr () { //添加地址
+      addAddr () {
 
       },
-      selectAddr (id) { //选择配送地址
+      selectAddr (id) {
         this.addressActive = id;
         var cur_address = ''
         var cur_name = ''
@@ -234,10 +224,10 @@
         this.signer_mobile = cur_mobile
         this.signer_name = cur_name
       },
-      balanceCount () { // 结算
-          if(this.addrInfo.length==0){
-              alert("请选择收货地址")
-          }else{
+      balanceCount () {
+          if (this.addrInfo.length==0){
+              alert("Please select a shipping address")
+          } else {
             createOrder(
               {
                 post_script:this.post_script,
@@ -247,7 +237,7 @@
                 order_mount:this.totalPrice
               }
             ).then((response)=> {
-              alert('订单创建成功')
+              alert('Order successfully created')
               window.location.href=response.data.alipay_url;
             }).catch(function (error) {
               console.log(error);
