@@ -49,37 +49,33 @@
       <div class="search_box--wrapper">
         <div class="search_box">
           <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord" />
-          <button class="sea_submit" @click="searchSubmit">Search</button>
+          <button class="sea_submit" @click="searchSubmit">&#x1F50E;</button> <!-- Search icon -->
         </div>
-        <div class="head_search_hot">
+        <!-- <div class="head_search_hot">
           <span>Trending Searches:</span>
           <router-link
             v-for="item in hotSearch"
             :to="'/app/home/search/'+item.keywords"
             :key="item.keywords"
           >{{item.keywords}}</router-link>
-        </div>
+        </div> -->
       </div>
 
       <div class="intro">
         <ul>
-          <!-- These are literally Google translated but it shows off key features, which we liked in OneTech -->
           <li class="no1">
             <a href="javascript:void(0);">
-              <h4>Genuine Security</h4>
-              <p>100% Genuine Low Price</p>
+              <h4>Secure Shopping</h4>
             </a>
           </li>
           <li class="no2">
             <a href="javascript:void(0);">
-              <h4>30 Days Return</h4>
-              <p>Guaranteed</p>
+              <h4>30 Day Returns</h4>
             </a>
           </li>
           <li class="no3">
             <a href="javascript:void(0);">
-              <h4>Over 99</h4>
-              <p>Lightning Delivery</p>
+              <h4>Express Shipping</h4>
             </a>
           </li>
         </ul>
@@ -90,7 +86,7 @@
         <div class="main_nav main_nav_hover" id="main_nav">
           <div class="main_nav_link" @mouseover="overAllmenu" @mouseout="outAllmenu">
             <a class="meunAll">
-              All Categories
+              Categories
               <i class="iconfont">&#xe643;</i>
             </a>
             <div class="main_cata" id="J_mainCata" v-show="showAllmenu">
@@ -151,7 +147,7 @@
         </ul>
         <div class="hd_cart" id="ECS_CARTINFO" @mouseover="overShopCar" @mouseout="outShopCar">
           <router-link class="tit" :to="'/app/shoppingcart/cart'">
-            <b class="iconfont">&#xe600;</b>View Cart
+            <b class="iconfont">&#xe600;</b>&nbsp;View Cart
             <span>
               <i class="iconfont">&#xe645;</i>
             </span>
