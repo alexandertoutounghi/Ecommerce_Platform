@@ -289,7 +289,7 @@ canvas {
     font-weight:normal
 }
 .series_info .name_hufu {
-    background-color:#09c762
+    background-color:#2462ff
 }
 .series_info .name_caizhuang {
     background-color:#f3646a
@@ -298,6 +298,6 @@ canvas {
     background-color:#f9b548
 }
 .series_info .name_gongju {
-    background-color:#09c762
+    background-color:#2462ff
 }
 </style>

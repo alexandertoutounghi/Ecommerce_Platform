@@ -4,7 +4,7 @@
             <div class="box">
                 <div class="box_1">
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-                        <h5><span>My Order</span></h5>
+                        <h5><span>My Current Orders</span></h5>
                         <div class="blank"></div>
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                             <tbody>
@@ -13,16 +13,21 @@
                                     <td bgcolor="#ffffff">Order Time</td>
                                     <td bgcolor="#ffffff">Total Order Amount</td>
                                     <td bgcolor="#ffffff">Order Status</td>
-                                    <td bgcolor="#ffffff">Operation</td>
+                                    <td bgcolor="#ffffff">Action</td>
                                 </tr>
-                                <tr v-for="item in orders" :key="item.id">
-                                    <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
-                                    <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
-                                    <td align="right" bgcolor="#ffffff">${{item.order_mount}}</td>
-                                    <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">Pending Payment</td>
-                                    <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">Paid</td>
-                                    <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">Cancel Order</a></font></td>
-                                </tr>
+                                <div v-if="orders.length > 0">
+                                    <tr v-for="item in orders" :key="item.id">
+                                        <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
+                                        <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
+                                        <td align="right" bgcolor="#ffffff">${{item.order_mount}}</td>
+                                        <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">Pending Payment</td>
+                                        <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">Paid</td>
+                                        <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">Cancel Order</a></font></td>
+                                    </tr>
+                                </div>
+                                <div else>
+                                    <tr>No orders</tr>
+                                </div>
                             </tbody>
                         </table>
                         <div class="blank5"></div>
@@ -159,7 +164,7 @@ a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -169,7 +174,7 @@ canvas {
     font-size:14px
 }
 .red,a.red,a.red:hover,.pink,a.pink,a.pink:hover {
-    color:#09c762
+    color:#2462ff
 }
 .gray999,.gray,a.gray,a.gray:hover {
     color:#999
@@ -222,7 +227,7 @@ canvas {
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .something_interesting {
     margin-top:10px
@@ -241,7 +246,7 @@ canvas {
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;

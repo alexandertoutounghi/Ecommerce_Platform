@@ -19,7 +19,7 @@ export default {
     },
     [types.SET_SHOPLIST] (state) { //Sets shopping cart data
         // token = cookie.getCookie('token')
-        if(cookie.getCookie('token') != null){
+        if (cookie.getCookie('token') !== null) {
           getShopCarts().then((response)=> {
             state.goods_list.goods_list = response.data;
             console.log(response.data)
@@ -32,6 +32,9 @@ export default {
           }).catch(function (error) {
             console.log(error);
           });
+        } else { // If no token exists
+          state.goods_list.goods_list = [];
+          state.goods_list.totalPrice = 0;
         }
     },
 

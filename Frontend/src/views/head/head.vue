@@ -1,13 +1,20 @@
 <template>
   <div id="header" class="new_header">
-    <div class="hd_bar">
+    <div class="hd_bar no_float">
       <div class="bd_bar_bd cle">
-        <ul class="welcome">
-          <li id="ECS_MEMBERZONE" v-if="userInfo.name">
-            <!-- If user is logged in, show their details -->
-            <router-link :to="'/app/home/member/userinfo'">{{ userInfo.name }}</router-link>&nbsp;[
-            <a @click="loginOut">Logout</a>
-            ]
+        <ul id="userinfo-bar">
+          <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false" v-if="userInfo.name">
+            <a>My Account</a>
+            <i class="iconfont arrow"></i>
+            <div class="more-bd" :class="{show:isShowVip}">
+              <!-- On hover of the above li, display drop down -->
+              <div class="list">
+                <router-link :to="'/app/home/member/order'">My Current Orders</router-link>
+                <router-link :to="'/app/home/member/collection'">My Order History</router-link>
+                <router-link :to="'/app/home/member/receive'">Modify Addresses</router-link> 
+                <a @click="loginOut">Logout</a>
+              </div>
+            </div>
           </li>
           <li id="ECS_MEMBERZONE" v-else>
             <!-- Otherwise, show the login/register buttons -->
@@ -16,19 +23,10 @@
             <router-link :to="'/app/register'">Register</router-link>
           </li>
         </ul>
-        <ul id="userinfo-bar">
-          <!-- Probably don't need this, can maybe move login | register to here -->
-          <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false">
-            <a>Member Centre</a>
-            <i class="iconfont arrow"></i>
-            <div class="more-bd" :class="{show:isShowVip}">
-              <!-- On hover of the above li, display drop down -->
-              <div class="list">
-                <router-link :to="'/app/home/member/order'">My Order</router-link>
-                <router-link :to="'/app/home/member/collection'">My Collection</router-link>
-                <router-link :to="'/app/home/member/receive'">Modify Shipping Address</router-link>
-              </div>
-            </div>
+        <ul class="welcome">
+          <li id="ECS_MEMBERZONE" v-if="userInfo.name">
+            <!-- If user is logged in, show their details -->
+            <router-link :to="'/app/home/member/userinfo'">Welcome, {{ userInfo.name }}!</router-link>
           </li>
         </ul>
       </div>
@@ -158,38 +156,43 @@
             >{{goods_list.goods_list.length}}</em>
           </router-link>
           <div class="list" v-show="showShopCar">
-            <div class="data">
-              <dl v-for="(item,index) in goods_list.goods_list" :key="index">
-                <dt>
-                  <router-link :to="'/app/home/productDetail/'+item.goods.id">
-                    <img :src="item.goods.goods_front_image" />
-                  </router-link>
-                </dt>
-                <dd>
-                  <h4>
-                    <router-link
-                      :to="'/app/home/productDetail/'+item.goods.id"
-                    >{{item.goods.name}}</router-link>
-                  </h4>
-                  <p>
-                    <span class="red">{{item.goods.shop_price}}</span>&nbsp;
-                    <i>X</i>
-                    &nbsp;{{item.nums}}
-                  </p>
-                  <a title="Delete" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a>
-                </dd>
-              </dl>
+            <div v-if="userInfo.name">
+              <div class="data">
+                <dl v-for="(item,index) in goods_list.goods_list" :key="index">
+                  <dt>
+                    <router-link :to="'/app/home/productDetail/'+item.goods.id">
+                      <img :src="item.goods.goods_front_image" />
+                    </router-link>
+                  </dt>
+                  <dd>
+                    <h4>
+                      <router-link
+                        :to="'/app/home/productDetail/'+item.goods.id"
+                      >{{item.goods.name}}</router-link>
+                    </h4>
+                    <p>
+                      <span class="red">{{item.goods.shop_price}}</span>&nbsp;
+                      <i>X</i>
+                      &nbsp;{{item.nums}}
+                    </p>
+                    <a title="Delete" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a>
+                  </dd>
+                </dl>
+              </div>
+              <div class="count">
+                Items in Cart:
+                <span class="red" id="hd_cart_count"> {{goods_list.goods_list.length > 0 ? goods_list.goods_list.length : "0"}}</span>
+                <p>
+                  Subtotal:
+                  <span class="red">
+                    <em id="hd_cart_total"> {{goods_list.totalPrice ? '$' + goods_list.totalPrice : "$0"}}</em>
+                  </span>
+                  <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
+                </p>
+              </div>
             </div>
-            <div class="count">
-              Total
-              <span class="red" id="hd_cart_count">{{goods_list.length || "0"}}</span>Goods
-              <p>
-                Total Price:
-                <span class="red">
-                  <em id="hd_cart_total">{{goods_list.totalPrice || "no price"}}</em>
-                </span>
-                <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
-              </p>
+            <div v-else>
+              <p>You must be signed in to use this feature</p>
             </div>
           </div>
         </div>
@@ -256,7 +259,6 @@ export default {
         .then(response => {
           console.log(response.data);
           this.goods_list.splice(index, 1);
-
           // Updates their shopping list after removing an item
           this.$store.dispatch("setShopList");
         })

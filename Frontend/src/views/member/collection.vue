@@ -5,23 +5,23 @@
             <div class="box_1">
                 <div class="userCenterBox boxCenterList clearfix" style="_height:1%; font-size:14px;">
 
-                    <h5><span>My Collection</span></h5>
+                    <h5><span>My Order History</span></h5>
                     <div class="blank"></div>
                     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                       <tbody>
                         <tr align="center">
-                            <th width="35%" bgcolor="#ffffff">Product Name</th>
-                            <th width="30%" bgcolor="#ffffff">Price</th>
-                            <th width="35%" bgcolor="#ffffff">Operating</th>
+                            <th width="70%" bgcolor="#ffffff">Product Name</th>
+                            <th width="15%" bgcolor="#ffffff">Price</th>
+                            <th width="15%" bgcolor="#ffffff">Action</th>
                         </tr>
                         <tr v-for="(item,index) in collections" :key="index">
                             <td bgcolor="#ffffff">
                                 <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6">{{item.goods.name}}</router-link>
                             </td>
-                            <td bgcolor="#ffffff">Shop Price<span class="goods-price">${{item.goods.shop_price}}</span>
+                            <td bgcolor="#ffffff"><span class="goods-price">${{item.goods.shop_price}}</span>
                             </td>
                             <td align="center" bgcolor="#ffffff">
-                                <a class="f6" @click="deletePro(index, item.goods.id)">Delete</a>
+                                <a class="f6" :style="{color: 'red'}" @click="deletePro(index, item.goods.id)">Delete</a>
                             </td>
                         </tr>
                         <!-- <tr>

@@ -4,15 +4,12 @@
       <div class="hd_bar" id="userinfo-bar">
         <div class="bd">
           <div class="logo">
-            <router-link to="/app/home/index">
-              <!-- Original logo is a banner, so we may need to add make one ourselves. For now I'm using what we have and shrinking it -->
+            <router-link :to="'/app/home/index'">
               <img
                 src="../../static/images/head/logosmaller.png"
                 alt="354 the Stars Logo"
                 class="logo-wrapper"
               />
-              <!-- The original, for reference \/ -->
-              <!-- <img src="../../static/images/head/logo.gif"> -->
             </router-link>
           </div>
         </div>

@@ -9,7 +9,7 @@
     padding: 40px 0;
     text-align: center;
     width: 480px;
-    border: 3px solid #09c762;
+    border: 3px solid #2462ff;
     border-radius: 10px;
     -moz-border-radius: 10px;
 }
@@ -24,7 +24,7 @@
     margin-right: 15px;
 }
 .add_ok .go a.back {
-    color: #09c762;
+    color: #2462ff;
     margin-right: 90px;
 }
 .add_ok .go a {

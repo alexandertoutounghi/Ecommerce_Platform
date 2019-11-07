@@ -161,7 +161,7 @@ canvas {
     margin-bottom:10px;
 }
 p.hot_price {
-    color:#09c762;
+    color:#2462ff;
     font-weight:bold;
     font-size:14px;
     line-height:24px;

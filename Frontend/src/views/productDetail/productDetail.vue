@@ -940,7 +940,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     height:16px;
     line-height:16px;
     _line-height:18px;
-    border:1px solid #1e9246;
+    border:1px solid #1844b4;
     border-radius:3px;
     font-size:100%;
     color:#fff;

@@ -17,28 +17,28 @@
                                     <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF">Date of Birth: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
-                                            <datepicker language="ch"  v-model="userInfo.birthday"></datepicker>
+                                            <datepicker v-model="userInfo.birthday"></datepicker>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF">Gender: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
                                             <input type="radio" id="male" value="male" v-model="userInfo.gender">
-                                            <label for="male">男</label>
+                                            <label for="male">Male</label>
                                             <input type="radio" id="female" value="female" v-model="userInfo.gender">
-                                            <label for="female">女</label>
+                                            <label for="female">Female</label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF">Email: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="xxxx@xx.com" size="25" class="inputBg" v-model="userInfo.email"></td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF" id="extend_field5i">Phone: </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
                                             <input disabled name="extend_field5" type="text" class="inputBg" v-model="userInfo.mobile"><span style="color:#FF0000"> *</span>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
                                             <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
@@ -117,7 +117,7 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .something_interesting {
     margin-top:10px
@@ -136,7 +136,7 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;
@@ -194,14 +194,13 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
 .btn_blue_1{
   display: inline-block;
   padding: 4px 12px;
-  height: 24px;
   line-height: 25px;
   _line-height: 18px;
-  border: 1px solid #1e9246;
+  border: 1px solid #1b4cc7;
   border-radius: 3px;
   font-size: 100%;
   color: #fff;
-  background-color: #09c762;
+  background-color: #2462ff;
   overflow: hidden;
   vertical-align: middle;
   cursor: pointer;

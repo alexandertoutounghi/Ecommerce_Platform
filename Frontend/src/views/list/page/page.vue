@@ -84,8 +84,8 @@ footer {
     text-align: center;
     cursor:pointer;
     &:hover{
-        color:#09c762;
-        border-color:#09c762;
+        color:#2462ff;
+        border-color:#2462ff;
 
     }
 }
