@@ -196,7 +196,7 @@
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 
 .my_nala_centre .something_interesting {
@@ -216,7 +216,7 @@
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;
@@ -275,11 +275,11 @@
   height: 24px;
   line-height: 25px;
   _line-height: 18px;
-  border: 1px solid #1e9246;
+  border: 1px solid #1844b4;
   border-radius: 3px;
   font-size: 100%;
   color: #fff;
-  background-color: #09c762;
+  background-color: #2462ff;
   overflow: hidden;
   vertical-align: middle;
   cursor: pointer;

@@ -191,7 +191,7 @@ a.productitem span.productimg img {
     display:block
 }
 a.productitem span.nalaprice {
-    color:#09c762;
+    color:#2462ff;
     font-size:14px;
     display:block
 }
@@ -213,7 +213,7 @@ a.productitem span.salerow {
     color:#999
 }
 a.productitem span.sales {
-    color:#09c762;
+    color:#2462ff;
     padding:0 2px
 }
 a.productitem span.xszk {
@@ -225,7 +225,7 @@ a.productitem span.price {
 }
 a.productitem:hover {
     text-decoration:none;
-    border-color:#09c762
+    border-color:#2462ff
 }
 
 .productlist{width:970px;overflow:hidden}

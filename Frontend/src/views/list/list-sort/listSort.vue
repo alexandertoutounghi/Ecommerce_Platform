@@ -117,7 +117,7 @@ a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -139,8 +139,8 @@ canvas {
 .sort .bd{float:left;font-size:0;padding-right:12px}
 .sort .bd a{display:inline-block;font-size:12px;margin-right:-1px;+margin-right:-2px;position:relative;z-index:1}
 .sort .bd a span{display:block;padding:5px 26px 5px 15px;background-position:right -128px;+background-position:right -127px}
-.sort .curr .search_DESC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -104px;+background-position:right -102px;color:#09c762;text-shadow:1px 1px 1px #fff}
-.sort .curr .search_ASC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -330px;+background-position:right -328px;color:#09c762;text-shadow:1px 1px 1px #fff}
+.sort .curr .search_DESC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -104px;+background-position:right -102px;color:#2462ff;text-shadow:1px 1px 1px #fff}
+.sort .curr .search_ASC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -330px;+background-position:right -328px;color:#2462ff;text-shadow:1px 1px 1px #fff}
 .sort .bd a:hover{z-index:2;text-decoration:none}
 .sort .bd a.default span{background-image:none;padding-right:15px}
 .sort .bd a.promotion span{padding-right:15px;padding-left:30px;background-position:10px -153px}
@@ -148,12 +148,12 @@ canvas {
 
 
 .search_num{width:400px;float:right;text-align:right;line-height:30px;padding:0 15px}
-.search_num b{color:#09c762}
+.search_num b{color:#2462ff}
 .search_num span.search_btn{margin-left:10px;font-size:13px}
 .search_num span.search_btn a{display:inline-block;width:26px;height:26px;line-height:28px;text-align:center;border:1px solid #e4e4e4;background-color:#fff;margin:0 5px;color:#999}
 .search_num span.search_btn a:hover{border-color:#ccc;box-shadow:0 1px 1px #eee;text-decoration:none;color:#2462ff}
 .search_num span.search_btn span{color:#333}
-.search_num span.search_btn span em{color:#09c762}
+.search_num span.search_btn span em{color:#2462ff}
 
 
 </style>

@@ -2,6 +2,21 @@
   <div id="header" class="new_header">
     <div class="hd_bar">
       <div class="bd_bar_bd cle">
+        <ul id="userinfo-bar">
+          <!-- Probably don't need this, can maybe move login | register to here -->
+          <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false">
+            <a>Member Centre</a>
+            <i class="iconfont arrow"></i>
+            <div class="more-bd" :class="{show:isShowVip}">
+              <!-- On hover of the above li, display drop down -->
+              <div class="list">
+                <router-link :to="'/app/home/member/order'">My Order</router-link>
+                <router-link :to="'/app/home/member/collection'">My Order History</router-link>
+                <router-link :to="'/app/home/member/receive'">Modify Shipping Address</router-link>
+              </div>
+            </div>
+          </li>
+        </ul>
         <ul class="welcome">
           <li id="ECS_MEMBERZONE" v-if="userInfo.name">
             <!-- If user is logged in, show their details -->
@@ -14,21 +29,6 @@
             <router-link :to="'/app/login'">Login</router-link>
             <s>|</s>
             <router-link :to="'/app/register'">Register</router-link>
-          </li>
-        </ul>
-        <ul id="userinfo-bar">
-          <!-- Probably don't need this, can maybe move login | register to here -->
-          <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false">
-            <a>Member Centre</a>
-            <i class="iconfont arrow"></i>
-            <div class="more-bd" :class="{show:isShowVip}">
-              <!-- On hover of the above li, display drop down -->
-              <div class="list">
-                <router-link :to="'/app/home/member/order'">My Order</router-link>
-                <router-link :to="'/app/home/member/collection'">My Collection</router-link>
-                <router-link :to="'/app/home/member/receive'">Modify Shipping Address</router-link>
-              </div>
-            </div>
           </li>
         </ul>
       </div>

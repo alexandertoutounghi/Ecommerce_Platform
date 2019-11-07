@@ -19,7 +19,7 @@
             <ul>
                 <li>
                     <a :class="{on: current==='userinfo'}" @click="toUserInfo">User Info</a>
-                    <a :class="{on: current==='collection'}" @click="toCollection">My Collection</a>
+                    <a :class="{on: current==='collection'}" @click="toCollection">My Order History</a>
                     <a :class="{on: current==='message'}" @click="toMessage">My Message</a>
                 </li>
             </ul>

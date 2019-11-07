@@ -13,7 +13,7 @@
                                     <td bgcolor="#ffffff">Order Time</td>
                                     <td bgcolor="#ffffff">Total Order Amount</td>
                                     <td bgcolor="#ffffff">Order Status</td>
-                                    <td bgcolor="#ffffff">Operation</td>
+                                    <td bgcolor="#ffffff">Action</td>
                                 </tr>
                                 <tr v-for="item in orders" :key="item.id">
                                     <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
@@ -159,7 +159,7 @@ a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -169,7 +169,7 @@ canvas {
     font-size:14px
 }
 .red,a.red,a.red:hover,.pink,a.pink,a.pink:hover {
-    color:#09c762
+    color:#2462ff
 }
 .gray999,.gray,a.gray,a.gray:hover {
     color:#999
@@ -222,7 +222,7 @@ canvas {
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .something_interesting {
     margin-top:10px
@@ -241,7 +241,7 @@ canvas {
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;

@@ -131,8 +131,8 @@ canvas {
 .sort .bd{float:left;font-size:0;padding-right:12px}
 .sort .bd a{display:inline-block;font-size:12px;margin-right:-1px;+margin-right:-2px;position:relative;z-index:1}
 .sort .bd a span{display:block;padding:5px 26px 5px 15px;background-position:right -128px;+background-position:right -127px}
-.sort .curr .search_DESC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -104px;+background-position:right -102px;color:#09c762;text-shadow:1px 1px 1px #fff}
-.sort .curr .search_ASC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -330px;+background-position:right -328px;color:#09c762;text-shadow:1px 1px 1px #fff}
+.sort .curr .search_DESC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -104px;+background-position:right -102px;color:#2462ff;text-shadow:1px 1px 1px #fff}
+.sort .curr .search_ASC{border:1px solid #fff;padding:4px 26px 4px 15px;background-position:right -330px;+background-position:right -328px;color:#2462ff;text-shadow:1px 1px 1px #fff}
 .sort .bd a:hover{z-index:2;text-decoration:none}
 .sort .bd a.default span{background-image:none;padding-right:15px}
 .sort .bd a.promotion span{padding-right:15px;padding-left:30px;background-position:10px -153px}

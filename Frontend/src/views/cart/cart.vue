@@ -320,7 +320,7 @@
   }
   .top-next .fr span.red {
     margin-right:0;
-    color:#09c762
+    color:#2462ff
   }
   .cart-box .hd {
     border:1px solid #e4e4e4;
@@ -394,7 +394,7 @@
   }
   .goods-list li .name i {
     background-color:#fff2f2;
-    color:#09c762;
+    color:#2462ff;
     padding:0 2px;
     border-radius:2px
   }
@@ -486,7 +486,7 @@
   }
   .goods-list li .price-xj cite {
     font-size:14px;
-    color:#09c762;
+    color:#2462ff;
     margin:0 3px
   }
   .goods-list li .del {
@@ -619,18 +619,18 @@
     height:16px;
     line-height:16px;
     _line-height:18px;
-    border:1px solid #1e9246;
+    border:1px solid #1844b4;
     border-radius:3px;
     font-size:100%;
     color:#fff;
-    background-color:#09c762;
+    background-color:#2462ff;
     overflow:hidden;
     vertical-align:middle
   }
   .btn:hover,.btn-css3:hover {
     text-decoration:none;
     color:#fff;
-    background:#1e9246
+    background:#1844b4
   }
   .btn img,.btn-css3 img {
     vertical-align:middle
