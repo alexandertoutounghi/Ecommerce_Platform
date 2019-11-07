@@ -9,7 +9,7 @@
             <div class="root_node"><i class="iconfont">&#xe645;</i>Order Centre</div>
             <ul>
                 <li>
-                    <a :class="{on: current==='order'}" @click="toOrder">My Order</a>
+                    <a :class="{on: current==='order'}" @click="toOrder">My Current Orders</a>
                     <a :class="{on: current==='receive'}"  @click="toReceive">Shipping Address</a>
                 </li>
             </ul>

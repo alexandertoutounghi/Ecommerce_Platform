@@ -4,7 +4,7 @@
             <div class="box">
                 <div class="box_1">
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
-                        <h5><span>My Order</span></h5>
+                        <h5><span>My Current Orders</span></h5>
                         <div class="blank"></div>
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                             <tbody>
@@ -15,14 +15,19 @@
                                     <td bgcolor="#ffffff">Order Status</td>
                                     <td bgcolor="#ffffff">Action</td>
                                 </tr>
-                                <tr v-for="item in orders" :key="item.id">
-                                    <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
-                                    <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
-                                    <td align="right" bgcolor="#ffffff">${{item.order_mount}}</td>
-                                    <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">Pending Payment</td>
-                                    <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">Paid</td>
-                                    <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">Cancel Order</a></font></td>
-                                </tr>
+                                <div v-if="orders.length > 0">
+                                    <tr v-for="item in orders" :key="item.id">
+                                        <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
+                                        <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
+                                        <td align="right" bgcolor="#ffffff">${{item.order_mount}}</td>
+                                        <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">Pending Payment</td>
+                                        <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">Paid</td>
+                                        <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">Cancel Order</a></font></td>
+                                    </tr>
+                                </div>
+                                <div else>
+                                    <tr>No orders</tr>
+                                </div>
                             </tbody>
                         </table>
                         <div class="blank5"></div>

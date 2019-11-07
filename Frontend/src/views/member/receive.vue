@@ -6,6 +6,7 @@
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
                         <h5><span>Shipping Information</span></h5>
                         <div class="blank"></div>
+                        <br/><p>Current Addresses</p>
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" v-for="(item, index) in receiveInfoArr" :key="index">
                             <tbody>
                                 <tr>
@@ -46,11 +47,11 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                        <br/><p>New Address</p>
                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                             <tbody>
                                 <tr>
-                                    <td align="right" bgcolor="#ffffff">Delivery Area: </td>
+                                    <td align="right" bgcolor="#ffffff">Delivery Location: </td>
                                     <td colspan="3" align="left" bgcolor="#ffffff">
                                         <div class="addr">
                                             <!-- <v-distpicker :placeholder="newInfo.dist" @province="getProvince" @city="getCity" @selected="getArea"></v-distpicker> -->
