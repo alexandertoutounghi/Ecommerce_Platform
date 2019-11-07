@@ -2,7 +2,7 @@
     <div class="productlist">
         <ul class="cle">
             <li v-for="item in listData" :key="item.id" >
-                <router-link :to="'/app/home/productDetail/'+item.id" target="_blank" class="productitem">
+                <router-link :to="'/app/home/productDetail/'+item.id" class="productitem">
                     <span class="productimg">
                         <img width="150" height="150" :title="item.productname" :alt="item.productname" :src="item.goods_front_image" style="display: block;">
                     </span>
@@ -153,13 +153,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {

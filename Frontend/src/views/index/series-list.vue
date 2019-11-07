@@ -1,6 +1,6 @@
 <template>
 <div>
-<div class="series_list" v-for="items in list">
+<div class="series_list" v-for="items in list" :key="items.id">
     <div class="series_box cle">
             <div class="series_info">
                 <div class="series_name name_hufu">
@@ -8,9 +8,9 @@
                 </div>
                 <ul class="brand">
 
-                    <li v-for="brand in items.brands">
+                    <li v-for="brand in items.brands" :key="brand.id">
                        <router-link :to="'/app/home/list/'+brand.id" >
-                       <a :title="brand.name" target="_blank">
+                       <a :title="brand.name">
                             <img :src="brand.image" :alt="brand.name" style="display: inline;">
                         </a>
                         </router-link>
@@ -31,14 +31,14 @@
 
                 <div class="pro_list">
                     <ul class="cle">
-                        <li v-for="list in items.goods">
+                        <li v-for="list in items.goods" :key="list.id">
                              <router-link :to="'/app/home/productDetail/'+list.id" target = _blank>
                                 <p class="pic">
                                  <img :src="list.goods_front_image" style="display: inline;">
                                  </p>
                                 <h3>{{list.name}}</h3>
                                 <p class="price">
-                                    ￥{{list.shop_price}}元
+                                    ${{list.shop_price}}
                                 </p>
                             </router-link>
                          </li>
@@ -61,7 +61,6 @@
             getList(){
               queryCategorygoods()
                 .then((response)=> {
-                   //跳转到首页页response.body面
                   console.log(response)
                     this.list = response.data
                 })
@@ -133,13 +132,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -151,7 +150,7 @@ canvas {
     src:url('http://at.alicdn.com/t/font_1412819191_5742776.eot?#iefix') format('embedded-opentype'),url('http://at.alicdn.com/t/font_1412819191_5742776.woff') format('woff'),url('http://at.alicdn.com/t/font_1412819191_5742776.ttf') format('truetype'),url('http://at.alicdn.com/t/font_1412819191_5742776.svg#iconfont') format('svg')
 }*/
 .red,a.red,a.red:hover,.pink,a.pink,a.pink:hover {
-    color:#09c762;
+    color:#2462ff;
 }
 .gray999,.gray,a.gray,a.gray:hover {
     color:#999;
@@ -221,7 +220,7 @@ canvas {
     margin:10px 0 5px
 }
 .series_list .pro_list li .price {
-    color:#09c762;
+    color:#2462ff;
     font-size:14px
 }
 .series_list .pro_list li a {

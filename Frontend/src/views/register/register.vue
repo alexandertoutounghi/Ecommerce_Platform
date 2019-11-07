@@ -12,37 +12,18 @@
                 value="ywSlOHdiGsK6VFB6iyhnB1B30khmz8SU"
               />
 
+              <p>Please enter your email and a password of 6 to 12 characters</p><br/>
               <div class="form-group marb8">
-                <label>Phone Number:</label>
+                <label>Email:</label>
                 <input
                   id="jsRegMobile"
                   name="account"
                   v-model="mobile"
                   type="text"
-                  placeholder="Please enter your phone number"
+                  placeholder=""
                 />
               </div>
               <p class="error-text marb8" v-show="error.mobile">{{error.mobile}}</p>
-
-              <div class="clearfix">
-                <div class="form-group marb8 verify-code">
-                  <label>SMS Verification Code</label>
-                  <input
-                    id="jsPhoneRegCaptcha"
-                    v-model="code"
-                    type="text"
-                    placeholder="Enter your phone verification code"
-                  />
-                </div>
-                <input
-                  class="verify-code-btn sendcode"
-                  type="button"
-                  id="jsSendCode"
-                  @click="seedMessage"
-                  :value="getMessageText"
-                />
-              </div>
-              <p class="error-text marb8" v-show="error.code">{{error.code}}</p>
 
               <div class="form-group marb8">
                 <label>Password</label>
@@ -51,7 +32,7 @@
                   name="password_m"
                   type="password"
                   v-model="password"
-                  placeholder="Please enter a 6-20 character password"
+                  placeholder=""
                 />
               </div>
               <p class="error-text marb8" v-show="error.password">{{error.password}}</p>

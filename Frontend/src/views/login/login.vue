@@ -19,7 +19,7 @@
                 type="text"
                 v-model="userName"
                 @focus="errorUnshow"
-                placeholder="Phone Number / Account Number"
+                placeholder=""
               />
             </div>
             <p class="error-text" v-show="userNameError">{{userNameError}}</p>
@@ -31,11 +31,10 @@
                 type="password"
                 v-model="parseWord"
                 @focus="errorUnshow"
-                placeholder="Please enter your password"
+                placeholder=""
               />
             </div>
             <p class="error-text" v-show="parseWordError">{{parseWordError}}</p>
-            <!--        <div class="error btns login-form-tips" id="jsLoginTips" v-show="error"><p>用户名或密码错误</p></div> -->
             <div class="auto-box marb38"></div>
             <p class="error-text" v-show="error">{{error}}</p>
             <input class="btn btn-login" id="jsLoginBtn" type="button" @click="login" value="Login" />
@@ -43,7 +42,7 @@
 
           <p class="form-p">
             No Account?
-            <router-link :to="'/app/register/'" target="_blank">[Register]</router-link>
+            <router-link :to="'/app/register/'">[Register]</router-link>
           </p>
         </div>
       </div>
@@ -308,7 +307,7 @@ export default {
   color: #666;
 }
 .form-box a:hover {
-  color: #6ec559;
+  color: #497dff;
 }
 .form-box {
   position: relative;

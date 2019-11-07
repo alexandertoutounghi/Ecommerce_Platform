@@ -16,7 +16,7 @@
                         </tr>
                         <tr v-for="(item,index) in collections" :key="index">
                             <td bgcolor="#ffffff">
-                                <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6" target="_blank">{{item.goods.name}}</router-link>
+                                <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6">{{item.goods.name}}</router-link>
                             </td>
                             <td bgcolor="#ffffff">Shop Price<span class="goods-price">${{item.goods.shop_price}}</span>
                             </td>
@@ -180,7 +180,7 @@
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .something_interesting {
     margin-top:10px
@@ -199,7 +199,7 @@
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;

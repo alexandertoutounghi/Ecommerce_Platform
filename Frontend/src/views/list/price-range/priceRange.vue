@@ -85,7 +85,7 @@ import clickoutside from '../../../static/js/clickoutside';
 .search-options dd .items{padding-top:2px}
 .search-options dd .w500{width:500px}
 .search-options dd .items a{color:#666}
-.search-options dd .items a:hover{color:#09c762}
+.search-options dd .items a:hover{color:#2462ff}
 .search-options dd .link{float:left;width:162px;height:18px;margin:0 10px 8px 0;overflow:hidden}
 .search-options dd.dd-price .link{width:102px}
 .search-options dd a.more-btn{position:absolute;top:3px;right:5px;margin-right:0;padding:0 20px 0 0;background-position:30px -381px;display:none;color:#09c762}
