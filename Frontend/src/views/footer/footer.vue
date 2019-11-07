@@ -8,7 +8,7 @@
             <span>Service Hours：09:00-23:00</span>
             <span class="ft_phone">
               Customer Service Hotline:
-              <em>010-88888888</em>
+              <em>1-800-123-4567</em>
             </span>
           </p>
         </div>

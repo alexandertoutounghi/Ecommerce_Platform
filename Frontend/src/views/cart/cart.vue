@@ -10,12 +10,12 @@
       </div>
       <div class="goods-list">
         <ul>
-          <li class="cle hover" style="border-bottom-style: none;" v-for="(item,index) in goods.goods_list">
+          <li class="cle hover" style="border-bottom-style: none;" v-for="(item,index) in goods.goods_list" :key="index">
             <div class="pic">
-              <a target="_blank"> <img :alt="item.goods.name" :src="item.goods.goods_front_image"></a>
+              <a> <img :alt="item.goods.name" :src="item.goods.goods_front_image"></a>
             </div>
             <div class="name">
-              <a target="_blank">{{item.goods.name}}</a>
+              <a>{{item.goods.name}}</a>
               <p></p>
             </div>
             <div class="price-xj">

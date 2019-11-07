@@ -16,7 +16,7 @@
                         </tr>
                         <tr v-for="(item,index) in collections" :key="index">
                             <td bgcolor="#ffffff">
-                                <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6" target="_blank">{{item.goods.name}}</router-link>
+                                <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6">{{item.goods.name}}</router-link>
                             </td>
                             <td bgcolor="#ffffff">Shop Price<span class="goods-price">${{item.goods.shop_price}}</span>
                             </td>

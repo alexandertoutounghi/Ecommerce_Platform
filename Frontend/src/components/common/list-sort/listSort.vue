@@ -15,7 +15,7 @@
                 <input type="hidden" name="order" value="DESC">
             </form>
         </div>
-        <div class="search_num">共<b>14</b>个商品 <span id="search_btn" class="search_btn"><a href="javascript:void(0);" class="iconfont"></a> <span>
+        <div class="search_num">Total <b>14</b> Products <span id="search_btn" class="search_btn"><a href="javascript:void(0);" class="iconfont"></a> <span>
         <em>1</em> /2 </span> <a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC" class="iconfont"></a> </span> </div>
     </div>
   

@@ -65,19 +65,19 @@
         <ul>
           <!-- These are literally Google translated but it shows off key features, which we liked in OneTech -->
           <li class="no1">
-            <a href="javascript:void(0);" target="_blank">
+            <a href="javascript:void(0);">
               <h4>Genuine Security</h4>
               <p>100% Genuine Low Price</p>
             </a>
           </li>
           <li class="no2">
-            <a href="javascript:void(0);" target="_blank">
+            <a href="javascript:void(0);">
               <h4>30 Days Return</h4>
               <p>Guaranteed</p>
             </a>
           </li>
           <li class="no3">
-            <a href="javascript:void(0);" target="_blank">
+            <a href="javascript:void(0);">
               <h4>Over 99</h4>
               <p>Lightning Delivery</p>
             </a>
@@ -139,8 +139,7 @@
         </div>
         <ul class="sub_nav cle" id="sub_nav">
           <li>
-            <router-link to="/app/home/index">Home</router-link>
-            <!-- Might want to add a vif here to hide when already on home page -->
+            <router-link v-if="$route.name !== 'index'" to="/app/home/index">Home</router-link>
           </li>
           <template v-for="(item,index) in allMenuLabel">
             <li :key="index">
@@ -151,7 +150,7 @@
           </template>
         </ul>
         <div class="hd_cart" id="ECS_CARTINFO" @mouseover="overShopCar" @mouseout="outShopCar">
-          <router-link class="tit" :to="'/app/shoppingcart/cart'" target="_blank">
+          <router-link class="tit" :to="'/app/shoppingcart/cart'">
             <b class="iconfont">&#xe600;</b>View Cart
             <span>
               <i class="iconfont">&#xe645;</i>
@@ -166,7 +165,7 @@
             <div class="data">
               <dl v-for="(item,index) in goods_list.goods_list" :key="index">
                 <dt>
-                  <router-link :to="'/app/home/productDetail/'+item.goods.id" target="_blank">
+                  <router-link :to="'/app/home/productDetail/'+item.goods.id">
                     <img :src="item.goods.goods_front_image" />
                   </router-link>
                 </dt>
@@ -174,7 +173,6 @@
                   <h4>
                     <router-link
                       :to="'/app/home/productDetail/'+item.goods.id"
-                      target="_blank"
                     >{{item.goods.name}}</router-link>
                   </h4>
                   <p>
@@ -194,7 +192,7 @@
                 <span class="red">
                   <em id="hd_cart_total">{{goods_list.totalPrice || "no price"}}</em>
                 </span>
-                <router-link class="btn" :to="'/app/shoppingcart/cart'" target="_blank">Checkout</router-link>
+                <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
               </p>
             </div>
           </div>

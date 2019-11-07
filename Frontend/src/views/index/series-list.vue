@@ -10,7 +10,7 @@
 
                     <li v-for="brand in items.brands" :key="brand.id">
                        <router-link :to="'/app/home/list/'+brand.id" >
-                       <a :title="brand.name" target="_blank">
+                       <a :title="brand.name">
                             <img :src="brand.image" :alt="brand.name" style="display: inline;">
                         </a>
                         </router-link>
