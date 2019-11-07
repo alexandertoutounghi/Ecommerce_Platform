@@ -156,38 +156,43 @@
             >{{goods_list.goods_list.length}}</em>
           </router-link>
           <div class="list" v-show="showShopCar">
-            <div class="data">
-              <dl v-for="(item,index) in goods_list.goods_list" :key="index">
-                <dt>
-                  <router-link :to="'/app/home/productDetail/'+item.goods.id">
-                    <img :src="item.goods.goods_front_image" />
-                  </router-link>
-                </dt>
-                <dd>
-                  <h4>
-                    <router-link
-                      :to="'/app/home/productDetail/'+item.goods.id"
-                    >{{item.goods.name}}</router-link>
-                  </h4>
-                  <p>
-                    <span class="red">{{item.goods.shop_price}}</span>&nbsp;
-                    <i>X</i>
-                    &nbsp;{{item.nums}}
-                  </p>
-                  <a title="Delete" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a>
-                </dd>
-              </dl>
+            <div v-if="userInfo.name">
+              <div class="data">
+                <dl v-for="(item,index) in goods_list.goods_list" :key="index">
+                  <dt>
+                    <router-link :to="'/app/home/productDetail/'+item.goods.id">
+                      <img :src="item.goods.goods_front_image" />
+                    </router-link>
+                  </dt>
+                  <dd>
+                    <h4>
+                      <router-link
+                        :to="'/app/home/productDetail/'+item.goods.id"
+                      >{{item.goods.name}}</router-link>
+                    </h4>
+                    <p>
+                      <span class="red">{{item.goods.shop_price}}</span>&nbsp;
+                      <i>X</i>
+                      &nbsp;{{item.nums}}
+                    </p>
+                    <a title="Delete" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a>
+                  </dd>
+                </dl>
+              </div>
+              <div class="count">
+                Items in Cart:
+                <span class="red" id="hd_cart_count"> {{goods_list.goods_list.length > 0 ? goods_list.goods_list.length : "0"}}</span>
+                <p>
+                  Subtotal:
+                  <span class="red">
+                    <em id="hd_cart_total">{{goods_list.totalPrice ? '$' + goods_list.totalPrice : "$0"}}</em>
+                  </span>
+                  <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
+                </p>
+              </div>
             </div>
-            <div class="count">
-              Items in Cart:
-              <span class="red" id="hd_cart_count"> {{goods_list.goods_list.length > 0 ? goods_list.goods_list.length : "0"}}</span>
-              <p>
-                Subtotal:
-                <span class="red">
-                  <em id="hd_cart_total">{{goods_list.totalPrice ? '$' + goods_list.totalPrice : "no price"}}</em>
-                </span>
-                <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
-              </p>
+            <div v-else>
+              <p>You must be signed in to use this feature</p>
             </div>
           </div>
         </div>
@@ -254,7 +259,6 @@ export default {
         .then(response => {
           console.log(response.data);
           this.goods_list.splice(index, 1);
-
           // Updates their shopping list after removing an item
           this.$store.dispatch("setShopList");
         })

@@ -4,7 +4,7 @@
       <div class="hd_bar" id="userinfo-bar">
         <div class="bd">
           <div class="logo">
-            <router-link to="/app/home/index">
+            <router-link :to="'/app/home/index'">
               <img
                 src="../../static/images/head/logosmaller.png"
                 alt="354 the Stars Logo"
