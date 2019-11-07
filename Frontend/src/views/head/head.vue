@@ -386,7 +386,7 @@ a {
   transition: color 0.2s;
 }
 a:hover {
-  color: #09c762;
+  color: #0560a0;
 }
 a:focus,
 area:focus {
@@ -416,10 +416,10 @@ img {
   top: 0;
 }
 .new_header .hd_cart .tit {
-  border-color: #1e9246;
+  border-color: #0560a0;
 }
 .new_header .hd_cart .tit span {
-  background-color: #1e9246;
+  background-color: #0560a0;
 }
 
 .hd_cart .tit b {
@@ -436,7 +436,7 @@ img {
   width: 34px;
   height: 28px;
   padding-top: 7px;
-  background-color: #09c762;
+  background-color: #0560a0;
   text-align: center;
   font-size: 12px;
   color: #fff;
@@ -609,32 +609,9 @@ img {
   opacity: 1 !important;
   visibility: visible !important;
 }
-/*.hd_bar .more-bd .list {*/
-/*width:94px;*/
-/*border:1px solid #ddd;*/
-/*background:#fff*/
-/*}*/
-/*.hd_bar .more-bd .hezuo_list {*/
-/*width:72px*/
-/*}*/
-/*.hd_bar .more-bd .list a {*/
-/*display:block;*/
-/*background-color:#fff;*/
-/*border-bottom:1px dashed #d7d7d7;*/
-/*padding:6px 10px;*/
-/*height:17px;*/
-/*overflow:hidden*/
-/*}*/
-/*.hd_bar .more-bd .list a:hover {*/
-/*background:#f8f8f8;*/
-/*color:#333;*/
-/*text-decoration:none*/
-/*}*/
-/*.hd_bar .more-bd .list a.last {*/
-/*border-bottom:0*/
-/*}*/
+
 .hd_bar li.hover a.menu-link {
-  color: #09c762;
+  color: #0560a0;
 }
 .hd_bar li.hover i.arrow {
   -moz-transform: rotate(180deg);
@@ -674,7 +651,7 @@ img {
   top: 0;
   width: 300px;
   height: 29px;
-  border: 1px solid #1e9246;
+  border: 1px solid #0560a0;
   border-right: 0;
   background-color: #fff;
   overflow: hidden;
@@ -730,7 +707,7 @@ img {
 }
 .head_search_hot a.red,
 .head_search_hot a:hover {
-  color: #09c762;
+  color: #0560a0;
 }
 
 .intro {
@@ -902,7 +879,7 @@ img {
 }
 .main_cata li.current h3 a,
 .main_cata li.current a:hover {
-  color: #09c762;
+  color: #2462ff;
 }
 
 .J_subCata {
@@ -952,7 +929,7 @@ img {
 }
 .J_subCata .J_subView dd a {
   display: inline-block;
-  color: #09c762;
+  color: #0560a0;
   padding: 0 8px;
   font-size: 13px;
 }
@@ -978,8 +955,8 @@ img {
   vertical-align: top;
 }
 .J_subCata .J_subView dd a:hover {
-  color: #09c762;
-  border-color: #09c762;
+  color: #0560a0;
+  border-color: #0560a0;
 }
 
 .clear {
@@ -1009,7 +986,7 @@ img {
 .hd_nav .sub_nav li.current a,
 .hd_nav .sub_nav li a:hover {
   color: #fff;
-  background-color: #1e9246;
+  background-color: #0560a0;
   text-decoration: none;
 }
 
@@ -1059,7 +1036,7 @@ img {
   width: 34px;
   height: 28px;
   padding-top: 7px;
-  background-color: #09c762;
+  background-color: #0560a0;
   text-align: center;
   font-size: 12px;
   color: #fff;
@@ -1312,7 +1289,7 @@ img {
 .hufu-step a.no1:hover,
 #current-hstep1 a.no1 {
   background-position: -52px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no2 {
   width: 122px;
@@ -1320,7 +1297,7 @@ img {
 .hufu-step a.no2:hover,
 #current-hstep2 a.no2 {
   background-position: -158px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no3 {
   width: 109px;
@@ -1328,7 +1305,7 @@ img {
 .hufu-step a.no3:hover,
 #current-hstep3 a.no3 {
   background-position: -280px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no4 {
   width: 112px;
@@ -1336,7 +1313,7 @@ img {
 .hufu-step a.no4:hover,
 #current-hstep4 a.no4 {
   background-position: -389px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no5 {
   width: 117px;
@@ -1344,7 +1321,7 @@ img {
 .hufu-step a.no5:hover,
 #current-hstep5 a.no5 {
   background-position: -501px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no6 {
   width: 120px;
@@ -1352,7 +1329,7 @@ img {
 .hufu-step a.no6:hover,
 #current-hstep6 a.no6 {
   background-position: -618px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no7 {
   width: 104px;
@@ -1360,7 +1337,7 @@ img {
 .hufu-step a.no7:hover,
 #current-hstep7 a.no7 {
   background-position: -738px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .hufu-step a.no8 {
   width: 124px;
@@ -1369,7 +1346,7 @@ img {
 .hufu-step a.no8:hover,
 #current-hstep8 a.no8 {
   background-position: -842px -54px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step {
   background-position: 0 -108px;
@@ -1381,7 +1358,7 @@ img {
 .caiz-step a.no1:hover,
 #current-cstep1 a.no1 {
   background-position: -52px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no2 {
   width: 92px;
@@ -1389,7 +1366,7 @@ img {
 .caiz-step a.no2:hover,
 #current-cstep2 a.no2 {
   background-position: -140px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no3 {
   width: 84px;
@@ -1397,7 +1374,7 @@ img {
 .caiz-step a.no3:hover,
 #current-cstep3 a.no3 {
   background-position: -232px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no4 {
   width: 92px;
@@ -1405,7 +1382,7 @@ img {
 .caiz-step a.no4:hover,
 #current-cstep4 a.no4 {
   background-position: -316px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no5 {
   width: 86px;
@@ -1413,7 +1390,7 @@ img {
 .caiz-step a.no5:hover,
 #current-cstep5 a.no5 {
   background-position: -408px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no6 {
   width: 85px;
@@ -1421,7 +1398,7 @@ img {
 .caiz-step a.no6:hover,
 #current-cstep6 a.no6 {
   background-position: -494px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no7 {
   width: 95px;
@@ -1429,7 +1406,7 @@ img {
 .caiz-step a.no7:hover,
 #current-cstep7 a.no7 {
   background-position: -579px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no8 {
   width: 82px;
@@ -1437,7 +1414,7 @@ img {
 .caiz-step a.no8:hover,
 #current-cstep8 a.no8 {
   background-position: -674px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no9 {
   width: 90px;
@@ -1445,7 +1422,7 @@ img {
 .caiz-step a.no9:hover,
 #current-cstep9 a.no9 {
   background-position: -756px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .caiz-step a.no10 {
   width: 120px;
@@ -1454,7 +1431,7 @@ img {
 .caiz-step a.no10:hover,
 #current-cstep10 a.no10 {
   background-position: -846px -162px;
-  color: #09c762;
+  color: #2462ff;
 }
 .cate-menu {
   margin-bottom: 12px;
@@ -1511,7 +1488,7 @@ img {
 }
 .cate-menu dd.current a,
 .cate-menu dd.current a:hover {
-  color: #09c762;
+  color: #2462ff;
   background-color: #f1f1f1;
 }
 .fixed-want {
@@ -1560,7 +1537,7 @@ img {
   padding: 1px 4px;
 }
 .fixed-want dd a.red {
-  color: #09c762;
+  color: #2462ff;
   background-color: #ffecf2;
   border-radius: 3px;
 }
@@ -1608,7 +1585,7 @@ a.more-btn,
   margin-right: 8px;
   background-position: right -245px;
   box-shadow: 0 1px 1px #eee;
-  color: #09c762;
+  color: #2462ff;
 }
 
 .search-selected a.item:hover {
@@ -1657,7 +1634,7 @@ a.more-btn,
   color: #666;
 }
 .search-options dd .items a:hover {
-  color: #09c762;
+  color: #2462ff;
 }
 .search-options dd .link {
   float: left;
@@ -1677,7 +1654,7 @@ a.more-btn,
   padding: 0 20px 0 0;
   background-position: 30px -381px;
   display: none;
-  color: #09c762;
+  color: #2462ff;
 }
 .search-options dd a.more-btn.clicked {
   background-position: 30px -359px;
@@ -1790,7 +1767,7 @@ a.more-btn,
   padding: 4px 26px 4px 15px;
   background-position: right -104px;
   background-position: right -102px;
-  color: #09c762;
+  color: #2462ff;
   text-shadow: 1px 1px 1px #fff;
 }
 .sort .curr .search_ASC {
@@ -1798,7 +1775,7 @@ a.more-btn,
   padding: 4px 26px 4px 15px;
   background-position: right -330px;
   background-position: right -328px;
-  color: #09c762;
+  color: #2462ff;
   text-shadow: 1px 1px 1px #fff;
 }
 .sort .bd a:hover {
@@ -1825,7 +1802,7 @@ a.more-btn,
   padding: 0 15px;
 }
 .search_num b {
-  color: #09c762;
+  color: #2462ff;
 }
 .search_num span.search_btn {
   margin-left: 10px;
@@ -1846,13 +1823,13 @@ a.more-btn,
   border-color: #ccc;
   box-shadow: 0 1px 1px #eee;
   text-decoration: none;
-  color: #09c762;
+  color: #2462ff;
 }
 .search_num span.search_btn span {
   color: #333;
 }
 .search_num span.search_btn span em {
-  color: #09c762;
+  color: #2462ff;
 }
 .productlist {
   width: 970px;
@@ -1910,14 +1887,14 @@ a.more-btn,
   font-size: 18px;
 }
 .cms-box .bd a:hover span.name {
-  color: #09c762;
+  color: #2462ff;
 }
 .baokuan-goods a,
 .baokuan-goods a span {
   display: block;
 }
 .baokuan-goods a span.price {
-  color: #09c762;
+  color: #2462ff;
 }
 .baokuan-goods a.no1 {
   float: left;
@@ -2076,7 +2053,7 @@ a.more-btn,
   overflow: hidden;
 }
 .week-hot .price {
-  color: #09c762;
+  color: #2462ff;
 }
 .week-hot .price em {
   font-size: 18px;
@@ -2122,7 +2099,7 @@ a.more-btn,
 }
 .seemore_items h3 a:hover {
   text-decoration: none;
-  color: #09c762;
+  color: #2462ff;
 }
 .seemore_items .bd {
   width: 162px;
