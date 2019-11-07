@@ -290,6 +290,7 @@ export default {
           this.allMenuLabel = response.data;
         })
         .catch(function(error) {
+          this.allMenuLabel = []
           console.log(error);
         });
     },
