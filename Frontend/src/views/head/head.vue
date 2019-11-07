@@ -179,12 +179,12 @@
               </dl>
             </div>
             <div class="count">
-              Total
-              <span class="red" id="hd_cart_count">{{goods_list.length || "0"}}</span>Goods
+              Items in Cart:
+              <span class="red" id="hd_cart_count"> {{goods_list.goods_list.length > 0 ? goods_list.goods_list.length : "0"}}</span>
               <p>
-                Total Price:
+                Subtotal:
                 <span class="red">
-                  <em id="hd_cart_total">{{goods_list.totalPrice || "no price"}}</em>
+                  <em id="hd_cart_total">{{goods_list.totalPrice ? '$' + goods_list.totalPrice : "no price"}}</em>
                 </span>
                 <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
               </p>
