@@ -153,13 +153,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {

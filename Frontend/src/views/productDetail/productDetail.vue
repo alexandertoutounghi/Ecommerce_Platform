@@ -1,7 +1,7 @@
 <template>
     <div>
        <current-loc></current-loc>
-        <!--商品详情页上方-->
+        <!--Above the product details page-->
         <div class="detail cle z-detail-box">
             <div class="detail_wrap">
                 <div class="detail_img" id="detail_img">
@@ -79,7 +79,7 @@
 
         </div>
 
-        <!--商品详情页下方-->
+        <!--Below product details page-->
         <div class="detail_bgcolor">
             <div class="z-detail-box cle">
                 <div class="z-detail-left">
@@ -294,11 +294,11 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     border-bottom:1px solid #fff
 }
 .tabs_bar ul li a em {
-    color:#09c762;
+    color:#2462ff;
     font-weight:bold
 }
 .tabs_bar li.tab-buy {
-    color:#09c762;
+    color:#2462ff;
     float:right;
     padding-right:94px;
     position:relative;
@@ -319,10 +319,10 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     height:23px;
     line-height:22px;
     padding:5px 12px;
-    background:#09c762
+    background:#2462ff
 }
 .tabs_bar li.tab-buy a.btn:hover {
-    background:#1e9246
+    background:#1441b1
 }
 .tabs_bar li.tab-buy a.wishlistbtn {
     position:absolute;
@@ -445,7 +445,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 .spxq_main .spxq_top {
     margin:25px 0 0;
     font-size:16px;
-    color:#09c762;
+    color:#2462ff;
     font-weight:bold
 }
 .spxq_main .spxq_dec div {
@@ -474,8 +474,8 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 .spxq_main h3 {
     font-size:20px;
     margin:20px 0 10px;
-    color:#09c762;
-    border-bottom:1px solid #09c762;
+    color:#2462ff;
+    border-bottom:1px solid #2462ff;
     padding-bottom:5px
 }
 .spxq_main p {
@@ -512,7 +512,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     color:#999999;
 }
 .z-detail-point-box-right div font {
-    color:#09c762;
+    color:#2462ff;
 }
 .z-detail-point-box-right div a.go_btn {
     position:absolute;
@@ -524,7 +524,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     z-index:99
 }
 .z-detail-point-box-right div a.good_com {
-    color:#09c762;
+    color:#2462ff;
     margin-right:5px
 }
 .z-detail-point-box-right div.good_com_box .good_com_tips {
@@ -643,13 +643,13 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     border:1px solid #ddd;
     margin:0;
     margin-right:8px;
-    +zoom:1;
+    zoom:1;
     cursor:pointer;
     float:left;
     display:block
 }
 .item-thumbs li.current {
-    border-color:#09c762
+    border-color:#2462ff
 }
 .item-thumbs .bd {
     width:330px;
@@ -688,7 +688,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     position:absolute;
 
     top:0;
-    color:#09c762
+    color:#2462ff
 }
 .item-thumbs a.left_btn,.item-thumbs a.right_btn {
     position:absolute;
@@ -772,7 +772,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     width:100%
 }
 .item-info dd li .icon_promo,.item-info dd li span.t_ico {
-    background-color:#09c762;
+    background-color:#2462ff;
     color:#fff;
     display:inline-block;
     height:20px;
@@ -825,7 +825,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     margin:0 4px
 }
 .item-info dd li em.red a {
-    color:#09c762
+    color:#2462ff
 }
 .item-info .property .unit {
     display:inline-block
@@ -838,7 +838,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     font-size:14px
 }
 .item-info .property .unit em.red {
-    color:#09c762;
+    color:#2462ff;
     margin:0
 }
 .item-info .property .nala_price {

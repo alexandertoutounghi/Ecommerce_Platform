@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
-        <div class="newopro-l fl"> <!-- TREASURE TEST BANNER AD -->
+        <div class="newopro-l fl"> <!-- TREASURE CHEST BANNER AD -->
           <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a>
         </div>
         <div class="newopro-r fr">
             <h2 class="index-tt">
                 <em class="ft18 c000">Just Released New Products</em>
-                <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">More&gt;&gt;</a></router-link>
+                <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">More &gt;&gt;</a></router-link>
             </h2>
             <ul class="newgoods_fastbuy">
                 <li class="prolist-cent clearfix have_num" v-for="(item, index) in newopro" :key="index">
@@ -117,13 +117,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -135,7 +135,7 @@ canvas {
     src:url('http://at.alicdn.com/t/font_1412819191_5742776.eot?#iefix') format('embedded-opentype'),url('http://at.alicdn.com/t/font_1412819191_5742776.woff') format('woff'),url('http://at.alicdn.com/t/font_1412819191_5742776.ttf') format('truetype'),url('http://at.alicdn.com/t/font_1412819191_5742776.svg#iconfont') format('svg')
 }*/
 .red,a.red,a.red:hover,.pink,a.pink,a.pink:hover {
-    color:#09c762;
+    color:#2462ff;
 }
 .gray999,.gray,a.gray,a.gray:hover {
     color:#999;

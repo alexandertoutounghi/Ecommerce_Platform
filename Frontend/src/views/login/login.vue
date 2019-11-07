@@ -308,7 +308,7 @@ export default {
   color: #666;
 }
 .form-box a:hover {
-  color: #6ec559;
+  color: #497dff;
 }
 .form-box {
   position: relative;

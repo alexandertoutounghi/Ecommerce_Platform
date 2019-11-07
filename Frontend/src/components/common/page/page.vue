@@ -90,13 +90,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus{
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -117,8 +117,8 @@ canvas {
     border-radius:2px
 }
 .pagenav a:hover {
-    color:#09c762;
-    border-color:#09c762;
+    color:#2462ff;
+    border-color:#2462ff;
     text-decoration:none
 }
 .pagenav span.currentStep {

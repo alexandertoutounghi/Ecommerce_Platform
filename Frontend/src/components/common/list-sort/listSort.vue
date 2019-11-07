@@ -103,13 +103,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -140,12 +140,12 @@ canvas {
 
 
 .search_num{width:400px;float:right;text-align:right;line-height:30px;padding:0 15px}
-.search_num b{color:#09c762}
+.search_num b{color:#2462ff}
 .search_num span.search_btn{margin-left:10px;font-size:13px}
 .search_num span.search_btn a{display:inline-block;width:26px;height:26px;line-height:28px;text-align:center;border:1px solid #e4e4e4;background-color:#fff;margin:0 5px;color:#999}
-.search_num span.search_btn a:hover{border-color:#ccc;box-shadow:0 1px 1px #eee;text-decoration:none;color:#09c762}
+.search_num span.search_btn a:hover{border-color:#ccc;box-shadow:0 1px 1px #eee;text-decoration:none;color:#2462ff}
 .search_num span.search_btn span{color:#333}
-.search_num span.search_btn span em{color:#09c762}
+.search_num span.search_btn span em{color:#2462ff}
 
 
 </style>

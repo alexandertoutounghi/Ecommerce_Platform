@@ -74,13 +74,13 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
 }
 ::selection {
-    background:#09c762;
+    background:#2462ff;
     color:#fff
 }
 canvas {
@@ -92,7 +92,7 @@ canvas {
     src:url('http://at.alicdn.com/t/font_1412819191_5742776.eot?#iefix') format('embedded-opentype'),url('http://at.alicdn.com/t/font_1412819191_5742776.woff') format('woff'),url('http://at.alicdn.com/t/font_1412819191_5742776.ttf') format('truetype'),url('http://at.alicdn.com/t/font_1412819191_5742776.svg#iconfont') format('svg')
 }*/
 .red,a.red,a.red:hover,.pink,a.pink,a.pink:hover {
-    color:#09c762
+    color:#2462ff
 }
 .gray999,.gray,a.gray,a.gray:hover {
     color:#999

@@ -56,7 +56,7 @@ a {
   transition: color 0.2s;
 }
 a:hover {
-  color: #09c762;
+  color: #2462ff;
 }
 a:focus,
 area:focus {

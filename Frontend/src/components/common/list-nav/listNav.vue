@@ -270,7 +270,7 @@ a {
     transition:color .2s
 }
 a:hover {
-    color:#09c762
+    color:#2462ff
 }
 a:focus,area:focus {
     outline:0
@@ -302,6 +302,6 @@ canvas {
 .cate-menu dd a{display:block;padding:7px 0 7px 27px;background-color:#fff}
 .cate-menu dd a:hover{background-color:#fafafa;text-decoration:none}
 .cate-menu dd a i{color:#bbb;margin-left:5px}
-.cate-menu dd.current a,.cate-menu dd.current a:hover{color:#09c762;background-color:#f1f1f1}
+.cate-menu dd.current a,.cate-menu dd.current a:hover{color:#2462ff;background-color:#f1f1f1}
 
 </style>

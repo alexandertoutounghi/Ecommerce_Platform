@@ -180,7 +180,7 @@
     font-weight:normal
 }
 .my_nala_centre .trade_mod .h301 a.more:hover {
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .something_interesting {
     margin-top:10px
@@ -199,7 +199,7 @@
 .my_nala_centre .something_interesting em {
     font-size:12px;
     font-weight:bold;
-    color:#09c762
+    color:#2462ff
 }
 .my_nala_centre .relate_goods {
     border:1px solid #e4e4e4;
