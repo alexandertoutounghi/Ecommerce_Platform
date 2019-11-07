@@ -185,7 +185,7 @@
                 <p>
                   Subtotal:
                   <span class="red">
-                    <em id="hd_cart_total">{{goods_list.totalPrice ? '$' + goods_list.totalPrice : "$0"}}</em>
+                    <em id="hd_cart_total"> {{goods_list.totalPrice ? '$' + goods_list.totalPrice : "$0"}}</em>
                   </span>
                   <router-link class="btn" :to="'/app/shoppingcart/cart'">Checkout</router-link>
                 </p>
