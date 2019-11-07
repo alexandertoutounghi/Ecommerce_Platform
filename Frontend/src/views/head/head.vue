@@ -5,7 +5,7 @@
         <ul id="userinfo-bar">
           <!-- Probably don't need this, can maybe move login | register to here -->
           <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false">
-            <a>Member Centre</a>
+            <a>My Account</a>
             <i class="iconfont arrow"></i>
             <div class="more-bd" :class="{show:isShowVip}">
               <!-- On hover of the above li, display drop down -->

@@ -2,7 +2,7 @@
 
 <div class="slidebar">
     <h3 class="my_nala">
-        <a @click="member">Member Centre</a>
+        <a @click="member">My Account</a>
     </h3>
     <ul class="slide_item">
         <li class="item">
@@ -15,12 +15,12 @@
             </ul>
         </li>
         <li class="item">
-            <div class="root_node"><i class="iconfont">&#xe645;</i>Member Centre</div>
+            <div class="root_node"><i class="iconfont">&#xe645;</i>Info and History</div>
             <ul>
                 <li>
                     <a :class="{on: current==='userinfo'}" @click="toUserInfo">User Info</a>
                     <a :class="{on: current==='collection'}" @click="toCollection">My Order History</a>
-                    <a :class="{on: current==='message'}" @click="toMessage">My Message</a>
+                    <!-- <a :class="{on: current==='message'}" @click="toMessage">My Message</a> -->
                 </li>
             </ul>
         </li>
