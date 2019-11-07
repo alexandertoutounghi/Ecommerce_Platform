@@ -49,7 +49,7 @@
       <div class="search_box--wrapper">
         <div class="search_box">
           <input class="sea_input" type="text" name="keywords" id="keyword" v-model="searchWord" />
-          <button class="sea_submit" @click="searchSubmit">&#x1F50E;</button> <!-- Search icon -->
+          <button class="sea_submit" @click="searchSubmit"><i class="fa fa-search"></i></button> <!-- Search icon -->
         </div>
         <!-- <div class="head_search_hot">
           <span>Trending Searches:</span>
@@ -778,7 +778,7 @@ img {
   overflow: hidden;
 }
 .hd_nav .main_nav .main_nav_link a:hover {
-  color: #fff;
+  color: #ff4500;
   text-decoration: none;
 }
 .hd_nav .main_nav .main_nav_link i {
