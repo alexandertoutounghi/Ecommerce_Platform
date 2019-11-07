@@ -22,7 +22,6 @@ export default {
         if (cookie.getCookie('token') !== null) {
           getShopCarts().then((response)=> {
             state.goods_list.goods_list = response.data;
-            console.log("getshopcarts called")
             console.log(response.data)
             var totalPrice = 0
             response.data.forEach(function(entry) {
