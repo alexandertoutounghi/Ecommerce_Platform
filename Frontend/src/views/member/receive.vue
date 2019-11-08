@@ -55,7 +55,15 @@
                                     <td colspan="3" align="left" bgcolor="#ffffff">
                                         <div class="addr">
                                             <!-- <v-distpicker :placeholder="newInfo.dist" @province="getProvince" @city="getCity" @selected="getArea"></v-distpicker> -->
-                                            <v-distpicker :province="newInfo.province" :city="newInfo.city" :area="newInfo.district" @province="getProvince" @city="getCity" @area="getArea"></v-distpicker>
+                                            <!-- <v-distpicker :province="newInfo.province" :city="newInfo.city" :area="newInfo.district" @province="getProvince" @city="getCity" @area="getArea"></v-distpicker> -->
+                                            <places
+                                                v-model="newInfo.country"
+                                                placeholder="Please type the address [US and Canada only]"
+                                                @change="val => { 
+                                                    newInfo.country = val;
+                                                }"
+                                                :options="{ countries: ['US', 'CA'] }">
+                                            </places>
                                         </div>
                                     </td>
                                 </tr>
@@ -96,6 +104,7 @@
 </template>
 <script>
 import VDistpicker from 'v-distpicker'
+import Places from 'vue-places'
 import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
     export default {
         data () {
@@ -134,7 +143,8 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
 
         },
         components: {
-            'v-distpicker': VDistpicker
+            'v-distpicker': VDistpicker,
+            'places': Places
         },
         created () {
             this.getReceiveInfo();

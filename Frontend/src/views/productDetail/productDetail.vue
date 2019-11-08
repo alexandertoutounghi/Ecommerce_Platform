@@ -13,12 +13,12 @@
                         </a>
                     </div>
                     <div class="item-thumbs" id="item-thumbs">
-                        <a class="prev" href="javascript:void(0);" @click="ImagePrev"></a>
-                        <a class="next" href="javascript:void(0);" @click="ImageNext"></a>
+                        <!-- <a class="prev" href="javascript:void(0);" @click="ImagePrev"></a>
+                        <a class="next" href="javascript:void(0);" @click="ImageNext"></a> -->
                         <div class="bd">
                             <div class="tempWrap" style="overflow:hidden; position:relative; width:330px">
                                 <ul class="cle" style="width: 330px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-                                    <li v-for="(item,index) in proDetail.images" :class="{'current': index===curIndex}" @click="replaceShow(index,item)" :key="index">
+                                    <li v-for="(item,index) in proDetail.images" :class="{'current': index===curIndex}" @click="replaceShow(index,item)" :key="item.id">
                                         <a>
                                             <img :src="item.image" alt="">
                                         </a>
@@ -126,7 +126,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     data () {
         return {
             productId: '',
-            curIndex: 1, 
+            curIndex: 0, 
             curShow: {
                 desc: 'First detail',
                 src: './images/1(1).jpg'
@@ -236,7 +236,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
             this.curIndex = this.curIndex === 0 ? 0 : this.curIndex - 1;
         },
         ImageNext () {
-            this.curIndex = this.curIndex === this.proDetail.detailImages.length - 1 ? this.proDetail.detailImages.length - 1 : this.curIndex + 1;
+            this.curIndex = this.curIndex === this.proDetail.images.length - 1 ? this.proDetail.images.length - 1 : this.curIndex + 1;
         },
         replaceShow (index, item) {
             this.curIndex = index;
