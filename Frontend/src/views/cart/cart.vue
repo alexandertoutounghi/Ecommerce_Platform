@@ -2,7 +2,7 @@
   <div id="main">
     <div class="top-next cle">
       <div class="fr"> <a class="graybtn" @click="continueShopping">Continue Shopping</a>
-        <a  class="btn" id="checkout-top" @click="balanceCount">&nbsp;Checkout&nbsp;</a> </div>
+        <a class="btn" id="checkout-top" @click="balanceCount">&nbsp;Checkout&nbsp;</a> </div>
     </div>
     <div class="cart-box" id="cart-box">
       <div class="hd"> <span class="no2" id="itemsnum-top">Items</span>
@@ -39,10 +39,9 @@
       <div class="fd cle">
         <div class="fl">
           <p class="no1"> <a id="del-all" @click="delAll" :style="{color:'red', float:'right'}">Clear Shopping Cart Contents</a> </p>
-          <p><a class="graybtn" @click="continueShopping">Continue Shopping</a></p>
         </div>
         <div class="fr" id="price-total">
-          <p><span id="selectedCount">{{goods.goods_list.length}}</span>Items, Total Price: <span class="red"><strong id="totalSkuPrice">${{totalPrice}}</strong></span></p>
+          <p><span id="selectedCount">{{goods.goods_list.length}}</span> item(s), Total Price: <span class="red align-price"><strong id="totalSkuPrice">${{totalPrice}}</strong></span></p>
         </div>
         <div class="extr">
           <div class="address">
@@ -62,12 +61,11 @@
           </div>
           <div class="pay">
             <p class="title">Select Payment Method</p>
-            <p class="payWrap"><img v-for="item in payWrapList" :key="item.id" src="../../static/images/alipay.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)"></p>
+            <p class="payWrap"><img v-for="item in payWrapList" :key="item.id" src="../../static/images/paypal.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)"></p>
           </div>
         </div>
         <textarea type="text" v-model="post_script" placeholder="Please enter a message" style="margin-top: 10px; height:50px;width: 100%;">
         </textarea>
-        <p class="sumup"><a class="btn" @click="balanceCount">Checkout</a></p>
       </div>
     </div>
   </div>
@@ -252,7 +250,7 @@
     margin-bottom: 20px;
   }
   .addressActive,.payWrapActive{
-    border:1px solid red !important;
+    border:1px solid #2462ff !important;
   }
   .payWrap{
     padding:0 10px;
@@ -268,6 +266,10 @@
     font-weight: bold;
     font-size: 14px;
     padding: 0 10px;
+  }
+
+  .align-price {
+    margin-right: 105px;
   }
   .address .add {
     width: 100px;
@@ -539,9 +541,6 @@
     color:#999
   }
 
-  .cart-box .fd {
-    padding-top:20px
-  }
   .cart-box .fd .no1 input {
     vertical-align:-2px
   }
@@ -579,7 +578,7 @@
     margin-bottom:20px
   }
   .cart-box .fd strong {
-    font-size:20px;
+    font-size:17px;
     font-family:arial;
     margin:0 3px
   }
@@ -588,7 +587,7 @@
   }
   .cart-box .fd .fr p {
     text-align:right;
-    margin-bottom:16px
+    margin-bottom: 40px;
   }
 
   .graybtn {
