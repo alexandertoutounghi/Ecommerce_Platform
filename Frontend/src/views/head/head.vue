@@ -289,7 +289,8 @@ export default {
       })
         .then(response => {
           console.log(response);
-          this.allMenuLabel = response.data;
+          this.allMenuLabel = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
+          // this.allMenuLabel = response.data;
         })
         .catch(function(error) {
           this.allMenuLabel = []
