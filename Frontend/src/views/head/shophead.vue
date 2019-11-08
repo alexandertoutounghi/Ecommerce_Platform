@@ -60,7 +60,7 @@
     left:0
 }
 .hd_bar .bd {
-    width:826px;
+    width: 1038px;
     height:57px;
     margin:0 auto;
     position:relative;
