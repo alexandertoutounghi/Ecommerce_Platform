@@ -6,24 +6,21 @@
                 <div class="hd_lbar" style="display: block;" id="ECS_MEMBERZONE">
                     <template v-if="userInfo.name">
                       <router-link :to="'/app/home/index'">Home</router-link>
-                      <router-link v-if="userInfo.name" :to="'/app/home/member/userinfo'">{{userInfo.name}}</router-link>
-                      &nbsp;[
+                      <router-link v-if="userInfo.name" :to="'/app/home/member/userinfo'">{{userInfo.name + "'s Account Info"}}</router-link>
                       <a @click="loginOut">Logout</a>
-                      ]
                     </template>
                     <template v-else>
                       <router-link :to="'/app/login'"> Login</router-link>
                       <router-link :to="'/app/register'"> Register</router-link>
                     </template>
-
                 </div>
-                <ul class="hd-step">
-                    <li class="first on"><em>1</em>Shopping Cart<i></i></li>
+                <!-- <ul class="hd-step">
+                    <li class="first on"><em>1</em>Review<i></i></li>
                     <li class="jt">&nbsp;</li>
-                    <li class="on"><em>2</em>Confirm Order Info<i></i></li>
+                    <li class="on"><em>2</em>Confirm<i></i></li>
                     <li class="jt">&nbsp;</li>
                     <li><em>3</em>Pay<i></i></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
