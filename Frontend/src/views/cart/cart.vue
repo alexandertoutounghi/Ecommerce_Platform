@@ -5,8 +5,8 @@
         <a  class="btn" id="checkout-top" @click="balanceCount">&nbsp;Checkout&nbsp;</a> </div>
     </div>
     <div class="cart-box" id="cart-box">
-      <div class="hd"> <span class="no2" id="itemsnum-top">{{goods.goods_list.length}}Items</span>
-        <span class="no4">Unit Price</span> <span>Quantity</span> <span>Subtotal</span>
+      <div class="hd"> <span class="no2" id="itemsnum-top">Items</span>
+        <span class="no4">Unit Cost</span> <span>Quantity</span> <span>Subtotal</span>
       </div>
       <div class="goods-list">
         <ul>
@@ -30,7 +30,7 @@
               <em id="total_items_3137">${{item.goods.shop_price * item.nums}}</em>
             </div>
             <div class="del">
-              <a class="btn-del" @click="deleteGoods(index, item.goods.id)">Delete</a>
+              <a class="btn-del" @click="deleteGoods(index, item.goods.id)" :style="{color:'red'}">Delete</a>
             </div>
           </li>
         </ul>
@@ -38,7 +38,7 @@
 
       <div class="fd cle">
         <div class="fl">
-          <p class="no1"> <a id="del-all" @click="delAll">Empty Shopping Cart</a> </p>
+          <p class="no1"> <a id="del-all" @click="delAll" :style="{color:'red', float:'right'}">Clear Shopping Cart Contents</a> </p>
           <p><a class="graybtn" @click="continueShopping">Continue Shopping</a></p>
         </div>
         <div class="fr" id="price-total">
@@ -358,7 +358,7 @@
     background-color:#fff
   }
   .goods-list li {
-  +display:inline;
+    display:inline;
     zoom:1;
     width:1006px;
     border-bottom:1px dotted #cbcbcb;

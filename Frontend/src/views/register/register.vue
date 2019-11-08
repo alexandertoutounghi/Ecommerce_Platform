@@ -45,7 +45,7 @@
               />
             </form>
           </div>
-
+          <br/>
           <p class="form-p">
             Already have an account?
             <router-link :to="'/app/login'">[Login]</router-link>
@@ -73,7 +73,7 @@ export default {
   methods: {
     isRegister() {
       var that = this;
-      register({
+      register( {
         password: that.password,
         username: that.username,
       })
@@ -359,7 +359,6 @@ export default {
 .form-p {
   position: absolute;
   left: 40px;
-  bottom: 25px;
 }
 .form-p > a {
   color: #fa8341;

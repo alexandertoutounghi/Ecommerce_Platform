@@ -39,7 +39,7 @@
             <p class="error-text" v-show="error">{{error}}</p>
             <input class="btn btn-login" id="jsLoginBtn" type="button" @click="login" value="Login" />
           </form>
-
+          <br/>
           <p class="form-p">
             No Account?
             <router-link :to="'/app/register/'">[Register]</router-link>
@@ -421,7 +421,6 @@ export default {
 .form-p {
   position: absolute;
   left: 40px;
-  bottom: 25px;
 }
 .form-p > a {
   color: #fa8341;

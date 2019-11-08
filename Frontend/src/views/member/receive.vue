@@ -20,14 +20,14 @@
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">Full Name: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="consignee" type="text" class="inputBg" id="consignee_0" value="ssss" v-model="item.signer_name">
-                                        <span :class = "{error:item.signer_name==''}">(Required)</span>
+                                        <span :class="{error:item.signer_name==''}">(Required)</span>
                                         </td>
 
                                 </tr>
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">Address: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="address" type="text" class="inputBg" id="address_0" v-model="item.address">
-                                        <span :class = "{error:item.address==''}">(Required)</span></td>
+                                        <span :class="{error:item.address==''}">(Required)</span></td>
                                 </tr>
                                 <!-- <tr>
 
