@@ -17,7 +17,7 @@
                 <input type="hidden" name="order" value="DESC"> -->
             </form>
         </div>
-        <div class="search_num">共<b>{{proNum}}</b>个商品 <span id="search_btn" class="search_btn"></span> </div>
+        <div class="search_num"><b>{{proNum}}</b> product(s) returned<span id="search_btn" class="search_btn"></span> </div>
     </div>
 
 </template>
