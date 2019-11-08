@@ -1,6 +1,6 @@
 <template>
     <div>
-       <current-loc></current-loc>
+       <!-- <current-loc></current-loc> -->
         <!--Above the product details page-->
         <div class="detail cle z-detail-box">
             <div class="detail_wrap">

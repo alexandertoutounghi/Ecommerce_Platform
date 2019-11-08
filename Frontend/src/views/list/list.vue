@@ -1,6 +1,6 @@
 <template>
     <div id="wrapper">
-        <current-loc :curLoc="curLoc"></current-loc>
+        <!-- <current-loc :curLoc="curLoc"></current-loc> -->
         <div class="main cle">
             <list-nav :currentCategoryName="currentCategoryName" :cateMenu="cateMenu" :proNum="proNum" :isObject="isObject" @on-change="changeMenu"></list-nav>
             <div class="maincon">
