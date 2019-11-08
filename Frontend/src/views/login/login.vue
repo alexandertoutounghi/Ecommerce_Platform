@@ -3,7 +3,7 @@
     <div class="c-box bg-box">
       <div class="login-box clearfix">
         <div class="fr form-box">
-          <h2>Account Login</h2>
+          <h2>Login</h2>
           <form id="jsLoginForm" autocomplete="off">
             <input
               type="hidden"
