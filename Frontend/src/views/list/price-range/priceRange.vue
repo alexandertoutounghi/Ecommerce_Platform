@@ -4,7 +4,7 @@
     <div class="bd">
         <dl>
             <dt>Price Ranges: </dt>
-            <dd class="dd-price" style="height: 48px;">
+            <dd class="dd-price">
                 <div class="items cle w500">
                     <div class="link" v-for="item in priceRange" :key="item.id" @click="changePriceRange(item.min,item.max)"> <a class="item">{{item.min}}&nbsp;-&nbsp;{{item.max}}</a> </div>
                     <!-- <div class="link"> <a class="item">20&nbsp;-&nbsp;70</a> </div>
@@ -17,9 +17,9 @@
                     <div class="form-bg">
                         <!-- A form to choose a custom price range. Submit button only shows when clicking in one of the boxes -->
                         <form id="freepriceform" >
-                            <span class="rmb"></span>
+                            <span class="rmb">$</span>
                             <input type="text" value="" name="price_min" id="pricemin" v-model="price_min" @focus="focus=true">
-                            <span class="rmb rmb2"></span>
+                            <span class="rmb rmb2">-      $</span>
                             <input type="text" value="" name="price_max" id="pricemax" v-model="price_max" @focus="focus=true">
                             <input v-show="focus" value="Apply Range" @click="changePriceRange(price_min, price_max)" class="submit">
                         </form>
@@ -39,7 +39,7 @@ import clickoutside from '../../../static/js/clickoutside';
         return {
             price_min: '',
             price_max: '',
-            focus: false //是否获得焦点
+            focus: false // Whether to get focus
         };
     },
     directives: {
@@ -81,7 +81,7 @@ import clickoutside from '../../../static/js/clickoutside';
 .search-options .bd{border:1px solid #eee;border-bottom:0;+zoom:1}
 .search-options dl{padding:10px 0;border-bottom:1px solid #eee;width:100%;position:relative}
 .search-options dt{position:absolute;top:10px;left:10px;font-size:14px}
-.search-options dd{position:relative;padding:0 50px 0 63px;height:24px;overflow:hidden;-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;transition:height .3s}
+.search-options dd{position:relative;padding: 0 0 0 115px;height:24px;overflow:hidden;-webkit-transition:height .3s;-moz-transition:height .3s;-o-transition:height .3s;transition:height .3s}
 .search-options dd .items{padding-top:2px}
 .search-options dd .w500{width:500px}
 .search-options dd .items a{color:#666}
@@ -107,13 +107,13 @@ import clickoutside from '../../../static/js/clickoutside';
     /*line-height:22px*/
 /*}*/
 
-.priceform{position:absolute;top:-11px;left:500px;z-index:10}
+.priceform{position:absolute;top:-11px;left:550px;z-index:10}
 .priceform .form-bg{width:270px;border:1px solid #fff;border-top-color:#eee;padding:8px 15px;+padding-bottom:7px;font-size:0}
-.priceform input{font-size:12px;border:1px solid #eaeaea;padding:3px;height:18px;width:60px;line-height:18px}
+.priceform input{font-size:12px;border:1px solid #eaeaea;padding:3px;height:18px;width:60px;line-height:18px; margin: 0 10px;}
 .priceform input.submit{text-align: center;margin-left: 20px;height:26px;padding:0;line-height:16px;cursor:pointer;background-color:#eaeaea;width:68px;border-color:#e1e1e1;background-color:#eaeaea;background-image:-moz-linear-gradient(#fefefe,#eaeaea);background-image:-webkit-linear-gradient(#fefefe,#eaeaea);background-image:linear-gradient(#fefefe,#eaeaea)}
 .priceform input.submit:hover{background-color:#e4e4e4}
 .priceform span{height:26px;width:12px;display:inline-block;vertical-align:-9px;+vertical-align:-1px;font-size:12px}
-.priceform span.rmb{background-position:-10px -272px}
+.priceform span.rmb{display: contents;}
 .priceform span.rmb2{padding-left:20px;background-position:8px -272px}
 /*.priceform form p{display:none;text-align:right;padding-top:4px}*/
 .priceform form p{text-align:right;padding-top:4px}
