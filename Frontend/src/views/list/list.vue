@@ -114,7 +114,6 @@
                   getCategory({
                     id:this.$route.params.id
                   }).then((response)=> {
-                    console.log(response)
                     // this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
                     this.cateMenu = response.data.sub_cat;
                     this.currentCategoryName = response.data.name
