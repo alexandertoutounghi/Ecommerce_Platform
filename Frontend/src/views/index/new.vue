@@ -2,7 +2,7 @@
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
         <div class="newopro-l fl"> <!-- TREASURE CHEST BANNER AD -->
-          <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a>
+          <a href=""><img src="../../static/images/verticalBanner.jpg" width="224" height="478"></a>
         </div>
         <div class="newopro-r fr">
             <h2 class="index-tt">
@@ -151,9 +151,7 @@ canvas {
 .mb30{margin-bottom:30px;}
 .ovh{overflow: hidden;}
 .border-eee{border: 1px solid #eee;}
-.newopro-l{ width: 224px;height: 478px;}
-.newopro-l { width: 224px;height: 478px;}
-.newopro-l img{ width: 224px;height: 478px;}
+.newopro-l img{height: 1097px;}
 .fl {
     float:left
 }
