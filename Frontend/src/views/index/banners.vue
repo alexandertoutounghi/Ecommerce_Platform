@@ -2,7 +2,8 @@
   <div class="banner-warp">
     <!-- <swiper :options="swiperOption">
       <swiper-slide v-for="item in banners" :key="item.goods"> -->
-        <router-link v-if="banners[0] && banners[0].goods" :to="'/app/home/productDetail/'+banners[0].goods" target = _blank> <img :src="banners[0].image" alt="" /></router-link>
+        <!-- <router-link v-if="banners[0] && banners[0].goods" :to="'/app/home/productDetail/'+banners[0].goods" target = _blank> <img :src="banners[0].image" alt="" /></router-link> -->
+        <img src="../../static/images/timefor.jpg" alt="banner_image" class="banner-img">
       <!-- </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div> -->
     <!-- </swiper> -->
@@ -10,7 +11,14 @@
 </template>
 <style>
   .banner-warp{
-    height:300px;
+    height:350px;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .banner-img {
+    width: 100%;
+    object-fit: cover;
   }
 </style>
 
