@@ -10,7 +10,7 @@
               <!-- On hover of the above li, display drop down -->
               <div class="list">
                 <router-link :to="'/app/home/member/order'">My Current Orders</router-link>
-                <router-link :to="'/app/home/member/collection'">My Order History</router-link>
+                <router-link :to="'/app/home/member/collection'">My Wishlist</router-link>
                 <router-link :to="'/app/home/member/receive'">Modify Addresses</router-link> 
                 <a @click="loginOut">Logout</a>
               </div>
@@ -108,7 +108,8 @@
                     style=" left: 215px; top: 0px;"
                   >
                     <div class="J_subView">
-                      <div v-for="(list, index) in item.sub_cat" :key="index">
+                      <div class="sub_cat" v-for="(list, index) in item.sub_cat" :key="index">
+                        
                         <dl>
                           <dt>
                             <router-link :to="'/app/home/list/'+list.id">{{list.name}}</router-link>
@@ -122,6 +123,7 @@
                             >{{childrenList.name}}</router-link>
                           </dd>
                         </dl>
+                       
                         <div class="clear"></div>
                       </div>
                     </div>
@@ -504,7 +506,7 @@ img {
   width: 360px;
 }
 #header.new_header .search_box .sea_submit {
-  background-color: #2462ff;
+  background-color: #0783d8;
   width: 80px;
   height: 32px;
 }
@@ -745,8 +747,9 @@ img {
 }
 
 .hd_nav {
-  background-color: #2462ff;
+  background-color: #0583d8;
   height: 35px;
+  border: 1px solid #000;
 }
 
 .hd_nav_bd {
@@ -767,21 +770,23 @@ img {
   width: 214px;
   height: 35px;
   color: #fff;
-  background-color: #000;
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 .hd_nav .main_nav .main_nav_link a.meunAll {
   display: block;
   padding: 7px 10px 0 0;
-  height: 25px;
+  height: 28px;
   font-size: 14px;
   text-align: center;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   overflow: hidden;
+  border: 1px solid;
+  border-top: none;
+  border-bottom: none;
 }
 .hd_nav .main_nav .main_nav_link a:hover {
-  color: #ff4500;
   text-decoration: none;
 }
 .hd_nav .main_nav .main_nav_link i {
@@ -817,7 +822,7 @@ img {
   width: 214px;
   padding: 10px 0;
   overflow: hidden;
-  background-color: #3b3b3b;
+  background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
   box-shadow: -2px 4px 4px rgba(200, 200, 200, 0.3);
 }
@@ -838,7 +843,7 @@ img {
 .main_cata li h3 a {
   font-size: 13px;
   font-family: Arial;
-  color: #fff;
+  color: #000000;
 }
 .main_cata li .bd {
   padding: 0 0 6px 14px;
@@ -892,11 +897,10 @@ img {
 }
 .J_subCata .J_subView {
   border: 1px solid #ccc;
-  width: 600px;
   min-height: 228px;
   padding-top: 5px;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #f8f8f8;
   position: relative;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
   padding: 10px;
@@ -956,6 +960,12 @@ img {
   border-color: #0560a0;
 }
 
+.sub_cat {
+  &:hover {
+    background-color: #dedede;
+  }
+}
+
 .clear {
   clear: both;
   height: 0;
@@ -1003,24 +1013,27 @@ img {
   border-color: #000000;
 }
 .new_header .hd_cart .tit span {
-  background-color: #000000;
+  background-color: #f8f8f8;
 }
 
 .hd_cart .tit {
   display: block;
   width: 168px;
-  height: 28px;
+  height: 30px;
   padding-top: 5px;
   position: relative;
   z-index: 10;
   background: #f8f8f8;
-  border: 1px solid #ccc;
-  border-right: 0;
   font-size: 14px;
-  color: #666;
+  color: #000000;
+  border-right: 1px solid;
+  border-left: 1px solid;
 }
+
+
+
 .hd_cart .tit b {
-  color: #aaa;
+  color: #000000;
   margin: 0 8px 0 12px;
   font-size: 16px;
   cursor: pointer;
@@ -1032,12 +1045,12 @@ img {
   display: block;
   width: 34px;
   height: 28px;
-  padding-top: 7px;
-  background-color: #0560a0;
+  padding-top: 5px;
   text-align: center;
   font-size: 12px;
-  color: #fff;
+  color: #000000;
   cursor: pointer;
+  border-top: 1px solid #000000;
 }
 .hd_cart .tit span i {
   display: inline-block;
@@ -1055,10 +1068,10 @@ img {
   top: -6px;
   text-align: center;
   font-size: 12px;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #000;
+  border: 2px solid #ff4600;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  background-color: rgb(150, 179, 252);
+  background-color: #f8f8f8;
   border-radius: 10px;
   padding: 0 5px;
   line-height: 16px;
@@ -1184,7 +1197,7 @@ img {
   width: 137px;
 }
 .hd_cart .list dd a {
-  color: #666;
+  color: #000;
 }
 .hd_cart .list dd h4 {
   height: 20px;
@@ -1203,7 +1216,7 @@ img {
 }
 .hd_cart .list .count {
   background-color: #f5f5f5;
-  color: #666;
+  color: #000;
   padding: 10px 8px 14px;
   position: relative;
 }
