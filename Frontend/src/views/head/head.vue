@@ -109,12 +109,10 @@
                   >
                     <div class="J_subView">
                       <div class="sub_cat" v-for="(list, index) in item.sub_cat" :key="index">
-                        
                         <dl>
                           <dt>
                             <router-link :to="'/app/home/list/'+list.id">{{list.name}}</router-link>
                           </dt>
-
                           <dd>
                             <router-link
                               v-for="childrenList in list.sub_cat"
@@ -123,7 +121,6 @@
                             >{{childrenList.name}}</router-link>
                           </dd>
                         </dl>
-                       
                         <div class="clear"></div>
                       </div>
                     </div>
