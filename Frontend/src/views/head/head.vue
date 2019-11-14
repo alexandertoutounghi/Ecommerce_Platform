@@ -911,7 +911,6 @@ img {
   font-size: 15px;
   font-weight: bold;
   line-height: 30px;
-  text-align: right;
   margin-bottom: 8px;
   margin-right: 5px;
   min-width: 80px;
@@ -1857,6 +1856,7 @@ a.more-btn,
 .productlist li a.productitem span.productimg img {
   width: 230px;
   height: 230px;
+  object-fit: scale-down;
 }
 .cms-box {
   float: left;
