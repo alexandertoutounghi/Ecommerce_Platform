@@ -218,7 +218,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
           }).then((response)=> {
                 console.log(response.data);
                 this.hasFav = true
-                alert('Successfully Added to Favourites');
             }).catch(function (error) {
                 console.log(error);
             });

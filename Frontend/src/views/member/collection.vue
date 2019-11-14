@@ -5,7 +5,7 @@
             <div class="box_1">
                 <div class="userCenterBox boxCenterList clearfix" style="_height:1%; font-size:14px;">
 
-                    <h5><span>My Order History</span></h5>
+                    <h5><span>My Wishlist</span></h5>
                     <div class="blank"></div>
                     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                       <tbody>

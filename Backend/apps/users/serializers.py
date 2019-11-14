@@ -81,18 +81,18 @@ class UserRegSerializer(serializers.ModelSerializer):
         # except VerifyCode.MultipleObjectsReturned as e:
         #     pass
         verify_records = VerifyCode.objects.filter(mobile=self.initial_data["username"]).order_by("-add_time")
-        if verify_records:
-            last_record = verify_records[0]
+        # if verify_records:
+        #     last_record = verify_records[0]
 
-            five_mintes_ago = datetime.now() - timedelta(hours=0, minutes=5, seconds=0)
-            if five_mintes_ago > last_record.add_time:
-                raise serializers.ValidationError("Verification Code Expired")
+        #     five_mintes_ago = datetime.now() - timedelta(hours=0, minutes=5, seconds=0)
+        #     if five_mintes_ago > last_record.add_time:
+        #         raise serializers.ValidationError("Verification Code Expired")
 
-            if last_record.code != code:
-                raise serializers.ValidationError("Invalid verification code")
+        #     if last_record.code != code:
+        #         raise serializers.ValidationError("Invalid verification code")
 
-        else:
-            raise serializers.ValidationError("Invalid verification code")
+        # else:
+        #     raise serializers.ValidationError("Invalid verification code")
 
     def validate(self, attrs):
         attrs["mobile"] = attrs["username"]
