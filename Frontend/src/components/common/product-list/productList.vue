@@ -288,6 +288,6 @@ a.productitem:hover {
 .productlist{width:970px;overflow:hidden}
 .productlist ul{margin-right:-20px}
 .productlist li{width:232px;height:342px;position:relative;float:left;margin:0 14px 14px 0;overflow:hidden;display:inline}
-.productlist li a.productitem span.productimg img{width:230px;height:230px}
+.productlist li a.productitem span.productimg img{width:230px;height:230px;object-fit: scale-down;}
         
 </style>
