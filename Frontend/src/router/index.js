@@ -354,7 +354,7 @@ router.beforeEach((to, from, next) => {
   // } else {
   //   next();
   // }
-  // Used when loggin in
+  //有登录时使用
   // if(to.path !== "/login"&&to.path !== "/home/index"&&to.path !== "/"){
   //    // iView.LoadingBar.start();
   // }

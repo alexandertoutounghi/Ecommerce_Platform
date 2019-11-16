@@ -49,11 +49,11 @@
                                     <label for="five">Buying</label>
 
                                     <!-- <input name="msg_type" type="radio" value="0" checked="checked">
-                                                            <input type="radio" name="msg_type" value="1">
-                                                            <input type="radio" name="msg_type" value="2">
-                                                            <input type="radio" name="msg_type" value="3">
-                                                            <input type="radio" name="msg_type" value="4">
-                                    -->
+                                    留言                        <input type="radio" name="msg_type" value="1">
+                                    投诉                        <input type="radio" name="msg_type" value="2">
+                                    询问                        <input type="radio" name="msg_type" value="3">
+                                    售后                        <input type="radio" name="msg_type" value="4">
+                                    求购 -->
                                 </td>
                             </tr>
                             <tr>
