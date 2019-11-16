@@ -1,8 +1,8 @@
 <template>
     <div class="tag-panel white-bg box-shadow" v-show="visible">
         <div class="tag-title">
-            <span>标签</span>
-            <Checkbox v-model="noTagFile" @on-change="notagChange">无标签文件</Checkbox>
+            <span>Label</span>
+            <Checkbox v-model="noTagFile" @on-change="notagChange">Unlabeled file</Checkbox>
         </div>
         <div class="tag-content">
             <i class="iconfont">&#xe711;</i>

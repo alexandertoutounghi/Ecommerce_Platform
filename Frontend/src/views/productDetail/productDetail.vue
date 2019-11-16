@@ -199,12 +199,12 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 
             // this.$http.post('/shopcart/', {
             //     params: {
-            //         goods: this.productId, // 商品id
-            //         nums: this.proDetail.purNum, // 购买数量
+            //         goods: this.productId, 
+            //         nums: this.proDetail.purNum, 
             //     }
             // }).then((response)=> {
             //     console.log(response.data);
-            //     alert('已成功加入购物车');
+            //     
             //     // 更新store数据
             //     this.$store.dispatch('setShopList');
 

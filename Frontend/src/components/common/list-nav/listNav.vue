@@ -2,49 +2,15 @@
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
             <h3><a href=""><strong>Fresh food</strong><i id="total_count">14 products in total</i></a></h3>
-<!--             <dl>
-                <dt>精品肉类</dt>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=64">羊肉</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=65">禽类</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=66">猪肉</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=67">牛肉</a> </dd>
-
-                <dt>海鲜水产</dt>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=68">参鲍</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=69">鱼</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=70">虾</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=71">蟹/贝</a> </dd>
-
-                <dt>蛋制品</dt>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=72">松花蛋/咸鸭蛋</a> </dd>
-                <dd> <a href="http://sx.web51.youxueshop.com/category.php?id=73">鸡蛋</a> </dd>
-
-            </dl> -->
             <dl>
                 <template v-for="item in cateMenu">
                     <dt :key="item.id">{{ item.name }}</dt>
                     <dd v-for="subItem in item.children">
-                        <a href="http://sx.web51.youxueshop.com/category.php?id=64">{{ subItem.name}}</a>
                     </dd>
                 </template>
                 
             </dl>
         </div>
-    <!--<div class="fixed-want" id="fixed-want">-->
-        <!--<div class="hd">大牌推荐</div>-->
-        <!--<div class="bd" style="border-top:0;">-->
-
-
-            <!--<dl class="brand">-->
-                <!--<dd>-->
-                    <!--<a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;brand=9" target="_blank" rel="nofollow">金赏</a>-->
-                    <!--<a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;brand=1" target="_blank" rel="nofollow">艾尔Aier</a>-->
-                    <!--<a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;brand=2" target="_blank" rel="nofollow">发育宝Haipet</a>-->
-                    <!--<p class="more"><a href="http://sx.web51.youxueshop.com/brand.php">更多&gt;</a></p>-->
-                <!--</dd>-->
-            <!--</dl>-->
-        <!--</div>-->
-    <!--</div>-->
     </div>
   
 </template>
@@ -52,115 +18,7 @@
   export default {
     data () {
         return {
-            cateMenu: [
-                {
-                    id: 123,
-                    name: '精品肉类',
-                    link: '',
-                    children: [
-                        {
-                            id: 111,
-                            name: '羊肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '牛肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '猪肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '鸡肉',
-                            link: ''
-                        },
-
-                    ]
-                },
-                {
-                    id: 123,
-                    name: '海鲜水产',
-                    link: '',
-                    children: [
-                        {
-                            id: 111,
-                            name: '鱼',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '虾',
-                            link: ''
-                        }
-
-                    ]
-                },
-                {
-                    id: 123,
-                    name: '精品肉类',
-                    link: '',
-                    children: [
-                        {
-                            id: 111,
-                            name: '羊肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '牛肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '猪肉',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '鸡肉',
-                            link: ''
-                        },
-
-                    ]
-                },
-                {
-                    id: 123,
-                    name: '叶菜类',
-                    link: '',
-                    children: [
-                        {
-                            id: 111,
-                            name: '生菜',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '菠菜',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '圆椒',
-                            link: ''
-                        },
-                        {
-                            id: 111,
-                            name: '西兰花',
-                            link: ''
-                        },
-
-                    ]
-                },
-                {
-                    id: 123,
-                    name: '叶菜类',
-                    link: ''
-                },
-            ]
+            cateMenu: []
         };
     },
     components: {
