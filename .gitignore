@@ -2,3 +2,6 @@
 bin
 lib
 pyvenv.cfg
+db_tools
+docs
+.idea

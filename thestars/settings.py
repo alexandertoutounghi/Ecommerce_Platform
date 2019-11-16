@@ -96,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "thestars",
         'USER': 'root',
-        'PASSWORD': "d6N3Z2h8",
+        'PASSWORD': "your_local_mysql_pwd",
         'HOST': "localhost",
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
