@@ -64,7 +64,7 @@
                 type: String,
                 default: 0
             },
-            state: String, // Description
+            state: String, // 说明
             // associateFile: {
             //     type: Object,
             //     default: function () {
@@ -85,7 +85,7 @@
 
         },
         methods: {
-            spread() { // Handles expand/collapse
+            spread() { //Handles expand/collapse
                 if (!this.isSpread) {
                     this.$refs.selectedBox.style.overflow = 'auto'
                     this.$refs.selectedBox.style.height = 'inherit';
@@ -140,6 +140,7 @@
         margin-bottom: 20px;
     }
     .control {
+        // 颜色要改 加一个统一的类
         color: #5bbede;
         cursor: pointer;
     }

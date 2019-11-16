@@ -105,11 +105,14 @@ export default {
       // })
       //   .then((response)=> {
       //     console.log(response);
+      //     //本地存储用户信息
       //     cookie.setCookie('name',response.data.info.name,7);
       //     cookie.setCookie('id',response.data.info.id,7)
+      //     //存储在store
+      //     // 更新store数据
       //     this.$store.dispatch('setInfo');
 
-      //     
+      //     //跳转到首页页面
       //     this.$router.push({ name: 'index'})
 
       //   })

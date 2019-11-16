@@ -1,5 +1,5 @@
 import LoadingComponent from './loading.vue'
-// Initialize values
+//这里是初始值
 const defaults={
 	target:"",
 	text:"",
@@ -37,14 +37,14 @@ const loading = {
     		}
     	})
       Vue.nextTick(function(){
-        // Determine if loading is added to the target element, or if we need to remove it
+        //判断target元素中是否添加了loading  如果有移除
         var target = document.querySelector(data.target);
         console.log(target);
         var loadingDom = target.getElementsByClassName("pio-loading2");
         if(loadingDom.length>0){
           target.removeChild(loadingDom[0]);
         }
-        // Insert the loading component onto the target element
+        //将loading组件插入到target元素上
         document.querySelector(data.target).appendChild(loadings.$mount().$el); 
       })
 
