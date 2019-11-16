@@ -1,12 +1,12 @@
 
 import contextmenuComponent from './contextmenu'
-//这里是初始值
+// Set initial value
 const defaults={
     event:''
 
 }
 
-//合并函数
+// Merge function
 function merge(target) {
   for (let i = 1, j = arguments.length; i < j; i++) {
     let source = arguments[i] || {};
@@ -22,15 +22,15 @@ function merge(target) {
   return target;
 };
 
-//插件注册
+// Registration plug-in
 const contextmenu = {
   install: function(Vue) {
     var contextmenuConstructor = Vue.extend(contextmenuComponent);
 
     Vue.prototype.$contextmenu = function(options){
-        //console.log(options)
+        // console.log(options)
         var event =event||window.event;
-        //var data = merge({},defaults,options);
+        // var data = merge({},defaults,options);
         var contextmenuVm = new contextmenuConstructor({
             data(){
                 return {
@@ -48,14 +48,13 @@ const contextmenu = {
                     }
                 },
                 rightClick(fn){
-                    fn()//执行事件
-                    //删除dom
+                    fn()// Execution event
                     this.removeDom()
                 }
             }
         })
        Vue.nextTick(function(){
-         //将loading组件插入到target元素上
+         // Insert loading component on the next target element
         document.body.appendChild(contextmenuVm.$mount().$el); 
         var menu = document.getElementById('contextMenu');
         var left = event.clientX + 5, /* nudge to the right, so the pointer is covering the title */

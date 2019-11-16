@@ -24,24 +24,6 @@
                                 <a class="f6" :style="{color: 'red'}" @click="deletePro(index, item.goods.id)">Delete</a>
                             </td>
                         </tr>
-                        <!-- <tr>
-                            <td bgcolor="#ffffff"><a href="http://sx.web51.youxueshop.com/goods.php?id=2" class="f6">田然牛肉大黄瓜条生鲜牛肉冷冻真空黄牛</a></td>
-                            <td bgcolor="#ffffff">          本店价<span class="goods-price">￥70元</span>
-                            </td>
-                            <td align="center" bgcolor="#ffffff">
-                                <a href="javascript:if (confirm(&#39;确定将此商品加入关注列表么？&#39;)) location.href=&#39;user.php?act=add_to_attention&amp;rec_id=30&#39;" class="f6">关注</a>
-                                <a href="javascript:addToCart(2)" class="f6">加入购物车</a> <a href="javascript:if (confirm(&#39;您确定要从收藏夹中删除选定的商品吗？&#39;)) location.href=&#39;user.php?act=delete_collection&amp;collection_id=30&#39;" class="f6">删除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff"><a href="http://sx.web51.youxueshop.com/goods.php?id=1" class="f6">新鲜水果甜蜜香脆单果约800克</a></td>
-                            <td bgcolor="#ffffff">          促销价<span class="goods-price">￥156元</span>
-                            </td>
-                            <td align="center" bgcolor="#ffffff">
-                                <a href="javascript:if (confirm(&#39;确定将此商品加入关注列表么？&#39;)) location.href=&#39;user.php?act=add_to_attention&amp;rec_id=29&#39;" class="f6">关注</a>
-                                <a href="javascript:addToCart(1)" class="f6">加入购物车</a> <a href="javascript:if (confirm(&#39;您确定要从收藏夹中删除选定的商品吗？&#39;)) location.href=&#39;user.php?act=delete_collection&amp;collection_id=29&#39;" class="f6">删除</a>
-                            </td>
-                        </tr> -->
                       </tbody>
                     </table>
                     <form name="selectPageForm" action="" method="get">
@@ -65,24 +47,7 @@
     export default {
         data () {
             return {
-                collections: [
-                    // {
-                    //     id: '3243', // 商品ID
-                    //     title: '田然牛肉大黄瓜条生鲜牛肉冷冻真空黄牛', // 商品名称
-                    //     price: 24 //价格
-                    // },
-                    // {
-                    //     id: 'dsfsd', // 商品ID
-                    //     title: '新鲜水果甜蜜香脆单果约800克', // 商品名称
-                    //     price: 24 //价格
-                    // },
-                    // {
-                    //     id: 'fsdfg', // 商品ID
-                    //     title: '田然牛肉大黄瓜条生鲜牛肉冷冻真空黄牛', // 商品名称
-                    //     price: 24 //价格
-                    // },
-
-                ]
+                collections: []
             };
         },
         props: {
@@ -108,7 +73,7 @@
                     console.log(error);
                 });
             },
-            // toProductionDetail (id) { //商品详情页
+            // toProductionDetail (id) { // Product details page
             //     this.$router.push({name:'productDetail', params: {productId: id}});
             // },
             concern (id) { //"Join attention" - I think this might be alerts?
