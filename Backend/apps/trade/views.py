@@ -94,3 +94,4 @@ class OrderViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.Crea
             shop_cart.delete()
         return order
 
+

@@ -97,6 +97,7 @@ DATABASES = {
         'NAME': "thestars",
         'USER': 'root',
         'PASSWORD': "your_local_mysql_pwd",
+
         'HOST': "localhost",
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }

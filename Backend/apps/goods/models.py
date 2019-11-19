@@ -145,3 +145,4 @@ class IndexAd(models.Model):
 
     def __str__(self):
         return self.goods.name
+

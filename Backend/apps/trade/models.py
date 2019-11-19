@@ -32,6 +32,7 @@ class ShoppingCart(models.Model):
 class OrderInfo(models.Model):
     """
     Orders
+
     """
     ORDER_STATUS = (
         ("TRADE_SUCCESS", "Success"),
@@ -55,6 +56,7 @@ class OrderInfo(models.Model):
     pay_time = models.DateTimeField(null=True, blank=True, verbose_name="Pay Time")
 
     # User Info
+
     address = models.CharField(max_length=100, default="", verbose_name="Shipping Address")
     signer_name = models.CharField(max_length=20, default="", verbose_name="Receipt")
     singer_mobile = models.CharField(max_length=11, verbose_name="Phone Number")

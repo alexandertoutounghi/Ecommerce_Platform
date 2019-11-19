@@ -25,6 +25,7 @@ User = get_user_model()
 class CustomBackend(ModelBackend):
     """
     Costumed User Verification
+
     """
 
     def authenticate(self, username=None, password=None, **kwargs):
@@ -78,6 +79,7 @@ class SmsCodeViewset(CreateModelMixin, viewsets.GenericViewSet):
         #     return Response({
         #         "mobile": mobile
         #     }, status=status.HTTP_201_CREATED)
+
 
 
 class UserViewset(CreateModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):

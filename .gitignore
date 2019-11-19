@@ -2,6 +2,6 @@
 bin
 lib
 pyvenv.cfg
-db_tools
-docs
-.idea
+
+Frontend/node_modules
+Frontend/package-lock.json

@@ -29,6 +29,7 @@ from trade.views import ShoppingCartViewset, OrderViewset
 from user_operation.views import UserFavViewset, LeavingMessageViewset, AddressViewset
 from users.views import UserViewset, SmsCodeViewset
 
+
 router = DefaultRouter()
 
 # configure goods url
@@ -56,6 +57,7 @@ router.register(r'indexgoods', IndexCategoryViewset, base_name="indexgoods")
 
 # Registration Code
 router.register(r'codes', SmsCodeViewset, base_name="codes")
+
 
 
 urlpatterns = [

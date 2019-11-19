@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand, HotSearchWords, IndexAd
+
+from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand
 
 
 # https://www.django-rest-framework.org/api-guide/serializers/
@@ -46,6 +47,7 @@ class HotWordsSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner
@@ -81,3 +83,4 @@ class IndexCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = GoodsCategory
         fields = "__all__"
+
