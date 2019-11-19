@@ -117,3 +117,32 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.goods.name
+
+
+class HotSearchWords(models.Model):
+    """
+    Popular search
+    """
+    keywords = models.CharField(default="", max_length=20, verbose_name="Popular Search")
+    index = models.IntegerField(default=0, verbose_name="Sorting")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="Added Time")
+
+    class Meta:
+        verbose_name = 'Popular Search'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.keywords
+
+
+class IndexAd(models.Model):
+    category = models.ForeignKey(GoodsCategory, related_name='category', verbose_name="Product Categories")
+    goods = models.ForeignKey(Goods, related_name='goods')
+
+    class Meta:
+        verbose_name = 'Product Categories Advertising on HomePage'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.goods.name
+
