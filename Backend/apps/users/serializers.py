@@ -51,6 +51,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 
 
 class UserRegSerializer(serializers.ModelSerializer):
+
     # code = serializers.CharField(required=True, write_only=True, max_length=4, min_length=4, label="Verification code",
     #                              error_messages={
     #                                  "blank": "Please input verification code",
@@ -59,6 +60,7 @@ class UserRegSerializer(serializers.ModelSerializer):
     #                                  "min_length": "Invalid verification code format"
     #                              },
     #                              help_text="Verification Code")
+
     username = serializers.CharField(label="Username", help_text="Username", required=True, allow_blank=False,
                                      validators=[
                                          UniqueValidator(queryset=User.objects.all(), message="User already exists")])
@@ -81,6 +83,7 @@ class UserRegSerializer(serializers.ModelSerializer):
         # except VerifyCode.MultipleObjectsReturned as e:
         #     pass
         verify_records = VerifyCode.objects.filter(mobile=self.initial_data["username"]).order_by("-add_time")
+
         # if verify_records:
         #     last_record = verify_records[0]
 
@@ -97,8 +100,10 @@ class UserRegSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         attrs["mobile"] = attrs["username"]
         # del attrs["code"]
+
         return attrs
 
     class Meta:
         model = User
+
         fields = ("username", "mobile", "password")
