@@ -1,124 +1,124 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ROOT_PATH = path.resolve(__dirname);
+Var webpack = require('webpack');
+Var path = require('path');
+Var HtmlWebpackPlugin = require('html-webpack-plugin');
+Var ROOT_PATH = path.resolve(__dirname);
 
-module.exports = {
-   // devtool: 'source-map', // 配置生成Source Maps 选择合适的选项
-    entry: {
-        // app: path.resolve(__dirname,'./src/main.js'),
-        index: './src/main.js',
-    },
-    output: {
-        // path: __dirname + '/public', // 打包后文件存放位置
-        //path: __dirname + '/dist', // 打包后文件存放位置
-        path: path.resolve(__dirname, 'dist'),
-        filename: "[name].entry.js",
-        chunkFilename: "[name].min.js",
-        publicPath: ''
-    },
-    plugins: [
-        /*
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENY: '"production'
-            }
-        }), */
-        // 压缩代码
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          },
-          sourceMap: true
-        }),
-        // new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'template.html',
-            inject: true
-        }),
-        // new webpack.optimize.CommonsChunkPlugin({name:'vendor',filename:'vendor.bundle.js'})
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.$': 'jquery',
-        })
-    ],
-    resolve: {
-        // require时省略的扩展名
-        extensions: ['.js', '.vue', '.json'],
-        alias: {
-            'vue$': 'vue/dist/vue.common.js'
-        }
-    },
-    /*
-    externals: {
-        jquery: 'window.$'
-    }, */
-    module: {
-        loaders: [
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                /*
-                options: {
-                    loaders: {
-                        css: ExtractTextPlugin.extract({
-                            use: 'css-loader',
-                            fallback: 'vue-style-loader'
-                        })
-                    }
-                } */
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-                /*
+Module.exports = {
+   // devtool: 'source-map', // configure to generate Source Maps and select the appropriate option
+    Entry: {
+        // app: path.resolve(__dirname,'./src/main.js'),
+        Index: './src/main.js',
+    },
+    Output: {
+        // path: __dirname + '/public', // file location after packaging
+        //path: __dirname + '/dist', // file location after packaging
+        Path: path.resolve(__dirname, 'dist'),
+        Filename: "[name].entry.js",
+        chunkFilename: "[name].min.js",
+        publicPath: ''
+    },
+    Plugins: [
+        /*
+        New webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENY: '"production'
+            }
+        }), */
+        // Compress code
+        New webpack.optimize.UglifyJsPlugin({
+          Compress: {
+            Warnings: false
+          },
+          sourceMap: true
+        }),
+        // new webpack.optimize.UglifyJsPlugin({minimize: true}),
+        New HtmlWebpackPlugin({
+            Filename: 'index.html',
+            Template: 'template.html',
+            Inject: true
+        }),
+        // new webpack.optimize.CommonsChunkPlugin({name:'vendor',filename:'vendor.bundle.js'})
+        New webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+        })
+    ],
+    Resolve: {
+        // extension omitted when require
+        Extensions: ['.js', '.vue', '.json'],
+        Alias: {
+            'vue$': 'vue/dist/vue.common.js'
+        }
+    },
+    /*
+    Externals: {
+        Jquery: 'window.$'
+    }, */
+    Module: {
+        Loaders: [
+            {
+                Test: /\.vue$/,
+                Loader: 'vue-loader',
+                /*
+                Options: {
+                    Loaders: {
+                        Css: ExtractTextPlugin.extract({
+                            Use: 'css-loader',
+                            Fallback: 'vue-style-loader'
+                        })
+                    }
+                } */
+            },
+            {
+                Test: /\.css$/,
+                Loader: 'style-loader!css-loader'
+                /*
 
-                options: {
-                    loaders: {
-                        css: ExtractTextPlugin.extract({
-                            use: 'css-loader'
-                        })
-                    }
-                } */
-            },
-            {
-                test: /\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader'
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg|jpg)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 100000,
-                    name: '/static/images/[name].[hash:7].[ext]'
-                }
-            },
-            {
-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'static/fonts/[name].[hash:7].[ext]'
-                }
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                query: {
-                    compact: false
-                }
-            },
-            {
-                test: /\.exec\.js$/,
-                use: [ 'script-loader' ]
-            }
-        ]
-    },
+                Options: {
+                    Loaders: {
+                        Css: ExtractTextPlugin.extract({
+                            Use: 'css-loader'
+                        })
+                    }
+                } */
+            },
+            {
+                Test: /\.scss$/,
+                Loader: 'style-loader!css-loader!sass-loader'
+            },
+            {
+                Test: /\.json$/,
+                Loader: 'json-loader'
+            },
+            {
+                Test: /\.(png|jpe?g|gif|svg|jpg)(\?.*)?$/,
+                Loader: 'url-loader',
+                Options: {
+                    Limit: 100000,
+                    Name: '/static/images/[name].[hash:7].[ext]'
+                }
+            },
+            {
+                Test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                Loader: 'url-loader',
+                Options: {
+                    Limit: 10000,
+                    Name: 'static/fonts/[name].[hash:7].[ext]'
+                }
+            },
+            {
+                Test: /\.js$/,
+                Loader: 'babel-loader',
+                Query: {
+                    Compact: false
+                }
+            },
+            {
+                Test: /\.exec\.js$/,
+                Use: [ 'script-loader' ]
+            }
+        ]
+    },
 }
