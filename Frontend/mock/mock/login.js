@@ -1,10 +1,7 @@
-module.exports = {
-    msg:'登录成功',
-    info:{
-        name:'admin',
-        id:1
-    }
+Module.exports = {
+     Msg: 'Login successful',
+     Info:{
+         Name: 'admin',
+         Id:1
+     }
 }
-
-
-
