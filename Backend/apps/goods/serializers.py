@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand
+from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand, HotSearchWords
 
 
 # https://www.django-rest-framework.org/api-guide/serializers/

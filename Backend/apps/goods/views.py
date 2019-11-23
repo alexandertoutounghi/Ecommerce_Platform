@@ -1,18 +1,18 @@
 # Create your views here.
 from rest_framework.response import Response
 
-
-from .models import Goods, GoodsCategory
-from .serializers import GoodsSerializer, CategorySerializer
+from .models import Goods, GoodsCategory, HotSearchWords, Banner
+from .serializers import GoodsSerializer, CategorySerializer, HotWordsSerializer, BannerSerializer, \
+    IndexCategorySerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import viewsets
 from rest_framework import mixins
+from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
 
 
 # from rest_framework_extensions.cache.mixins import CacheResponseMixin
-
 
 
 # https://www.django-rest-framework.org/api-guide/generic-views/
@@ -27,7 +27,6 @@ class GoodsPagination(PageNumberPagination):
 class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
     Product List, Pagination, Search, Filter, Ordering
-
     """
     # throttle_classes = (UserRateThrottle, )
     queryset = Goods.objects.all()
@@ -35,7 +34,6 @@ class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewset
     pagination_class = GoodsPagination
     # authentication_classes = (TokenAuthentication, )
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-
     filter_class = GoodsFilter
     search_fields = ('name', 'goods_brief', 'goods_desc')
     ordering_fields = ('sold_num', 'shop_price')
