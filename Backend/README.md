@@ -1,13 +1,13 @@
 # COMP354Project
 COMP 354 Project 
 Instructions:
-1. Install [Python 3.6.0]:https://www.python.org/downloads/release/python-360/
+1. Install [Python 3.6.0](https://www.python.org/downloads/release/python-360/)
    * Make sure its added to your PATH variable.
    * run from command line/terminal `python -V` to ensure your python version is 3.6.0
 2. Install WAMP/LAMP
-   * (For Windows) Install [WAMP]:https://sourceforge.net/projects/wampserver/
-   * (For Mac) Follow thses [Installation Instructions]:https://jasonmccreary.me/articles/install-apache-php-mysql-mac-os-x/
-   * (for Debian based Linux): [Installation Instructions]:https://howtoubuntu.org/how-to-install-lamp-on-ubuntu
+   * (For Windows) Install [WAMP](https://sourceforge.net/projects/wampserver/)
+   * (For Mac) Follow thses [Installation Instructions](https://jasonmccreary.me/articles/install-apache-php-mysql-mac-os-x/)
+   * (for Debian based Linux): [Installation Instructions](https://howtoubuntu.org/how-to-install-lamp-on-ubuntu)
 3. Clone this repository make sure you are located in the **Backend/** Directory
 4. In your terminal/console Run:
 5. `pip install virtualenv`
