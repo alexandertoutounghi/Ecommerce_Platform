@@ -1,9 +1,13 @@
 # Create your views here.
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from .models import Goods, GoodsCategory, HotSearchWords, Banner
+from utils.permissions import IsOwnerOrReadOnly
+from .models import Goods, GoodsCategory, HotSearchWords, Banner, ProductRating
 from .serializers import GoodsSerializer, CategorySerializer, HotWordsSerializer, BannerSerializer, \
-    IndexCategorySerializer
+    IndexCategorySerializer, ProductRatingSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import viewsets
 from rest_framework import mixins
@@ -79,3 +83,23 @@ class IndexCategoryViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     queryset = GoodsCategory.objects.filter(is_tab=True, name__in=["FreshFood", "Drinks"])
     serializer_class = IndexCategorySerializer
+
+
+class ProductRatingViewset(mixins.ListModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin,
+                           viewsets.GenericViewSet):
+    """
+    list:
+        Get user comment
+    create:
+        Add user comment
+    delete:
+        Delete user comment
+    """
+
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    serializer_class = ProductRatingSerializer
+
+    def get_queryset(self):
+        return ProductRating.objects.all()
+    #     # return UserLeavingMessage.objects.filter(user=self.request.user)

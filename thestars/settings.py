@@ -96,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "thestars",
         'USER': 'root',
-        'PASSWORD': "your_local_mysql_pwd",
+        'PASSWORD': "d6N3Z2h8",
         'HOST': "localhost",
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
@@ -152,8 +152,8 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema'
 }
 
-# 手机号码正则表达式
-REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
+
+REGEX_MOBILE = "^[54]\d{9}$|^147\d{8}$|^176\d{8}$"
 
 import datetime
 

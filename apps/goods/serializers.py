@@ -1,5 +1,7 @@
+from django.db.models import Q
 from rest_framework import serializers
-from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand, HotSearchWords, IndexAd
+from .models import Goods, GoodsCategory, GoodsImage, Banner, GoodsCategoryBrand, HotSearchWords, IndexAd, \
+    ProductRating
 
 
 # https://www.django-rest-framework.org/api-guide/serializers/
@@ -81,3 +83,14 @@ class IndexCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = GoodsCategory
         fields = "__all__"
+
+
+class ProductRatingSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
+    add_time = serializers.DateTimeField(read_only=True, format='%Y-%m-%d %H:%M')
+
+    class Meta:
+        model = ProductRating
+        fields = ("goods", "user", "rating_star", "subject", "message", "add_time")

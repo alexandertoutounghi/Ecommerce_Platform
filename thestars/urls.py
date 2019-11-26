@@ -21,7 +21,8 @@ import xadmin
 from thestars.settings import MEDIA_ROOT
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
-from goods.views import GoodsListViewSet, CategoryViewset, HotSearchsViewset, BannerViewset, IndexCategoryViewset
+from goods.views import GoodsListViewSet, CategoryViewset, HotSearchsViewset, BannerViewset, IndexCategoryViewset, \
+    ProductRatingViewset
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
@@ -43,6 +44,8 @@ router.register(r'userfavs', UserFavViewset, base_name="userfavs")
 # router.register(r'hotsearchs', HotSearchsViewset, base_name="hotsearchs")
 # Comments
 router.register(r'messages', LeavingMessageViewset, base_name="messages")
+# Product Rating
+router.register(r'rating', ProductRatingViewset, base_name="rating")
 # Shipping address
 router.register(r'address', AddressViewset, base_name="address")
 # Shopping cart URL
