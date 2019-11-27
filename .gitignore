@@ -5,7 +5,7 @@ pyvenv.cfg
 # These are setup files for the frontend that can be ingored
 Frontend/node_modules
 Frontend/package-lock.json
-Frontend/.babelrc
+# Frontend/.babelrc
 Frontend/package.json
 # These are setup files for the backend that can be ingored.
 Backend/thestars/Scripts/*
