@@ -1,6 +1,6 @@
 // Bootstrap-Vue, and FontAwesome Additions
 // ===============================================================================================
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
