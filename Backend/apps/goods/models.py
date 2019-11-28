@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 # Create your models here.
 from django.utils.datetime_safe import datetime
 
@@ -61,7 +63,8 @@ class Goods(models.Model):
     """
     category = models.ForeignKey(GoodsCategory, verbose_name="Goods Category")
     goods_sn = models.CharField(max_length=50, default="", verbose_name="SKU")
-    name = models.CharField(max_length=100, verbose_name="Goods Name")
+    name = models.CharField(max_length=100, verbose_name="Name")
+    seller = models.ForeignKey(User, null=True, blank=True, verbose_name="Seller")
     click_num = models.IntegerField(default=0, verbose_name="Clicks")
     sold_num = models.IntegerField(default=0, verbose_name="Sales")
     fav_num = models.IntegerField(default=0, verbose_name="favorite",
@@ -102,7 +105,35 @@ class GoodsImage(models.Model):
         return self.goods.name
 
 
-class Banner(models.Model):
+class ProductRating(models.Model):
+    """
+    Product Rating
+    """
+    RATING_STARS = (
+        (1, "One Star"),
+        (2, "Two Star"),
+        (3, "Three Star"),
+        (4, "Four Star"),
+        (5, "Five Star")
+    )
+    goods = models.ForeignKey(Goods, verbose_name="goods")
+    user = models.ForeignKey(User, verbose_name="User")
+    rating_star = models.IntegerField(default=1, choices=RATING_STARS, verbose_name="Product Rating",
+                                      help_text="Rating Star: 1(One Star),2(Two Star),3(Three Star),4(Four Star),"
+                                                "5(Five Star)")
+    subject = models.CharField(max_length=100, default="", verbose_name="Subject")
+    message = models.TextField(default="", verbose_name="Content", help_text="Content")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="Add Time")
+
+    class Meta:
+        verbose_name = "Product Rating"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.message
+
+
+class Banner(models.Model):	class Banner(models.Model):
     """
     featured goods (banner on homepage)
     """
