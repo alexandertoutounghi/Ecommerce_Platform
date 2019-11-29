@@ -1,7 +1,10 @@
 <template>
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
-            <h3 v-if="isObject"><a href=""><strong>{{currentCategoryName}}</strong><i id="total_count">Total Count: {{proNum}} Units</i></a></h3>
+            <div v-if="isObject" class="cat_info-container">
+                <p class="cat_title">{{currentCategoryName}}</p>
+                <p id="total_count">Total Count: {{proNum}} Units</p>
+            </div>
             <dl>
                 <template v-for="item in cateMenu">
                     <dt :key="item.id">{{ item.name }}</dt>
@@ -129,6 +132,17 @@ table {
 .cle,.clearfix,.clear_f,.cle_float {
     *zoom:1
 }
+
+.cat_info-container {
+    padding: 10px
+}
+
+.cat_title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
 .fl {
     float:left
 }

@@ -1,7 +1,40 @@
 # COMP354Project
 COMP 354 Project 
-<<<<<<< HEAD
-=======
+Instructions:
+1. Install [Python 3.6.0](https://www.python.org/downloads/release/python-360/)
+   * Make sure its added to your PATH variable.
+   * run from command line/terminal `python -V` to ensure your python version is 3.6.0
+2. Install WAMP/LAMP
+   * (For Windows) Install [WAMP](https://sourceforge.net/projects/wampserver/)
+   * (For Mac) Follow thses [Installation Instructions](https://jasonmccreary.me/articles/install-apache-php-mysql-mac-os-x/)
+   * (for Debian based Linux): [Installation Instructions](https://howtoubuntu.org/how-to-install-lamp-on-ubuntu)
+3. Clone this repository make sure you are located in the **Backend/** Directory
+4. In your terminal/console Run:
+5. `pip install virtualenv`
+6. `cd thestars/`
+7.  `source bin/activate` (or) `source Scripts/activate.bat`
+8. `pip install -r requirements.txt`
+9. run 'python manage.py createsuperuser', then enter 'admin', passcode 'thestarsadmin'(to be consistency in all tests)
+10. Edit settings.py USER and PASSWORD under DATABASES, put your MySQL username and password, there. 
+11. Login to MySQL Terminal or MySQL Manager
+12. run `create database thestars` on terminal or create database using MySQL Manager
+13. run `python manage.py makemigrations`
+14. run `python manage.py migrate`
+15. run `python manage.py runserver localhost:443` or `python manage.py runserver 127.0.0.1:443`
+
+You are able to visit the backend system 127.0.0.1:443 now.
+path: 127.0.0.1:443/xadmin   to access backend dashboard
+path: 127.0.0.1:443/docs   to access project docs
+
+Remote server address: http://173.249.5.177:443/
+nohup python3 manage.py runserver 0.0.0.0:443 &
+
+Make MySQL Data Structure in pycharm:
+Tools -> Run manage.py Task -> makemigrations (Populate the data changes)
+Tools -> Run manage.py Task -> migrate (Populate the data structure in MySQL)
+
+========================================================================================================================================
+
 System requirement
 
 pip install .....
@@ -47,15 +80,5 @@ password in JSON in http header to get auth token.
 
 * For front end. When using the API which requires auth, use Scheme 'JWT'
 
-* SERVER SETUP
-https://blog.csdn.net/qq_34272964/article/details/79726713
-pip install virtualenv
-virtualenv thestars
-
-* start env:
-cd thestars/
-source bin/activate
-python -V
 
 
->>>>>>> origin/backend_with_mockdata_dongzhang

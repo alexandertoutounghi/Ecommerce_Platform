@@ -1,13 +1,22 @@
 # Create your views here.
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from .models import Goods, GoodsCategory
-from .serializers import GoodsSerializer, CategorySerializer
+from utils.permissions import IsOwnerOrReadOnly
+from .models import Goods, GoodsCategory, HotSearchWords, Banner, ProductRating
+from .serializers import GoodsSerializer, CategorySerializer, HotWordsSerializer, BannerSerializer, \
+    IndexCategorySerializer, ProductRatingSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import viewsets
 from rest_framework import mixins
+from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import GoodsFilter
+
+
+# from rest_framework_extensions.cache.mixins import CacheResponseMixin
 
 
 # https://www.django-rest-framework.org/api-guide/generic-views/
@@ -19,16 +28,16 @@ class GoodsPagination(PageNumberPagination):
     max_page_size = 100
 
 
-class GoodsListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class GoodsListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     """
-    List all goods
+    Product List, Pagination, Search, Filter, Ordering
     """
     # throttle_classes = (UserRateThrottle, )
     queryset = Goods.objects.all()
     serializer_class = GoodsSerializer
     pagination_class = GoodsPagination
     # authentication_classes = (TokenAuthentication, )
-    filter_backends = (DjangoFilterBackend,)
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
     filter_class = GoodsFilter
     search_fields = ('name', 'goods_brief', 'goods_desc')
     ordering_fields = ('sold_num', 'shop_price')
@@ -50,3 +59,47 @@ class CategoryViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
     """
     queryset = GoodsCategory.objects.filter(category_type=1)
     serializer_class = CategorySerializer
+
+
+class HotSearchsViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Get popular search list
+    """
+    queryset = HotSearchWords.objects.all().order_by("-index")
+    serializer_class = HotWordsSerializer
+
+
+class BannerViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Get featured product list, banners on home page
+    """
+    queryset = Banner.objects.all().order_by("index")
+    serializer_class = BannerSerializer
+
+
+class IndexCategoryViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Product categories data on home page
+    """
+    queryset = GoodsCategory.objects.filter(is_tab=True, name__in=["FreshFood", "Drinks"])
+    serializer_class = IndexCategorySerializer
+    
+
+class ProductRatingViewset(mixins.ListModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin,
+                           viewsets.GenericViewSet):
+    """
+    list:
+        Get user comment
+    create:
+        Add user comment
+    delete:
+        Delete user comment
+    """
+
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    serializer_class = ProductRatingSerializer
+
+    def get_queryset(self):
+        return ProductRating.objects.all()
+    #     # return UserLeavingMessage.objects.filter(user=self.request.user)

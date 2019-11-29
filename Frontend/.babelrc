@@ -1,24 +1,22 @@
 {
   "presets": [
-      [
-          "env",
-          {
-              "modules": false
-          }
-      ],
-      "stage-2"
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "stage-2"
   ],
   "plugins": [
-      "transform-runtime",
-      "transform-es2015-destructuring",
-      "transform-object-rest-spread"
+    "transform-runtime",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
   ],
   "comments": false,
   "env": {
-      "test": {
-          "plugins": [
-              "istanbul"
-          ]
-      }
+    "test": {
+      "plugins": ["istanbul"]
+    }
   }
 }

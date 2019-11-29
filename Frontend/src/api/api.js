@@ -5,16 +5,16 @@ let host = 'http://shop.projectsedu.com';
 // let host = 'http://127.0.0.1:8000';
 let host354 = 'http://173.249.5.177:443';
 
-//获取商品类别信息
+// Get product category information
 export const queryCategorygoods = params => { return axios.get(`${host354}/indexgoods/`) }
 
-//获取首页中的新品
+// Get new products from the homepage
 export const newGoods = params => { return axios.get(`${host}/newgoods/`) }
 
-//获取轮播图
+// Get the banner carousel
 export const bannerGoods = params => { return axios.get(`${host}/banners/`) }
 
-//获取商品类别信息
+// Get product category information
 export const getCategory = params => {
   if('id' in params){
     return axios.get(`${host354}/categorys/`+params.id+'/');
@@ -25,33 +25,37 @@ export const getCategory = params => {
 };
 
 
-//获取热门搜索关键词
+// Get popular search keywords
 export const getHotSearch = params => { return axios.get(`${host}/hotsearchs/`) }
 
-//获取商品列表
+// Get a list of products
 export const getGoods = params => { return axios.get(`${host354}/goods/`, { params: params }) }
 
-//商品详情
+// Product details
 export const getGoodsDetail = goodId => { return axios.get(`${host354}/goods/${goodId}`+'/') }
 
-//获取购物车商品
+// Get shopping cart items
 export const getShopCarts = params => { return axios.get(`${host354}/shopcarts/`) }
-// 添加商品到购物车
+
+// Add item to cart
 export const addShopCart = params => { return axios.post(`${host354}/shopcarts/`, params) }
-//更新购物车商品信息
+
+// Update shopping cart product information
 export const updateShopCart = (goodsId, params) => { return axios.patch(`${host354}/shopcarts/`+goodsId+'/', params) }
-//删除某个商品的购物记录
+
+// Delete item from shopping cart
 export const deleteShopCart = goodsId => { return axios.delete(`${host354}/shopcarts/`+goodsId+'/') }
 
-//收藏
+// Add item to wishlist
 export const addFav = params => { return axios.post(`${host354}/userfavs/`, params) }
 
-//取消收藏
+// Remove item from wishlist
 export const delFav = goodsId => { return axios.delete(`${host354}/userfavs/`+goodsId+'/') }
 
+// Get all items from wishlist
 export const getAllFavs = () => { return axios.get(`${host354}/userfavs/`) }
 
-//判断是否收藏
+// Get specific item from wishlist
 export const getFav = goodsId => { return axios.get(`${host354}/userfavs/`+goodsId+'/') }
 
 // A POST REQUEST
@@ -59,48 +63,47 @@ export const login = params => {
   return axios.post(`${host354}/login/`, params)
 }
 
-//注册
+// Register new user
+export const register = params => { return axios.post(`${host354}/users/`, params) }
 
-export const register = parmas => { return axios.post(`${host354}/users/`, parmas) }
-
-//短信
+// Get SMS text message (function discontinued)
 export const getMessage = parmas => { return axios.post(`${host}/code/`, parmas) }
 
-
-//获取用户信息
+// Get user's information
 export const getUserDetail = () => { return axios.get(`${host354}/users/1/`) }
 
-//修改用户信息
+// Modify user's information
 export const updateUserInfo = params => { return axios.patch(`${host354}/users/1/`, params) }
 
-
-//获取订单
+// Get all user's orders
 export const getOrders = () => { return axios.get(`${host354}/orders/`) }
-//删除订单
+
+// Remove a user order
 export const delOrder = orderId => { return axios.delete(`${host354}/orders/`+orderId+'/') }
-//添加订单
+
+// Create new user order
 export const createOrder = params => {return axios.post(`${host354}/orders/`, params)}
-//获取订单详情
+
+// Get user's order details
 export const getOrderDetail = orderId => {return axios.get(`${host354}/orders/`+orderId+'/')}
 
-
-//获取留言
+// Get messages
 export const getMessages = () => {return axios.get(`${host354}/messages/`)}
 
-//添加留言
+// Add a message
 export const addMessage = params => {return axios.post(`${host354}/messages/`, params, {headers:{ 'Content-Type': 'multipart/form-data' }})}
 
-//删除留言
+// Delete a message
 export const delMessages = messageId => {return axios.delete(`${host354}/messages/`+messageId+'/')}
 
-//添加收货地址
+// Add user address
 export const addAddress = params => {return axios.post(`${host354}/address/`, params)}
 
-//删除收货地址
+// Delete user address
 export const delAddress = addressId => {return axios.delete(`${host354}/address/`+addressId+'/')}
 
-//修改收货地址
+// Modify user address
 export const updateAddress = (addressId, params) => {return axios.patch(`${host354}/address/`+addressId+'/', params)}
 
-//获取收货地址
+// Get user's addresses
 export const getAddress = () => {return axios.get(`${host354}/address/`)}

@@ -12,7 +12,7 @@
 @time: 2017/7/4 17:04
 """
 import xadmin
-from .models import Goods, GoodsCategory, GoodsImage, GoodsCategoryBrand, Banner
+from .models import Goods, GoodsCategory, GoodsImage, GoodsCategoryBrand, Banner, ProductRating
 
 
 class GoodsAdmin(object):
@@ -49,7 +49,17 @@ class GoodsBrandAdmin(object):
         return context
 
 
-class BannerGoodsAdmin(object):
+class ProductRatingAdmin(object):
+    list_display = ["goods", "user", "rating_star", "subject", "message"]
+
+    def get_context(self):
+        context = super(ProductRatingAdmin, self).get_context()
+        if 'form' in context:
+            context['form'].fields['rating_star'].queryset = GoodsCategory.objects.filter(category_type=1)
+        return context
+
+
+    class BannerGoodsAdmin(object):	class BannerGoodsAdmin(object):
     list_display = ["goods", "image", "index"]
 
 
@@ -65,4 +75,5 @@ xadmin.site.register(Goods, GoodsAdmin)
 xadmin.site.register(GoodsCategory, GoodsCategoryAdmin)
 xadmin.site.register(Banner, BannerGoodsAdmin)
 xadmin.site.register(GoodsCategoryBrand, GoodsBrandAdmin)
+xadmin.site.register(ProductRating, ProductRatingAdmin)
 

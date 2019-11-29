@@ -21,12 +21,14 @@ import xadmin
 from thestars.settings import MEDIA_ROOT
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
-from goods.views import GoodsListViewSet, CategoryViewset
+from goods.views import GoodsListViewSet, CategoryViewset, HotSearchsViewset, BannerViewset, IndexCategoryViewset, ProductRatingViewset
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 
-from user_operation.views import UserFavViewset
-from users.views import UserViewset
+from trade.views import ShoppingCartViewset, OrderViewset
+from user_operation.views import UserFavViewset, LeavingMessageViewset, AddressViewset
+from users.views import UserViewset, SmsCodeViewset
+
 
 router = DefaultRouter()
 
@@ -38,6 +40,27 @@ router.register(r'categorys', CategoryViewset, base_name="categorys")
 router.register(r'users', UserViewset, base_name="users")
 # Wish list
 router.register(r'userfavs', UserFavViewset, base_name="userfavs")
+# # Popular search
+# router.register(r'hotsearchs', HotSearchsViewset, base_name="hotsearchs")
+# Comments
+router.register(r'messages', LeavingMessageViewset, base_name="messages")
+# Product Rating
+router.register(r'rating', ProductRatingViewset, base_name="rating")
+# Shipping address
+router.register(r'address', AddressViewset, base_name="address")
+# Shopping cart URL
+router.register(r'shopcarts', ShoppingCartViewset, base_name="shopcarts")
+# Order relevant URL
+router.register(r'orders', OrderViewset, base_name="orders")
+# Banners relevant URL on HomePage (Featured Products)
+router.register(r'banners', BannerViewset, base_name="banners")
+# Product Series Data
+router.register(r'indexgoods', IndexCategoryViewset, base_name="indexgoods")
+
+# Registration Code
+router.register(r'codes', SmsCodeViewset, base_name="codes")
+
+
 
 urlpatterns = [
     url('xadmin/', xadmin.site.urls),
