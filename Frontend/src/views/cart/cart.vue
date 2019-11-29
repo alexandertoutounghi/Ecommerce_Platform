@@ -61,7 +61,27 @@
           </div>
           <div class="pay">
             <p class="title">Select Payment Method</p>
-            <p class="payWrap"><img v-for="item in payWrapList" :key="item.id" src="../../static/images/paypal.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)"></p>
+            <div class="payWrap">
+              <img v-for="item in payWrapList" :key="item.id" src="../../static/images/paypal.jpg" :class="{'payWrapActive':payWrapActive==item.id}" @click="selectPay(item.id)">
+              <div class="payCredentials" id="payCreds">
+                <form id="credsForm">
+                  <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="credsField" required>
+                  </div>
+                  <div class="credsPass">
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="password" class="credsField" required>
+                  </div>
+                  <div class="credsSubmit">
+                    <input type="submit" class="credsSubmit_btn" v-on:click="acceptLogin" value="Log in">
+                    <div class="loader" id="loader"></div>
+                    <div class="tick-mark" id="tick-mark"></div>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
           </div>
         </div>
         <textarea type="text" v-model="post_script" placeholder="Please enter a message" style="margin-top: 10px; height:50px;width: 100%;">
@@ -195,6 +215,9 @@
       },
       selectPay(id){
         this.payWrapActive = id;
+        var payCreds = document.getElementById("payCreds");
+
+        payCreds.classList.add("active");
       },
       getAllAddr () {
         getAddress().then((response)=> {
@@ -242,6 +265,22 @@
             });
           }
       },
+      acceptLogin: function(e){
+        var loader = document.getElementById("loader");
+        var tickMark = document.getElementById("tick-mark");
+        var form = document.getElementById("credsForm");
+        var checkoutBtn = document.getElementById("checkout-top");
+
+        if(form.checkValidity()) {
+          e.preventDefault();
+          loader.classList.add("active");
+          setTimeout(function(){
+           loader.classList.remove("active");
+           tickMark.classList.add("active");
+           }, 3000);
+           checkoutBtn.disabled = false;
+        } 
+      },
     }
   }
 </script>
@@ -253,7 +292,9 @@
     border:1px solid #2462ff !important;
   }
   .payWrap{
-    padding:0 10px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    display: flex;
   }
   .extr {
     padding: 0 0px;
@@ -296,6 +337,100 @@
     width: 150px;
     height: 80px;
     cursor: pointer;
+  }
+
+  .payCredentials {
+    display: none;
+    margin-left: 20px;
+  }
+
+  .credsPass {
+    margin-top: 8px;
+  }
+
+  .credsSubmit {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .credsSubmit_btn {
+    padding: 3px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #009bde;
+    color: #fff;
+  }
+
+  .credsSubmit_btn:hover {
+    background-color: #047caf;
+  }
+
+  .loader {
+    border: 3px solid #fafafa;
+    border-top: 3px solid #2362ff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: spin-data-v-ab080f58 2s linear infinite;
+    animation: spin-data-v-ab080f58 2s linear infinite;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: none;
+  }
+
+  .loader.active {
+    display: block;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .tick-mark {
+    position: relative;
+    display: inline-block;
+    width: 33px;
+    height: 26px;
+    margin-left: 10px;
+    display: none;
+  }
+
+  .tick-mark.active {
+    display: block;
+  }
+
+  .tick-mark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 29%;
+    width: 2px;
+    background-color: #25a61d;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+  }
+
+  .tick-mark::after {
+    position: absolute;
+    left: -4px;
+    bottom: 13px;
+    height: 2px;
+    width: 65%;
+    background-color: #25a61d;
+    content: "";
+    transform: translateX(10px) rotate(-48deg);
+  }
+
+  .payCredentials.active {
+    display: block;
+  }
+
+  .credsField {
+    border: none;
+    background: #fafafa;
+    border-bottom: 1px solid #737373;
   }
   #main{
     width:1008px;
@@ -352,6 +487,7 @@
   .cart-box .hd span.no4 {
     width:170px
   }
+
   .goods-list {
     margin-bottom:8px
   }
