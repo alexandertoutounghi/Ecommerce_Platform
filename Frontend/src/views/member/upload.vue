@@ -12,35 +12,43 @@
                                 <tbody>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Good Category: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.category"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">SKU: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.sku"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Goods Name: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.name"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Stock: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.stock"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Market Price: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.market_price"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Shop Price: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.shop_price"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Brief Description: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.brief_description"></textarea></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Description: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.description"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="28%" align="right" bgcolor="#FFFFFF">Front Page Image: </td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input type='file' name="fileupload" value="fileupload" id="fileupload" @change="processFrontImage($event)"></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="28%" align="right" bgcolor="#FFFFFF">Images: </td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input type='file' id="file" ref="myFiles" @change="processImgFiles($event)" multiple></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
@@ -59,18 +67,30 @@
     </div>
 </template>
 <script>
-import datepicker from 'vue-date'
-import {getUserDetail, updateUserInfo} from '../../api/api'
     export default {
         data () {
             return {
-                userInfo: {
-                    birthday: '',
-                    sex: '',
-                    email: '',
-                    phone: '',
-                }
+                good: {
+                    category: '',
+                    sku: '',
+                    name: '',
+                    stock: '',
+                    market_price: '',
+                    shop_price: '',
+                    brief_description: '',
+                    description: '',
+                    front_img: '',
+                    images: []
+                },
             };
+        },
+        methods: {
+            processFrontImage(event) {
+                this.good.front_img = event.target.files[0];
+            },
+            processImgFiles(event) {
+                this.good.images = this.$refs.myFiles.files
+            }
         }
     }
 </script>
