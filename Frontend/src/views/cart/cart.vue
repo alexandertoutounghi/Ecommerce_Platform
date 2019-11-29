@@ -269,7 +269,6 @@
         var loader = document.getElementById("loader");
         var tickMark = document.getElementById("tick-mark");
         var form = document.getElementById("credsForm");
-        var checkoutBtn = document.getElementById("checkout-top");
 
         if(form.checkValidity()) {
           e.preventDefault();
@@ -278,7 +277,6 @@
            loader.classList.remove("active");
            tickMark.classList.add("active");
            }, 3000);
-           checkoutBtn.disabled = false;
         } 
       },
     }
