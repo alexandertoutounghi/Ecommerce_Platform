@@ -6,9 +6,8 @@ pyvenv.cfg
 Frontend/node_modules
 Frontend/package-lock.json
 Frontend/.babelrc
-Frontend/package.json
+# Frontend/package.json
 # These are setup folders for the backend that can be ingored.
 Backend/thestars/Scripts/*
 Backend/thestars/Include/*
 Backend/thestars/tcl/*
-Frontend/package.json
