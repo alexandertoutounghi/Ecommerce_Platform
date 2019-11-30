@@ -12,6 +12,7 @@
                 <router-link :to="'/app/home/member/order'">My Current Orders</router-link>
                 <router-link :to="'/app/home/member/collection'">My Wishlist</router-link>
                 <router-link :to="'/app/home/member/receive'">Modify Addresses</router-link> 
+                <router-link :to="'/app/home/member/upload'">Upload item</router-link>
                 <a @click="loginOut">Logout</a>
               </div>
             </div>

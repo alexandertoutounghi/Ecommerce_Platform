@@ -33,6 +33,7 @@ import order from '../views/member/order'
 import orderDetail from '../views/member/orderDetail'
 import collection from '../views/member/collection'
 import userinfo from '../views/member/userinfo'
+import upload from '../views/member/upload'
 import register from '../views/register/register'
 
 // Alternative router set-up shown below - Can probably be deleted but kept for now just in case
@@ -262,6 +263,15 @@ var router = new Router({
                 component: userinfo,
                 meta: {
                   title: 'User Info',
+                  need_log: true
+                }
+              },
+              {
+                path: 'upload',
+                name: 'upload',
+                component: upload,
+                meta: {
+                  title: 'Upload Item',
                   need_log: true
                 }
               },
