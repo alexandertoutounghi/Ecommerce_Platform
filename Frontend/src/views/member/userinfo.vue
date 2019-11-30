@@ -63,7 +63,7 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
             return {
                 userInfo: {
                     birthday: '',
-                    gender: '',
+                    sex: '',
                     email: '',
                     phone: '',
                 }
