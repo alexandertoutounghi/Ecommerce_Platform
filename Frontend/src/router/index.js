@@ -34,6 +34,7 @@ import orderDetail from '../views/member/orderDetail'
 import collection from '../views/member/collection'
 import userinfo from '../views/member/userinfo'
 import upload from '../views/member/upload'
+import storeItems from '../views/member/storeItems'
 import register from '../views/register/register'
 
 // Alternative router set-up shown below - Can probably be deleted but kept for now just in case
@@ -275,6 +276,15 @@ var router = new Router({
                   need_log: true
                 }
               },
+              {
+                path: 'storeItems',
+                name: 'storeItems',
+                component: storeItems,
+                meta: {
+                  title: 'See store items',
+                  need_log: true
+                }
+              }
             ]
           }
         ]

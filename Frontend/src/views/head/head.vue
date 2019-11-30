@@ -12,7 +12,8 @@
                 <router-link :to="'/app/home/member/order'">My Current Orders</router-link>
                 <router-link :to="'/app/home/member/collection'">My Wishlist</router-link>
                 <router-link :to="'/app/home/member/receive'">Modify Addresses</router-link> 
-                <router-link :to="'/app/home/member/upload'">Upload item</router-link>
+                <router-link :to="'/app/home/member/upload'">Add new item</router-link>
+                <router-link :to="'/app/home/member/storeItems'">See items in store</router-link>
                 <a @click="loginOut">Logout</a>
               </div>
             </div>
