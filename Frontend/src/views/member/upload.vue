@@ -53,7 +53,7 @@
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
                                             <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
-                                            <button class="btn_blue_1" style="border:none;" @click="confirmModify">Add Item</button>
+                                            <button class="btn_blue_1" style="border:none;" @click="addItemToStore">Add Item</button>
                                             <!-- <input name="submit" type="submit" value="确认修改" class="btn_blue_1" style="border:none;"> -->
                                         </td>
                                     </tr>
@@ -67,20 +67,28 @@
     </div>
 </template>
 <script>
+import {addItem} from '../../api/api'
     export default {
         data () {
             return {
                 good: {
-                    category: '',
-                    sku: '',
-                    name: '',
-                    stock: '',
-                    market_price: '',
-                    shop_price: '',
-                    brief_description: '',
-                    description: '',
+                    category: 'Food',
+                    sku: '464',
+                    name: 'Test',
+                    seller: 'Admin',
+                    click_num: 0,
+                    sold_num: 0,
+                    fav_num: 0,
+                    stock: '10',
+                    market_price: '10.00',
+                    shop_price: '5.00',
+                    brief_description: 'This is a test for adding items',
+                    description: 'this is a test for adding items',
+                    ship_free: true,
                     front_img: '',
-                    images: []
+                    is_new: true,
+                    is_hot: false,
+                    add_time: 0,
                 },
             };
         },
@@ -90,6 +98,13 @@
             },
             processImgFiles(event) {
                 this.good.images = this.$refs.myFiles.files
+            },
+            addItemToStore() {
+                addItem(this.good).then((response)=> {
+                    alert('Item successfully added');
+                }).catch(function (error) {
+                    console.log(error);
+                });
             }
         }
     }
