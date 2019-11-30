@@ -1,6 +1,6 @@
 // Bootstrap-Vue, and FontAwesome Additions
 // ===============================================================================================
-// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -16,9 +16,16 @@ import {
   BRow,
   BCol,
   BButton,
-  BProgress
+  BProgress,
+  BBadge,
+  BInputGroup,
+  BInputGroupPrepend,
+  BInputGroupAppend,
+  BInputGroupText,
+  BInputGroupAddon,
+  BFormInput
 } from "bootstrap-vue";
-
+Vue.component("b-badge", BBadge);
 Vue.component("b-container", BContainer);
 Vue.component("b-form-textarea", BFormTextarea);
 Vue.component("b-row", BRow);
@@ -26,6 +33,12 @@ Vue.component("b-col", BCol);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("b-button", BButton);
 Vue.component("b-progress", BProgress);
+Vue.component("b-input-group", BInputGroup);
+Vue.component("b-input-group-prepend", BInputGroupPrepend);
+Vue.component("b-input-group-append", BInputGroupAppend);
+Vue.component("b-input-group-text", BInputGroupText);
+Vue.component("b-input-group-addon", BInputGroupAddon);
+Vue.component("b-form-input", BFormInput);
 
 library.add(faUserCircle, faStar, faThumbsUp, faThumbsDown);
 
