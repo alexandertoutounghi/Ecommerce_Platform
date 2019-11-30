@@ -28,7 +28,8 @@
             <div class="root_node"><i class="iconfont">&#xe645;</i>Seller Features</div>
             <ul>
                 <li>
-                    <a :class="{on: current==='upload'}" @click="toUpload">Sell Item</a>
+                    <a :class="{on: current==='upload'}" @click="toUpload">Add New Item</a>
+                    <a :class="{on: current==='storeItems'}" @click="toStoreItems">Items in Store</a>
                 </li>
             </ul>
         </li>
@@ -84,6 +85,10 @@
             toUpload () {
                 this.current = 'upload';
                 this.$router.push({name: 'upload'});
+            },
+            toStoreItems () {
+                this.current = 'storeItems';
+                this.$router.push({name: 'storeItems'});
             }
         }
     }
