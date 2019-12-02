@@ -3,7 +3,8 @@ import axios from 'axios';
 
 let host = 'http://shop.projectsedu.com';
 // let host = 'http://127.0.0.1:8000';
-let host354 = 'http://173.249.5.177:443';
+//let host354 = 'http://173.249.5.177:443';
+let host354 = 'http://142.44.242.138:444';
 
 // Get product category information
 export const queryCategorygoods = params => { return axios.get(`${host354}/indexgoods/`) }
@@ -107,3 +108,6 @@ export const updateAddress = (addressId, params) => {return axios.patch(`${host3
 
 // Get user's addresses
 export const getAddress = () => {return axios.get(`${host354}/address/`)}
+
+// Add item to the store
+export const addItem = (params) => {return axios.post(`${host354}/goods/`, params)}
