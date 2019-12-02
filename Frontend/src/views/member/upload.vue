@@ -64,7 +64,7 @@
     </div>
 </template>
 <script>
-//import {addItem} from '../../api/api'
+import {addItem} from '../../api/api'
 import axios from 'axios'
     export default {
         data () {
@@ -115,7 +115,7 @@ import axios from 'axios'
                     add_time: this.good.add_time,
                 }
                 console.log(newGood);
-                axios.post('http://142.44.242.138:444/goods')
+                axios.post('http://142.44.242.138:444/goods/', newGood)
                 .then((response) => {
                     console.log(response);
                 })

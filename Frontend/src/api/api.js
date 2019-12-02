@@ -110,4 +110,4 @@ export const updateAddress = (addressId, params) => {return axios.patch(`${host3
 export const getAddress = () => {return axios.get(`${host354}/address/`)}
 
 // Add item to the store
-export const addItem = (params) => {return axios.post(`${host354}/goods/`, params)}
+export const addItem = (params) => {return axios.post(`${host354}/goods`, params)}
