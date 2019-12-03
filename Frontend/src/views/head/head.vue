@@ -964,6 +964,12 @@ img {
   }
 }
 
+.first {
+  &:hover {
+    background-color: #dedede;
+  }
+}
+
 .clear {
   clear: both;
   height: 0;

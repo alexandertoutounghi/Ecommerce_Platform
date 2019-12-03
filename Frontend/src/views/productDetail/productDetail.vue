@@ -17,7 +17,7 @@
                         <a class="next" href="javascript:void(0);" @click="ImageNext"></a> -->
                         <div class="bd">
                             <div class="tempWrap" style="overflow:hidden; position:relative; width:330px">
-                                <ul class="cle" style="width: 330px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+                                <ul class="cle" style="display: flex;justify-content: center;width: 330px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
                                     <li v-for="(item,index) in proDetail.images" :class="{'current': index===curIndex}" @click="replaceShow(index,item)" :key="item.id">
                                         <a>
                                             <img :src="item.image" alt="">
