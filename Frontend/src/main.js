@@ -30,7 +30,6 @@ Vue.component("b-progress", BProgress);
 library.add(faUserCircle, faStar, faThumbsUp, faThumbsDown);
 
 // ===============================================================================================
-import mock from "../mock/mock.js";
 import $ from "jquery";
 import Vue from "vue";
 import "./styles/common.scss";
