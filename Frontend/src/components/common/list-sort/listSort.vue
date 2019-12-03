@@ -2,8 +2,8 @@
     <div class="sort">
         <div class="bd">
             <form method="GET" name="listform">
-                <a title="销量" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=sales_volume_base&amp;order=ASC#goods_list" class="curr" rel="nofollow"><span class="search_DESC">销量</span></a>
-                <a title="价格" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=shop_price&amp;order=ASC#goods_list" rel="nofollow"><span class="">价格</span></a>
+                <a title="" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=sales_volume_base&amp;order=ASC#goods_list" class="curr" rel="nofollow"><span class="search_DESC"></span></a>
+                <a title="" href="http://sx.web51.youxueshop.com/category.php?category=2&amp;display=grid&amp;brand=0&amp;price_min=0&amp;price_max=0&amp;filter_attr=0&amp;page=1&amp;sort=shop_price&amp;order=ASC#goods_list" rel="nofollow"><span class=""></span></a>
                 <input type="hidden" name="category" value="2">
                 <input type="hidden" name="display" value="grid" id="display">
                 <input type="hidden" name="brand" value="0">
@@ -16,7 +16,7 @@
             </form>
         </div>
         <div class="search_num">Total <b>14</b> Products <span id="search_btn" class="search_btn"><a href="javascript:void(0);" class="iconfont"></a> <span>
-        <em>1</em> /2 </span> <a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC" class="iconfont"></a> </span> </div>
+        <em>1</em> /2 </span> <a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC" class="iconfont"></a> </span> </div>
     </div>
   
 </template>

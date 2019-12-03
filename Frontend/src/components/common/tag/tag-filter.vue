@@ -36,7 +36,7 @@
             }
         },
         created () {
-            // 请求tag数据
+            
             this.getTags();
             
         },

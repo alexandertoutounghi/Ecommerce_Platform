@@ -3,7 +3,7 @@
     <div class="search-options" id="search-options">
     <div class="bd">
         <dl>
-            <dt>价格：</dt>
+            <dt></dt>
             <dd class="dd-price" style="height: 48px;">
                 <div class="items cle w500">
                     <div class="link"> <a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=20&amp;price_max=70" class="item">20&nbsp;-&nbsp;70</a> </div>
@@ -21,7 +21,7 @@
                             <span class="rmb rmb2"></span>
                             <input type="text" value="" name="price_max" id="pricemax">
                             <p>
-                                <input type="submit" value="确定" onclick="return makeUri();" class="submit">
+                                <input type="submit" value="" onclick="return makeUri();" class="submit">
                             </p>
                         </form>
                     </div>

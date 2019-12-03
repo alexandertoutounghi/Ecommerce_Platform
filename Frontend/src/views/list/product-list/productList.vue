@@ -16,7 +16,7 @@
                     <!-- <span class="price">{{item.price}}</span> -->
                     <span class="salerow">Units Sold: <span class="sales">{{item.sold_num}}</span></span>
                 </router-link>
-                <!--<a class="addcart" target="_blank" rel="nofollow" @click="addShoppingCart">加入购物车</a>-->
+                <!--<a class="addcart" target="_blank" rel="nofollow" @click="addShoppingCart"></a>-->
             </li>
         </ul>
     <br clear="all">
@@ -48,7 +48,7 @@
 
         },
         methods: {
-            addShoppingCart () { //加入购物车
+            addShoppingCart () { 
 
                 this.$http.post('/product/addShoppingCart', {
                     params: {

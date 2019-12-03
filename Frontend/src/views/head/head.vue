@@ -232,7 +232,7 @@ export default {
       // this.$http.get('/getMenu')
       //     .then((response)=> {
 
-      //跳转到登录
+      
       // this.$router.push({ name: 'login' })
       //     })
       //     .catch(function (error) {

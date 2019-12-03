@@ -7,10 +7,10 @@
                     <img src="../../../static/images/file.png">
                 </div>
                 <div class="item-intro">
-                    <p><span class="item-title" @click="itemClick(index)">{{ item.name }}来源于什么什么什么</span><i class="iconfont">&#xe682;</i><span class="item-time float-right">{{item.updateTime}}</span></p>
+                    <p><span class="item-title" @click="itemClick(index)">{{ item.name }}</span><i class="iconfont">&#xe682;</i><span class="item-time float-right">{{item.updateTime}}</span></p>
                     
                     <i class="iconfont icon-tag">&#xe711;</i>
-                    <span v-if="!item.tags.length">暂无</span>
+                    <span v-if="!item.tags.length"></span>
                     <Tag v-if="item.tags.length" class="tag-btn" v-for="(tagItem,index) in item.tags" :key="index">{{tagItem.tagName}}</Tag>
                 </div>
             </li>
@@ -57,7 +57,7 @@
             },
             itemSelected (materialId) {
                 
-                // 已存在
+                
                 if (this.selectedArr.indexOf(materialId) !== -1) {
                     this.selectedArr.splice(this.selectedArr.indexOf(materialId), 1);
                 } else {

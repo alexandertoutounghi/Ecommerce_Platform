@@ -4,7 +4,7 @@
             <li>
                 <span class="currentStep">1</span>
                 <a href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC" class="step">2</a>
-                <a class="nextLink" href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC">下一页</a>
+                <a class="nextLink" href="http://sx.web51.youxueshop.com/category.php?id=2&amp;price_min=0&amp;price_max=0&amp;page=2&amp;sort=sales_volume_base&amp;order=DESC"></a>
 
             </li>
         </ul>
