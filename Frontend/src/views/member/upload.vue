@@ -115,11 +115,11 @@ import axios from 'axios'
                     add_time: this.good.add_time,
                 }
                 console.log(newGood);
-                axios.post('http://142.44.242.138:444/goods/', newGood)
+                axios.post('http://142.44.242.138:444/goods/goods/add/', newGood)
                 .then((response) => {
                     console.log(response);
                 })
-                .catch((error) =>{
+                .catch((error) => {
                     console.log(error);
                 });
             }

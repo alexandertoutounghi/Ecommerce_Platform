@@ -36,6 +36,7 @@ import userinfo from '../views/member/userinfo'
 import upload from '../views/member/upload'
 import storeItems from '../views/member/storeItems'
 import register from '../views/register/register'
+import password from '../views/login/password'
 
 // Alternative router set-up shown below - Can probably be deleted but kept for now just in case
 
@@ -159,6 +160,19 @@ var router = new Router({
         },
         meta: {
           title: 'Register',
+          need_log: false
+        }
+      },
+      {
+        path: 'password',
+        name: 'password',
+        components: {
+          head: loginHead,
+          content: password,
+          footer: footer,
+        },
+        meta: {
+          title: 'Reset Password',
           need_log: false
         }
       },
