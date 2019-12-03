@@ -592,10 +592,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     margin:20px auto 0;
     position:relative
 }
-.detail_img .pic_view img {
-    width:380px;
-    height:380px
-}
 
 .detail_img {
     width:410px;
@@ -613,7 +609,8 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 }
 .detail_img .pic_view img {
     width:380px;
-    height:380px
+    height:380px;
+    object-fit: scale-down;
 }
 #pic-view {
     position:absolute;

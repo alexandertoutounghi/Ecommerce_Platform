@@ -12,7 +12,7 @@
         <ul>
           <li class="cle hover" style="border-bottom-style: none;" v-for="(item,index) in goods.goods_list" :key="index">
             <div class="pic">
-              <a> <img :alt="item.goods.name" :src="item.goods.goods_front_image"></a>
+              <a> <img class="cart_image" :alt="item.goods.name" :src="item.goods.goods_front_image"></a>
             </div>
             <div class="name">
               <a>{{item.goods.name}}</a>
@@ -486,6 +486,9 @@
     width:170px
   }
 
+  .cart_image {
+    object-fit: scale-down;
+  }
   .goods-list {
     margin-bottom:8px
   }
