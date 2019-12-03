@@ -1,19 +1,19 @@
 <template>
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
-        <div class="newopro-l fl"> <!-- TREASURE CHEST BANNER AD -->
+        <div class="newopro-l fl">
           <a href=""><img src="../../static/images/verticalBanner.jpg" width="224" height="478"></a>
         </div>
-        <div class="newopro-r fr">
+        <div class="newopro-r">
             <h2 class="index-tt">
-                <em class="ft18 c000">Just Released New Products</em>
-                <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">More &gt;&gt;</a></router-link>
+                <em class="ft18 c000">New arrivals</em>
+                <!-- <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">More &gt;&gt;</a></router-link> -->
             </h2>
             <ul class="newgoods_fastbuy">
                 <li class="prolist-cent clearfix have_num" v-for="(item, index) in newopro" :key="index">
                     <div class="prolist-l fl">
                     <router-link :to="'/app/home/productDetail/'+item.id"  target = _blank> <a  :title="item.name" class="imgBox">
-                    <img :src="item.goods_front_image" style="height: 158px;width: 158px;" class="zom"> 
+                    <img :src="item.goods_front_image" class="zom"> 
                     <!-- removed alt text so it would display properly while we have no images -->
                     </a></router-link>
                     </div>
@@ -22,8 +22,8 @@
                         <router-link :to="'/app/home/productDetail/'+item.id"  :title="item.name" target = _blank>{{item.name}}</router-link>
                         </h3>
                         <p><em class="c333"></em>{{item.goods_brief}}</p><div>
-                        <span class="p-price"><em class="fastbuy_price">${{item.shop_price}}</em><del>Original Price:${{item.market_price}}</del></span>
-                        <a href="" class="p-buy fr ibg">Buy Now</a>
+                        <span class="p-price"><del class="before_price">${{item.market_price}}</del><em class="fastbuy_price">${{item.shop_price}}</em></span>
+                        <!-- <a href="" class="p-buy fr ibg">Buy Now</a> -->
                         <span class="p-time fr">Sales: {{item.sold_num}} Units</span>
                     </div>
                     </div>
@@ -158,11 +158,17 @@ canvas {
 .fr {
     float:right
 }
-.index-tt{ line-height: 60px;}
+.index-tt{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin-top: 20px;
+}
+
 .ft18{font-size: 18px;}
 .c000{color: #000;}
 .c333{ color: #333;}
-.prolist-cent{ padding: 15px 0 30px; border-bottom: 1px solid #eee;}
+.prolist-cent{ height: 150px; padding: 25px 0 30px; border-bottom: 1px solid #eee;}
 .prolist-cent:last-child{border-bottom:none;}
 .clearfix:after,.clear_f:after{
     visibility:hidden;
@@ -175,18 +181,28 @@ canvas {
 .clearfix{
     *zoom:1;
 }
-.prolist-l{ padding: 0 50px;}
+.prolist-l{ padding: 0 20px 0 50px;}
 .prolist-l .imgBox{ width: 158px; height: 158px;}
 
 .prolist-r{ padding-left: 15px; width: 655px;}
 .prolist-r h3{ line-height: 34px;}
 .prolist-r p{ line-height: 20px; max-height: 40px; overflow: hidden; color: #999;}
-.prolist-r div{line-height: 56px; padding-top: 12px;}
+.prolist-r div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
 .ft14{font-size: 14px;}
 .bold{font-weight:bold;}
-.p-price{ color: #f40;}
-.p-price i{font-size: 20px; }
-.p-price em{font-size: 28px;margin-right: 10px;}
+.p-price{font-size: 20px; margin-bottom: 10px;}
+.p-price i{font-size: 20px;}
+.p-price em{
+    color: #f40;
+    margin-left: 10px;
+}
+.before-price {
+    color: #000;
+}
 .p-time .ibg{ width: 17px; height: 17px; background-position: 0 -17px; margin-right: 5px;}
 .ibg{
 /* background: url(images/indexico.png) no-repeat;*/
@@ -194,5 +210,11 @@ canvas {
 .p-buy:hover{color: #fff;}
 .p-buy{width: 188px; height: 56px; line-height: 56px; color: #fff; font-weight:bold; font-size: 18px; text-indent: 78px; background-position: 0 -36px; margin-left: 25px;}
 .p-buy:hover{text-decoration: none;}
+.zom {
+    height: 158px;
+    width: 158px;
+    object-fit: scale-down;
+    object-position: left;
+}
 
 </style>

@@ -3,7 +3,10 @@ import axios from 'axios';
 
 let host = 'http://shop.projectsedu.com';
 // let host = 'http://127.0.0.1:8000';
+<<<<<<< HEAD
 //let host354 = 'http://173.249.5.177:443';
+=======
+>>>>>>> master
 let host354 = 'http://142.44.242.138:444';
 
 // Get product category information

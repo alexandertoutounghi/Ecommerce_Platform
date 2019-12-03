@@ -162,7 +162,7 @@
                 <dl v-for="(item,index) in goods_list.goods_list" :key="index">
                   <dt>
                     <router-link :to="'/app/home/productDetail/'+item.goods.id">
-                      <img :src="item.goods.goods_front_image" />
+                      <img class="cart_image" :src="item.goods.goods_front_image" />
                     </router-link>
                   </dt>
                   <dd>
@@ -290,7 +290,7 @@ export default {
       })
         .then(response => {
           console.log(response);
-          this.allMenuLabel = response.data.filter(category => !category.is_tab && category.name.includes("_Test"));
+          this.allMenuLabel = response.data.filter(category => !category.is_tab);
         })
         .catch(function(error) {
           this.allMenuLabel = []
@@ -1028,7 +1028,9 @@ img {
   border-left: 1px solid;
 }
 
-
+.cart_image {
+  object-fit: scale-down;
+}
 
 .hd_cart .tit b {
   color: #000000;
