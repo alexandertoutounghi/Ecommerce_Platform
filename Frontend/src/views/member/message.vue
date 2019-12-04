@@ -106,15 +106,15 @@
                     // {
                     //     id: 1234,
                     //     message_type: 1,
-                    //     theme: '留言主题',
-                    //     message: '留言内容',
+                    //     theme: '',
+                    //     message: '',
                     //     time: '2017-07-19 21:20:25',
                     // },
                     // {
                     //     id: 5678,
                     //     message_type: 2,
-                    //     theme: '留言主题',
-                    //     message: '留言内容',
+                    //     theme: '',
+                    //     message: '',
                     //     time: '2017-07-19 21:20:25',
                     // }
                 ]

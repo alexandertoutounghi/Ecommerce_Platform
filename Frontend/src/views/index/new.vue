@@ -22,7 +22,13 @@
                         <router-link :to="'/app/home/productDetail/'+item.id"  :title="item.name" target = _blank>{{item.name}}</router-link>
                         </h3>
                         <p><em class="c333"></em>{{item.goods_brief}}</p><div>
-                        <span class="p-price"><del class="before_price">${{item.market_price}}</del><em class="fastbuy_price">${{item.shop_price}}</em></span>
+                        <span v-if="item.shop_price != item.market_price">
+                            <span class="p-price"><del class="before_price">${{item.market_price}}</del>
+                            <em class="fastbuy_price">${{item.shop_price}}</em></span>
+                        </span>
+                        <span v-else>
+                            <span class="p-price">${{item.market_price}}</span>
+                        </span>
                         <!-- <a href="" class="p-buy fr ibg">Buy Now</a> -->
                         <span class="p-time fr">Sales: {{item.sold_num}} Units</span>
                     </div>

@@ -36,100 +36,7 @@ import userinfo from '../views/member/userinfo'
 import upload from '../views/member/upload'
 import storeItems from '../views/member/storeItems'
 import register from '../views/register/register'
-
-// Alternative router set-up shown below - Can probably be deleted but kept for now just in case
-
-// var head = function(resolve) {
-//   require.ensure(['../views/head/head'], () => {
-//     resolve(require('../views/head/head'))
-//   }, 'head')
-// };
-// var footer = function(resolve) {
-//   require.ensure(['../views/footer/footer'], () => {
-//     resolve(require('../views/footer/footer'))
-//   }, 'footer')
-// };
-//
-// var list = function(resolve) {
-//   require.ensure(['../views/list/list'], () => {
-//     resolve(require('../views/list/list'))
-//   }, 'list')
-// };
-//
-// var index = function(resolve) {
-//   require.ensure(['../views/index/index'], () => {
-//     resolve(require('../views/index/index'))
-//   }, 'index')
-// };
-//
-// var loginHead = function(resolve) {
-//   require.ensure(['../views/loginHead/loginHead'], () => {
-//     resolve(require('../views/loginHead/loginHead'))
-//   }, 'loginHead')
-// };
-//
-// var login = function(resolve) {
-//   require.ensure(['../views/login/login'], () => {
-//     resolve(require('../views/login/login'))
-//   }, 'login')
-// };
-//
-// var shophead = function(resolve) {
-//   require.ensure(['../views/head/shophead'], () => {
-//     resolve(require('../views/head/shophead'))
-//   }, 'shophead')
-// };
-// var cart = function(resolve) {
-//   require.ensure(['../views/cart/cart'], () => {
-//     resolve(require('../views/cart/cart'))
-//   }, 'cart')
-// };
-// var productDetail = function(resolve) {
-//   require.ensure(['../views/productDetail/productDetail'], () => {
-//     resolve(require('../views/productDetail/productDetail'))
-//   }, 'productDetail')
-// };
-// var member = function(resolve) {
-//   require.ensure(['../views/member/member'], () => {
-//     resolve(require('../views/member/member'))
-//   }, 'member')
-// };
-// var message = function(resolve) {
-//   require.ensure(['../views/member/message'], () => {
-//     resolve(require('../views/member/message'))
-//   }, 'message')
-// };
-// var receive = function(resolve) {
-//   require.ensure(['../views/member/receive'], () => {
-//     resolve(require('../views/member/receive'))
-//   }, 'receive')
-// };
-// var order = function(resolve) {
-//   require.ensure(['../views/member/order'], () => {
-//     resolve(require('../views/member/order'))
-//   }, 'order')
-// };
-// var orderDetail = function(resolve) {
-//   require.ensure(['../views/member/orderDetail'], () => {
-//     resolve(require('../views/member/orderDetail'))
-//   }, 'orderDetail')
-// };
-//
-// var collection = function(resolve) {
-//   require.ensure(['../views/member/collection'], () => {
-//     resolve(require('../views/member/collection'))
-//   }, 'order')
-// };
-// var userinfo = function(resolve) {
-//   require.ensure(['../views/member/userinfo'], () => {
-//     resolve(require('../views/member/userinfo'))
-//   }, 'userinfo')
-// };
-// var register = function(resolve) {
-//   require.ensure(['../views/register/register'], () => {
-//     resolve(require('../views/register/register'))
-//   }, 'register')
-// };
+import password from '../views/login/password'
 
 var router = new Router({
   routes: [{
@@ -159,6 +66,19 @@ var router = new Router({
         },
         meta: {
           title: 'Register',
+          need_log: false
+        }
+      },
+      {
+        path: 'password',
+        name: 'password',
+        components: {
+          head: loginHead,
+          content: password,
+          footer: footer,
+        },
+        meta: {
+          title: 'Reset Password',
           need_log: false
         }
       },

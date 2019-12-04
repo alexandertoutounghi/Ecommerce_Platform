@@ -11,7 +11,7 @@
                                 <tr>
                                     <td width="15%" align="right" bgcolor="#ffffff">Order Number: </td>
                                     <td align="left" bgcolor="#ffffff">{{orderInfo.order_sn}}
-                                        <!-- <a href="http://sx.youxueshop.com/user.php?act=message_list&amp;order_id=778" class="f6">[发送/查看商家留言]</a> -->
+                                        <!-- <a href="http://sx.youxueshop.com/user.php?act=message_list&amp;order_id=778" class="f6"></a> -->
                                     </td>
                                 </tr>
                                 <tr>
@@ -31,7 +31,7 @@
                         <tbody>
                             <tr>
                                 <th width="30%" align="center" bgcolor="#ffffff">Product Name</th>
-                                <!--<th>市场价</th>-->
+                                
                                 <th width="19%" align="center" bgcolor="#ffffff">Commodity Price</th>
                                 <th width="9%" align="center" bgcolor="#ffffff">Number of Purchases</th>
                                 <th width="20%" align="center" bgcolor="#ffffff">Subtotal</th>
@@ -90,9 +90,9 @@
             return {
                 orderId: '',
                 orderInfo: {
-                    // orderStatus: '已完成',
-                    // payStatus: '未付款',
-                    // deliveryStatus: '未发货'
+                    // orderStatus: '',
+                    // payStatus: '',
+                    // deliveryStatus: ''
                 },
                 proList: [
                     {
@@ -106,7 +106,7 @@
                 ],
                 receiveData: {},
                 totalPrice: 123,
-                freightPrice: 23, //运费
+                freightPrice: 23,
             };
         },
         components: {
