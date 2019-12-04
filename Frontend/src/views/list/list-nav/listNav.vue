@@ -2,27 +2,27 @@
     <div class="sidebar">
         <div class="cate-menu" id="cate-menu">
             <div v-if="isObject" class="cat_info-container">
-                <p class="cat_title">{{currentCategoryName}}</p>
+                <p class="cat_title" v-if="cateMenu && curCatIndex && cateMenu[curCatIndex]">{{cateMenu[curCatIndex].name}}</p>
+                <p class="cat_title" v-else>{{currentCategoryName }}</p>
                 <p id="total_count">Total Count: {{proNum}} Units</p>
             </div>
             <dl>
-                <template v-for="item in cateMenu">
-                    <dt :key="item.id">{{ item.name }}</dt>
+                <template v-for="(item, index) in cateMenu">
+                    <dt :key="item.id"><a @click="changeMenu(item.id, index)">{{ item.name}}</a></dt>
                     <dd v-for="subItem in item.sub_cat"> <!-- Just ignore for now, it's being a pain -->
-                        <a @click="changeMenu(subItem.id)">{{ subItem.name}}</a>
+                        <a @click="changeMenu(subItem.id, index)">{{ subItem.name}}</a>
                     </dd>
                 </template>
             </dl>
         </div>
-
     </div>
-
 </template>
 <script>
   export default {
     data () {
         return {
             cateType: '', //category
+            curCatIndex: Number,
         };
     },
     components: {
@@ -47,15 +47,20 @@
         currentCategoryName: ""
     },
     created () {
-
     },
     watch: {
-
+        currentCategoryName: {
+            handler: function(val, oldval) {
+                if (oldval != val)
+                    this.curCatIndex = null
+            }
+        }
     },
     computed: {
     },
     methods: {
-        changeMenu(id) {
+        changeMenu(id, index) {
+            this.curCatIndex = index;
             this.$emit('on-change', id);
         }
     }
