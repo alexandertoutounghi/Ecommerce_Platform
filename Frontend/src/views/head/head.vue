@@ -36,14 +36,11 @@
     <div class="hd_main cle">
       <div class="logo">
         <router-link to="/app/home/index" class="lizi_logo">
-          <!-- Original logo is a banner, so we may need to add make one ourselves. For now I'm using what we have and shrinking it -->
           <img
             src="../../static/images/head/logosmaller.png"
             alt="354 the Stars Logo"
             class="logo-wrapper"
           />
-          <!-- The original, for reference \/ -->
-          <!-- <img src="../../static/images/head/logo.gif"> -->
         </router-link>
       </div>
       <div class="search_box--wrapper">
@@ -280,6 +277,7 @@ export default {
         params: {}
       })
         .then(response => {
+          console.log("response");
           console.log(response);
           this.allMenuLabel = response.data.filter(category => !category.is_tab);
         })
