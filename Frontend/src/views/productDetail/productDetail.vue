@@ -148,7 +148,8 @@ import ReviewContainer from "./Review_Container";
     components: {
         'current-loc': currentLoc,
         'hot-sales': hotSales,
-         model
+         model,
+         ReviewContainer
     },
     props: {
 

@@ -1,10 +1,10 @@
 <template>
   <div>
     <span v-for="(index) in fullstar" :key="index">
-      <font-awesome-icon icon="star" style="color:orange;" />
+      <font-awesome-icon icon="star" style="color:orange;"/>
     </span>
-    <span class="ml-0" v-for="(index) in emptyStar[fullstar].value" :key="index">
-      <font-awesome-icon class="ml-0" icon="star" />
+    <span class="ml-0" v-for="(item) in emptyStar[fullstar].value" :key="item.id">
+      <font-awesome-icon class="ml-0" icon="star"/>
     </span>
   </div>
 </template>
@@ -25,12 +25,13 @@ export default {
       // emptyStar: 5
     };
   },
-  created: {},
   beforeUpdate() {
     // this.emptyStar = this.emptyStar - this.fullstar;
     // this.emptyStar = this.emptyStar.toFixed();
   },
-  name: "Star"
+  afterUpdate() {
+    console.log(emptyStar[fullstar]);
+  }
 };
 </script>
 

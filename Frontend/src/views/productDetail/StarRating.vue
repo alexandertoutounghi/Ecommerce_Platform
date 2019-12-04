@@ -17,7 +17,6 @@ import Star from "./Star";
 export default {
   name: "StarRating",
   props: ["fullstar"],
-  created: {},
   components: {
     Star
   }

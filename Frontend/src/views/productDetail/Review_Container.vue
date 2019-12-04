@@ -19,7 +19,7 @@
         </b-col>
         <b-col sm="6">
           <!-- Create a loop for this -->
-          <b-row v-for="(item) in reviewTypes" :key="item">
+          <b-row v-for="(item) in reviewTypes" :key="item.id">
             <StarRating :fullstar="item.value" />
           </b-row>
         </b-col>
@@ -41,7 +41,7 @@
         </b-col>
       </b-row>
       <component v-bind:is="comment" v-on:clicked="postComment"></component>
-      <b-row class="justify-content-md-left mt-4 mb-5" v-for="item in this.ratings" :key="item">
+      <b-row class="justify-content-md-left mt-4 mb-5" v-for="item in this.ratings" :key="item.id">
         <b-col lg="12">
           <TextBox :comment="item.comment" :title="item.title" :star="item.star" />
         </b-col>
