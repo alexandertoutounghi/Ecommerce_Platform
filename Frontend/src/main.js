@@ -30,6 +30,7 @@ Vue.component("b-progress", BProgress);
 library.add(faUserCircle, faStar, faThumbsUp, faThumbsDown);
 
 // ===============================================================================================
+import $ from "jquery";
 import Vue from "vue";
 import "./styles/common.scss";
 import "./styles/fonts/iconfont.css";

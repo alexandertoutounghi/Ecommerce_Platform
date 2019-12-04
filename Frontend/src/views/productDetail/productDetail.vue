@@ -39,9 +39,14 @@
                             <ul>
                                 <li v-if="proDetail.ship_free">This item has free shipping and won't be included in the shippping cost of your order!</li>
                                 <li>
-                                    <span class="lbl">Market Price</span> <em class="cancel">${{proDetail.market_price}}</em></li>
-                                <li>
-                                    <span class="icon_promo">FLASH SALE</span> <span class="lbl">Sale Price</span><span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">${{proDetail.shop_price}}</strong> </span>  <span class="timedown" id="timedown"></span>
+                                    <span class="lbl">Market Price</span> 
+                                        <em v-if="proDetail.shop_price != proDetail.market_price" class="cancel">${{proDetail.market_price}}</em>
+                                        <em v-else >${{proDetail.market_price}}</em>
+                                    </li>
+                                <li v-if="proDetail.shop_price != proDetail.market_price">
+                                    <span class="icon_promo">FLASH SALE</span> <span class="lbl">Sale Price</span>
+                                    <span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">${{proDetail.shop_price}}</strong> </span>  
+                                    <span class="timedown" id="timedown"></span>
                                 </li>
                                 <li>
                                     <span class="lbl">Quantity Sold</span><span>Recently Sold<em class="red">{{proDetail.sold_num}}</em> Units</span></li>
@@ -196,21 +201,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
             }).catch(function (error) {
                 console.log(error);
             });
-
-            // this.$http.post('/shopcart/', {
-            //     params: {
-            //         goods: this.productId, 
-            //         nums: this.proDetail.purNum, 
-            //     }
-            // }).then((response)=> {
-            //     console.log(response.data);
-            //     
-            //     
-            //     this.$store.dispatch('setShopList');
-
-            // }).catch(function (error) {
-            //     console.log(error);
-            // });
         },
         addCollect () {
           addFav({

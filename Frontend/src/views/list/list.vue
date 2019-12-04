@@ -2,7 +2,7 @@
     <div id="wrapper">
         <!-- <current-loc :curLoc="curLoc"></current-loc> -->
         <div class="main cle">
-            <list-nav :currentCategoryName="currentCategoryName" :cateMenu="cateMenu" :proNum="proNum" :isObject="isObject" @on-change="changeMenu"></list-nav>
+            <list-nav :currentCategoryName="currentCategoryName" :cateMenu="fullCateMenu" :proNum="proNum" :isObject="isObject" @on-change="changeMenu"></list-nav>
             <div class="maincon">
                 <price-range :priceRange="priceRange" @on-change="changePrice"></price-range>
                 <list-sort @on-sort="changeSort" :proNum="proNum"></list-sort>
@@ -31,6 +31,7 @@
                 top_category: '',
                 listData: [],
                 cateMenu: {},
+                fullCateMenu: {},
                 isObject:true,
                 ordering: '-add_time',
                 proNum: 0,
@@ -78,9 +79,9 @@
                     this.searchWord = this.$route.params.keyword;
                 }
 
-                this.getCurLoc();
+                //this.getCurLoc();
                 this.getListData();
-                this.getPriceRange();
+                //this.getPriceRange();
             },
             getListData() {
                 if(this.pageType=='search'){
@@ -110,26 +111,23 @@
 
             },
             getMenu(id) {
-                if(id != null){
+                if(id != null ){
                   getCategory({
                     id:this.$route.params.id
                   }).then((response)=> {
                     // this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
-                    this.cateMenu = response.data.sub_cat;
+                    this.cateMenu = response.data;
+                    //this.cateMenu = response.data.sub_cat;
                     this.currentCategoryName = response.data.name
                   }).catch(function (error) {
                     console.log(error);
                   });
-                }else {
-                  getCategory({}).then((response)=> {
-                    this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
-                    // this.cateMenu = response.data;
-                    this.isObject = false
-                  }).catch(function (error) {
-                    console.log(error);
-                  });
-                }
-
+                } 
+                getCategory({}).then((response)=> {
+                this.fullCateMenu = response.data;
+                }).catch(function (error) {
+                console.log(error);
+                });
             },
 
             getCurLoc () {
@@ -169,7 +167,7 @@
             },
             changeMenu (id) {
                 this.top_category = id;
-                this.getCurLoc();
+                //this.getCurLoc();
                 this.getMenu(id);
                 this.getListData();
             },

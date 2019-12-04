@@ -72,14 +72,14 @@
             // toProductionDetail (id) { // Product details page
             //     this.$router.push({name:'productDetail', params: {productId: id}});
             // },
-            concern (id) { //"Join attention" - I think this might be alerts?
+            concern (id) { //alerts
                 this.$http.post('/addConcern', {
                     params: {
                         productId: id,
                     }
                 }).then((response)=> {
                     console.log(response.data);
-                    alert('"Has Joined the Attention" aka... added to alert list?');
+                    alert('Signed up for alerts!');
                 }).catch(function (error) {
                     console.log(error);
                 });
@@ -100,13 +100,15 @@
 
             },
             deletePro (index, id) { //Delete favourites item
-                alert('Are you sure you want to remove the selected item from your favourites?');
-                delFav(id).then((response)=> {
-                    this.collections.splice(index,1);
-                    alert('Deleted Item!');
-                }).catch(function (error) {
-                    console.log(error);
-                });
+                var ans = confirm('Are you sure you want to remove the selected item from your favourites?');
+                if (ans) {
+                    delFav(id).then((response)=> {
+                        this.collections.splice(index,1);
+                        alert('Deleted Item!');
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
             }
         }
     }

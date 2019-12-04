@@ -169,15 +169,17 @@
         this.totalPrice = totalPrice;
       },
       deleteGoods(index,id) {
-        alert('Are you sure you want to remove this item from your shopping cart?');
-        deleteShopCart(id).then((response)=> {
-          console.log(response.data);
-          this.goods.goods_list.splice(index,1);
-          this.$store.dispatch('setShopList');
+        var ans = confirm('Are you sure you want to remove this item from your shopping cart?');
+        if (ans) {
+          deleteShopCart(id).then((response)=> {
+            console.log(response.data);
+            this.goods.goods_list.splice(index,1);
+            this.$store.dispatch('setShopList');
 
-        }).catch(function (error) {
-          console.log(error);
-        });
+          }).catch(function (error) {
+            console.log(error);
+          });
+        }
       },
       reduceCartNum(index, id) {
         if(this.goods.goods_list[index].nums<=1){
