@@ -49,6 +49,7 @@
 
     <model ref="model"></model>
   </div>
+
 </template>
 <script>
 // import "bootstrap/dist/css/bootstrap.css";
@@ -196,6 +197,7 @@ export default {
         });
     },
 
+
     deleteCollect() {
       delFav(this.productId)
         .then(response => {
@@ -222,6 +224,7 @@ export default {
   }
 };
 </script >
+
 
  <style scoped src="bootstrap/dist/css/bootstrap.css">
 </style>

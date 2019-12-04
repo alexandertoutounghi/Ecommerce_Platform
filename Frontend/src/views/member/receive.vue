@@ -29,20 +29,20 @@
                                     <td align="left" bgcolor="#ffffff"><input name="address" type="text" class="inputBg" id="address_0" v-model="item.address">
                                         <span :class="{error:item.address==''}">(Required)</span></td>
                                 </tr>
-                                <!-- <tr>
+                                <tr>
 
                                     <td align="right" bgcolor="#ffffff">Cell Phone: </td>
                                     <td align="left" bgcolor="#ffffff"><input name="mobile" type="text" class="inputBg" id="mobile_0" v-model="item.signer_mobile"><span :class = "{error:item.signer_mobile==''}">(Required)</span></td>
-                                </tr> -->
+                                </tr>
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">&nbsp;</td>
                                     <td colspan="3" align="center" bgcolor="#ffffff">
-                                    <!-- <input type="submit" name="submit" class="bnt_blue_2" value="新增收货地址"> -->
+                                    <!-- <input type="submit" name="submit" class="bnt_blue_2" value=""> -->
 
                                     <button class="bnt_blue_2" @click="confirmUpdate(item.id, index)">Save Changes</button>
                                     <button class="bnt_blue_2" @click="deleteInfo(item.id)">Delete</button>
-                                    <!-- <input type="hidden" name="act" value="act_edit_address">
-                                    <input name="address_id" type="hidden" value="320"> -->
+                                    <input type="hidden" name="act" value="act_edit_address">
+                                    <input name="address_id" type="hidden" value="320">
                                     </td>
                                 </tr>
                             </tbody>
@@ -86,7 +86,7 @@
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">&nbsp;</td>
                                     <td colspan="3" align="center" bgcolor="#ffffff">
-                                    <!-- <input type="submit" name="submit" class="bnt_blue_2" value="新增收货地址"> -->
+                                    <!-- <input type="submit" name="submit" class="bnt_blue_2" value=""> -->
                                     <button class="bnt_blue_2" @click="addReceive">Save New Shipping Address</button>
 
                                     <!-- <input type="hidden" name="act" value="act_edit_address">
@@ -118,21 +118,16 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                     addr: '',
                 },
                 newInfo: {
-                    province: '',
-                    city: '',
-                    area: '',
-                    receiveName: '',
-                    addr: '',
-                    phone:''
+                    country: ''
                 },
                 receiveInfoArr: [
                     // {
                     //     id: '',
-                    //     province: '', //省
-                    //     city: '', // 市
-                    //     area: '', // 区
-                    //     receiveName: '', // 收件人姓名
-                    //     addr: '', // 详细地址
+                    //     province: '',
+                    //     city: '',
+                    //     area: '',
+                    //     receiveName: '',
+                    //     addr: '',
                     // }
                 ]
 
@@ -191,11 +186,13 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
             },
 
             addReceive () {
-                addAddress(this.newInfo).then((response)=> {
+                let address = {
+                    country: this.newInfo.country
+                }
+                console.log(address);
+                addAddress(address).then((response)=> {
                     alert('Added Sucessfully');
-                    // Reset 
-                    this.getReceiveInfo();
-                    this.newInfo = Object.assign({}, this.newInfoEmpty);
+                    console.log(response);
 
                 }).catch(function (error) {
                     console.log(error);

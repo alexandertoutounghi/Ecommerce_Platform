@@ -5,23 +5,19 @@
             <div class="box_1">
                 <div class="userCenterBox boxCenterList clearfix" style="_height:1%; font-size:14px;">
 
-                    <h5><span>My Wishlist</span></h5>
+                    <h5><span>Items in Store</span></h5>
                     <div class="blank"></div>
                     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                       <tbody>
                         <tr align="center">
                             <th width="70%" bgcolor="#ffffff">Product Name</th>
                             <th width="15%" bgcolor="#ffffff">Price</th>
-                            <th width="15%" bgcolor="#ffffff">Action</th>
                         </tr>
                         <tr v-for="(item,index) in collections" :key="index">
                             <td bgcolor="#ffffff">
                                 <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6">{{item.goods.name}}</router-link>
                             </td>
                             <td bgcolor="#ffffff"><span class="goods-price">${{item.goods.shop_price}}</span>
-                            </td>
-                            <td align="center" bgcolor="#ffffff">
-                                <a class="f6" :style="{color: 'red'}" @click="deletePro(index, item.goods.id)">Delete</a>
                             </td>
                         </tr>
                       </tbody>
@@ -76,14 +72,14 @@
             // toProductionDetail (id) { // Product details page
             //     this.$router.push({name:'productDetail', params: {productId: id}});
             // },
-            concern (id) { //"Join attention" - I think this might be alerts?
+            concern (id) { //alerts
                 this.$http.post('/addConcern', {
                     params: {
                         productId: id,
                     }
                 }).then((response)=> {
                     console.log(response.data);
-                    alert('"Has Joined the Attention" aka... added to alert list?');
+                    alert('Signed up for alerts!');
                 }).catch(function (error) {
                     console.log(error);
                 });

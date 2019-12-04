@@ -10,6 +10,7 @@ let host354 = "http://142.44.242.138:444";
 export const getReviews = params => {
   return axios.get(`${host354}/rating/`);
 };
+r
 
 // Get product category information
 export const queryCategorygoods = params => {
@@ -180,3 +181,7 @@ export const updateAddress = (addressId, params) => {
 export const getAddress = () => {
   return axios.get(`${host354}/address/`);
 };
+
+
+// Add item to the store
+export const addItem = (params) => {return axios.post(`${host354}/goods`, params)}

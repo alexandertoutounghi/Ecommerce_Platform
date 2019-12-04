@@ -152,7 +152,8 @@ class ProductRating(models.Model):
         return self.message
 
 
-class Banner(models.Model):
+
+class Banner(models.Model):	
     """
     featured goods (banner on homepage)
     """

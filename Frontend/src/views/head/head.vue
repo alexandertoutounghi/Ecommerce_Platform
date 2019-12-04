@@ -12,6 +12,8 @@
                 <router-link :to="'/app/home/member/order'">My Current Orders</router-link>
                 <router-link :to="'/app/home/member/collection'">My Wishlist</router-link>
                 <router-link :to="'/app/home/member/receive'">Modify Addresses</router-link> 
+                <router-link :to="'/app/home/member/upload'">Add new item</router-link>
+                <router-link :to="'/app/home/member/storeItems'">See items in store</router-link>
                 <a @click="loginOut">Logout</a>
               </div>
             </div>
@@ -34,14 +36,11 @@
     <div class="hd_main cle">
       <div class="logo">
         <router-link to="/app/home/index" class="lizi_logo">
-          <!-- Original logo is a banner, so we may need to add make one ourselves. For now I'm using what we have and shrinking it -->
           <img
             src="../../static/images/head/logosmaller.png"
             alt="354 the Stars Logo"
             class="logo-wrapper"
           />
-          <!-- The original, for reference \/ -->
-          <!-- <img src="../../static/images/head/logo.gif"> -->
         </router-link>
       </div>
       <div class="search_box--wrapper">
@@ -160,7 +159,7 @@
                 <dl v-for="(item,index) in goods_list.goods_list" :key="index">
                   <dt>
                     <router-link :to="'/app/home/productDetail/'+item.goods.id">
-                      <img :src="item.goods.goods_front_image" />
+                      <img class="cart_image" :src="item.goods.goods_front_image" />
                     </router-link>
                   </dt>
                   <dd>
@@ -227,15 +226,6 @@ export default {
       cookie.delCookie("name");
       //Brings user to login page after logging out
       this.$router.push({ name: "login" });
-      // this.$http.get('/getMenu')
-      //     .then((response)=> {
-
-      //跳转到登录
-      // this.$router.push({ name: 'login' })
-      //     })
-      //     .catch(function (error) {
-      //       console.log(error);
-      // });
     },
     overAllmenu() {
       this.showAllmenu = true;
@@ -287,8 +277,9 @@ export default {
         params: {}
       })
         .then(response => {
+          console.log("response");
           console.log(response);
-          this.allMenuLabel = response.data.filter(category => !category.is_tab && category.name.includes("_Test"));
+          this.allMenuLabel = response.data.filter(category => !category.is_tab);
         })
         .catch(function(error) {
           this.allMenuLabel = []
@@ -962,6 +953,12 @@ img {
   }
 }
 
+.first {
+  &:hover {
+    background-color: #dedede;
+  }
+}
+
 .clear {
   clear: both;
   height: 0;
@@ -1026,7 +1023,9 @@ img {
   border-left: 1px solid;
 }
 
-
+.cart_image {
+  object-fit: scale-down;
+}
 
 .hd_cart .tit b {
   color: #000000;

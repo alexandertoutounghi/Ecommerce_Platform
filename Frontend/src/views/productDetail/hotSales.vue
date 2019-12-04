@@ -7,7 +7,7 @@
         <ul>
             <li v-for="item in hotProduct" :key="item.id">
               <router-link :to="'/app/home/productDetail/'+item.id">
-                <img width="194px" height="194px" :src="item.goods_front_image">
+                <img class="hot_image" :src="item.goods_front_image">
                 <p>{{item.goods_brief}}</p>
                 <p class="hot_price">${{item.shop_price}}</p>
               </router-link>
@@ -159,6 +159,12 @@ canvas {
 }
 .hot_box ul li {
     margin-bottom:10px;
+}
+
+.hot_image {
+    width:194px;
+    height:194px;
+    object-fit: scale-down;
 }
 p.hot_price {
     color:#2462ff;
