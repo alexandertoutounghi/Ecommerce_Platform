@@ -1,13 +1,13 @@
 // Bootstrap-Vue, and FontAwesome Additions
 // ===============================================================================================
-// import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUserCircle,
   faStar,
   faThumbsUp,
-  faThumbsDown
+  faThumbsDown,
+  faShoppingCart,
+  faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
@@ -16,9 +16,20 @@ import {
   BRow,
   BCol,
   BButton,
-  BProgress
+  BProgress,
+  BBadge,
+  BInputGroup,
+  BInputGroupPrepend,
+  BInputGroupAppend,
+  BInputGroupText,
+  BInputGroupAddon,
+  BFormInput,
+  BImg,
+  BImgLazy,
+  BFormSelect
 } from "bootstrap-vue";
-
+Vue.component("b-form-select", BFormSelect);
+Vue.component("b-badge", BBadge);
 Vue.component("b-container", BContainer);
 Vue.component("b-form-textarea", BFormTextarea);
 Vue.component("b-row", BRow);
@@ -26,8 +37,23 @@ Vue.component("b-col", BCol);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("b-button", BButton);
 Vue.component("b-progress", BProgress);
+Vue.component("b-input-group", BInputGroup);
+Vue.component("b-input-group-prepend", BInputGroupPrepend);
+Vue.component("b-input-group-append", BInputGroupAppend);
+Vue.component("b-input-group-text", BInputGroupText);
+Vue.component("b-input-group-addon", BInputGroupAddon);
+Vue.component("b-form-input", BFormInput);
+Vue.component("b-img", BImg);
+Vue.component("b-img-lazy", BImgLazy);
 
-library.add(faUserCircle, faStar, faThumbsUp, faThumbsDown);
+library.add(
+  faUserCircle,
+  faStar,
+  faThumbsUp,
+  faThumbsDown,
+  faShoppingCart,
+  faHeart
+);
 
 // ===============================================================================================
 import $ from "jquery";

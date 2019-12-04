@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework import mixins
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.authentication import SessionAuthentication
 
@@ -20,7 +20,8 @@ class UserFavViewset(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Retr
         Put the product into wish list
     """
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
-    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    authentication_classes = (
+        JSONWebTokenAuthentication, SessionAuthentication)
     lookup_field = "goods_id"
 
     def get_queryset(self):
@@ -52,8 +53,9 @@ class LeavingMessageViewset(mixins.ListModelMixin, mixins.DestroyModelMixin, mix
         Delete user comment
     """
 
-    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
-    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
+    authentication_classes = (
+        JSONWebTokenAuthentication, SessionAuthentication)
     serializer_class = LeavingMessageSerializer
 
     def get_queryset(self):
@@ -73,7 +75,8 @@ class AddressViewset(viewsets.ModelViewSet):
         Delete user address
     """
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
-    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+    authentication_classes = (
+        JSONWebTokenAuthentication, SessionAuthentication)
     serializer_class = AddressSerializer
 
     def get_queryset(self):

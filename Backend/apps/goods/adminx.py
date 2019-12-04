@@ -58,6 +58,7 @@ class ProductRatingAdmin(object):
             context['form'].fields['rating_star'].queryset = GoodsCategory.objects.filter(category_type=1)
         return context
 
+
 class BannerGoodsAdmin(object):	
     list_display = ["goods", "image", "index"]
 
