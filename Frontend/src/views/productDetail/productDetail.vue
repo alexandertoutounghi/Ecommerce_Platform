@@ -557,7 +557,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 }
 
 
-/*商品详情页上方*/
 .detail {
     border:1px solid #d9dbe8;
     /*border-top-color:#666;*/

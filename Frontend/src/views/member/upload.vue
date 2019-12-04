@@ -7,7 +7,7 @@
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
                         <h5><span>Add New Item</span></h5>
                         <div class="blank"></div>
-                        <form name="formEdit" action="" method="post" >
+                        <form>
                             <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                                 <tbody>
                                     <tr>
@@ -16,7 +16,7 @@
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">SKU: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.sku"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.goods_sn"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Goods Name: </td>
@@ -24,7 +24,7 @@
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Stock: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.stock"></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input size="25" class="inputBg" v-model="good.goods_num"></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Market Price: </td>
@@ -36,25 +36,19 @@
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Brief Description: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.brief_description"></textarea></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.goods_brief"></textarea></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Description: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.description"></textarea></td>
+                                      <td width="72%" align="left" bgcolor="#FFFFFF"><textarea rows='6' cols='100' size="25" class="inputBg" v-model="good.goods_desc"></textarea></td>
                                     </tr>
                                     <tr>
                                       <td width="28%" align="right" bgcolor="#FFFFFF">Front Page Image: </td>
                                       <td width="72%" align="left" bgcolor="#FFFFFF"><input type='file' name="fileupload" value="fileupload" id="fileupload" @change="processFrontImage($event)"></td>
                                     </tr>
                                     <tr>
-                                      <td width="28%" align="right" bgcolor="#FFFFFF">Images: </td>
-                                      <td width="72%" align="left" bgcolor="#FFFFFF"><input type='file' id="file" ref="myFiles" @change="processImgFiles($event)" multiple></td>
-                                    </tr>
-                                    <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
-                                            <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
-                                            <button class="btn_blue_1" style="border:none;" @click="confirmModify">Add Item</button>
-                                            <!-- <input name="submit" type="submit" value="确认修改" class="btn_blue_1" style="border:none;"> -->
+                                            <button class="btn_blue_1" style="border:none;" @click="addItemToStore">Add Item</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -67,29 +61,64 @@
     </div>
 </template>
 <script>
+import {addItem} from '../../api/api'
+import axios from 'axios'
     export default {
         data () {
             return {
                 good: {
-                    category: '',
-                    sku: '',
-                    name: '',
-                    stock: '',
-                    market_price: '',
-                    shop_price: '',
-                    brief_description: '',
-                    description: '',
-                    front_img: '',
-                    images: []
+                    category: 'Food',
+                    goods_sn: '464',
+                    name: 'Test',
+                    seller: 'Admin',
+                    click_num: 0,
+                    sold_num: 0,
+                    fav_num: 0,
+                    goods_num: '10',
+                    market_price: '10.00',
+                    shop_price: '5.00',
+                    goods_brief: 'This is a test for adding items',
+                    goods_desc: 'this is a test for adding items',
+                    ship_free: true,
+                    goods_front_image: '',
+                    is_new: true,
+                    is_hot: false,
+                    add_time: 0,
                 },
             };
         },
         methods: {
             processFrontImage(event) {
-                this.good.front_img = event.target.files[0];
+                this.good.goods_front_image = event.target.files[0];
             },
-            processImgFiles(event) {
-                this.good.images = this.$refs.myFiles.files
+            addItemToStore() {
+                let newGood = {
+                    category: this.good.category,
+                    goods_sn: this.good.goods_sn,
+                    name: this.good.name,
+                    seller: this.good.seller,
+                    click_num: this.good.click_num,
+                    sold_num: this.good.sold_num,
+                    fav_num: this.good.fav_num,
+                    goods_num: this.good.goods_num,
+                    market_price: this.good.market_price,
+                    shop_price: this.good.shop_price,
+                    goods_brief: this.good.goods_brief,
+                    goods_desc: this.good.goods_desc,
+                    ship_free: this.good.ship_free,
+                    goods_front_image: this.good.goods_front_image,
+                    is_new: this.good.is_new,
+                    is_hot: this.good.is_hot,
+                    add_time: this.good.add_time,
+                }
+                console.log(newGood);
+                axios.post('http://142.44.242.138:444/xadmin/goods/goods/add/', newGood)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
             }
         }
     }

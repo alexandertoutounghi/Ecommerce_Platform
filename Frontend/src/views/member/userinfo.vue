@@ -43,7 +43,7 @@
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
                                             <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
                                             <button class="btn_blue_1" style="border:none;" @click="confirmModify">Confirm Changes</button>
-                                            <!-- <input name="submit" type="submit" value="确认修改" class="btn_blue_1" style="border:none;"> -->
+                                            <!-- <input name="submit" type="submit" value="" class="btn_blue_1" style="border:none;"> -->
                                         </td>
                                     </tr>
                                 </tbody>

@@ -36,6 +36,7 @@ import userinfo from '../views/member/userinfo'
 import upload from '../views/member/upload'
 import storeItems from '../views/member/storeItems'
 import register from '../views/register/register'
+import password from '../views/login/password'
 
 var router = new Router({
   routes: [{
@@ -65,6 +66,19 @@ var router = new Router({
         },
         meta: {
           title: 'Register',
+          need_log: false
+        }
+      },
+      {
+        path: 'password',
+        name: 'password',
+        components: {
+          head: loginHead,
+          content: password,
+          footer: footer,
+        },
+        meta: {
+          title: 'Reset Password',
           need_log: false
         }
       },

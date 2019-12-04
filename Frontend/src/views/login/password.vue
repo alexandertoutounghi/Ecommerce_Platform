@@ -3,7 +3,7 @@
     <div class="c-box bg-box">
       <div class="login-box clearfix">
         <div class="fr form-box">
-          <h2>Login</h2>
+          <h2>Reset Password</h2>
           <form id="jsLoginForm" autocomplete="off">
             <input
               type="hidden"
@@ -37,7 +37,7 @@
             <p class="error-text" v-show="parseWordError">{{parseWordError}}</p>
             <div class="auto-box marb38"></div>
             <p class="error-text" v-show="error">{{error}}</p>
-            <input class="btn btn-login" id="jsLoginBtn" type="button" @click="login" value="Login" />
+            <input class="btn btn-login" id="jsLoginBtn" type="button" @click="login" value="Reset Password" />
           </form>
           <br/>
           <p class="form-p">
@@ -46,8 +46,8 @@
           </p>
           <br>
           <p class="form-p">
-            Forgot Password?
-            <router-link :to="'/app/password/'">[Reset Password]</router-link>
+            Already have an account?
+            <router-link :to="'/app/login/'">[Login]</router-link>
           </p> 
         </div>
       </div>
@@ -69,6 +69,7 @@ export default {
     };
   },
   methods: {
+    // switch to method for changing password instead of login once backend is setup
     login() {
       // if(this.userName==''||this.parseWord==''){
       //   this.error = true;
@@ -81,13 +82,14 @@ export default {
       })
         .then(response => {
           console.log(response);
+          alert('Password has been reset, redirecting to login')
           //Stores the user information locally
           cookie.setCookie("name", this.userName, 7);
           cookie.setCookie("token", response.data.token, 7);
           // Add to the store for easier referencing in different parts of the site
           that.$store.dispatch("setInfo");
           //Go to homepage after they've logged in successfully
-          this.$router.push({ name: "index" });
+          this.$router.push({ name: "login" });
         })
         .catch(function(error) {
           // Display error if they couldn't login
