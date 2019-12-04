@@ -117,16 +117,19 @@
                 <hot-sales></hot-sales>
             </div>
         </div>
+        <ReviewContainer class="mt-4" />
         <model ref="model"></model>
     </div>
 </template>
 <script>
 import cookie from '../../static/js/cookie';
 import currentLoc from './current-loc/current-loc';
+import "bootstrap-vue/dist/bootstrap-vue.css";
 import hotSales from './hotSales';
 import model from './model'
 import { mapGetters } from 'vuex';
-import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from '../../api/api';
+import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart, postReviews, getReviews} from '../../api/api';
+import ReviewContainer from "./Review_Container";
   export default {
     data () {
         return {
@@ -145,7 +148,8 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
     components: {
         'current-loc': currentLoc,
         'hot-sales': hotSales,
-         model
+         model,
+         ReviewContainer
     },
     props: {
 
@@ -543,7 +547,8 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
 
 .detail_bgcolor {
     padding-top:16px;
-    padding-bottom:40px
+    padding-bottom:40px;
+    height: 200px;
 }
 .z-detail-box {
     width:1196px;

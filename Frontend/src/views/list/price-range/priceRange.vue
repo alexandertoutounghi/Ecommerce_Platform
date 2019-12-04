@@ -1,5 +1,4 @@
 <template>
-
     <div class="search-options" id="search-options">
     <div class="bd">
         <dl>

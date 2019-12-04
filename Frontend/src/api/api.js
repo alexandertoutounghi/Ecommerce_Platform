@@ -58,6 +58,12 @@ export const getAllFavs = () => { return axios.get(`${host354}/userfavs/`) }
 // Get specific item from wishlist
 export const getFav = goodsId => { return axios.get(`${host354}/userfavs/`+goodsId+'/') }
 
+// Get reviews and ratings
+export const postReviews = params => {
+  return axios.post(`${host354}/rating/`);
+};
+
+
 // A POST REQUEST
 export const login = params => {
   return axios.post(`${host354}/login/`, params)
