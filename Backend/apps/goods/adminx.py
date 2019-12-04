@@ -59,7 +59,7 @@ class ProductRatingAdmin(object):
         return context
 
 
-    class BannerGoodsAdmin(object):	class BannerGoodsAdmin(object):
+class BannerGoodsAdmin(object):	
     list_display = ["goods", "image", "index"]
 
 

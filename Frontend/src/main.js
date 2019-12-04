@@ -1,13 +1,13 @@
 // Bootstrap-Vue, and FontAwesome Additions
 // ===============================================================================================
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUserCircle,
   faStar,
   faThumbsUp,
-  faThumbsDown
+  faThumbsDown,
+  faShoppingCart,
+  faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
@@ -23,8 +23,12 @@ import {
   BInputGroupAppend,
   BInputGroupText,
   BInputGroupAddon,
-  BFormInput
+  BFormInput,
+  BImg,
+  BImgLazy,
+  BFormSelect
 } from "bootstrap-vue";
+Vue.component("b-form-select", BFormSelect);
 Vue.component("b-badge", BBadge);
 Vue.component("b-container", BContainer);
 Vue.component("b-form-textarea", BFormTextarea);
@@ -39,8 +43,17 @@ Vue.component("b-input-group-append", BInputGroupAppend);
 Vue.component("b-input-group-text", BInputGroupText);
 Vue.component("b-input-group-addon", BInputGroupAddon);
 Vue.component("b-form-input", BFormInput);
+Vue.component("b-img", BImg);
+Vue.component("b-img-lazy", BImgLazy);
 
-library.add(faUserCircle, faStar, faThumbsUp, faThumbsDown);
+library.add(
+  faUserCircle,
+  faStar,
+  faThumbsUp,
+  faThumbsDown,
+  faShoppingCart,
+  faHeart
+);
 
 // ===============================================================================================
 import mock from "../mock/mock.js";
