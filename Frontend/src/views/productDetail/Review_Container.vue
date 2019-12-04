@@ -13,7 +13,7 @@
             <h1 class="font-weight-bold">2.1</h1>
           </b-row>
           <b-row class="mt-2">
-            <Star />
+            <Star :fullstar="5"/>
           </b-row>
           <b-row class="mt-2">Number of product rating</b-row>
         </b-col>
@@ -29,14 +29,14 @@
               block
               v-on:click="comment='Review'"
               variant="primary"
-              class="mr-4 ml-4"
+              class="mr-4 ml-4 h-100"
             >Write a Review</b-button>
           </b-row>
           <b-row>
-            <b-button block variant="primary" class="mt-4 mr-4 ml-4">Contact Seller</b-button>
+            <b-button block variant="primary" class="mt-4 mr-4 ml-4 h-100">Contact Seller</b-button>
           </b-row>
           <b-row>
-            <b-button block variant="danger" class="mt-4 mr-4 ml-4">Report Seller</b-button>
+            <b-button block variant="danger" class="mt-4 mr-4 ml-4 h-100">Report Seller</b-button>
           </b-row>
         </b-col>
       </b-row>
@@ -75,7 +75,7 @@ export default {
     StarRating,
     Star,
     TextBox,
-    Review: Review
+    Review
   },
   methods: {
     postComment(value1, value2, value3) {

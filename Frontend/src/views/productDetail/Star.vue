@@ -29,9 +29,6 @@ export default {
     // this.emptyStar = this.emptyStar - this.fullstar;
     // this.emptyStar = this.emptyStar.toFixed();
   },
-  afterUpdate() {
-    console.log(emptyStar[fullstar]);
-  }
 };
 </script>
 
