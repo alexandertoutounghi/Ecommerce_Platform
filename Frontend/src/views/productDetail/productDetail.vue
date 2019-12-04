@@ -117,16 +117,19 @@
                 <hot-sales></hot-sales>
             </div>
         </div>
+        <ReviewContainer class="mt-4" />
         <model ref="model"></model>
     </div>
 </template>
 <script>
 import cookie from '../../static/js/cookie';
 import currentLoc from './current-loc/current-loc';
+import "bootstrap-vue/dist/bootstrap-vue.css";
 import hotSales from './hotSales';
 import model from './model'
 import { mapGetters } from 'vuex';
-import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from '../../api/api';
+import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart, postReviews, getReviews} from '../../api/api';
+import ReviewContainer from "./Review_Container";
   export default {
     data () {
         return {
