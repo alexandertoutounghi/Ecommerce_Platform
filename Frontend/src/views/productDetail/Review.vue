@@ -47,7 +47,7 @@
       <b-row class="justify-content-md-left mt-4 mb-2">
         <b-col>
           <span>
-            <b-button @click="submit()" variant="primary">Submit</b-button>
+            <b-button @click="submit()" variant="primary" class='h-100'>Submit</b-button>
           </span>
         </b-col>
       </b-row>
@@ -77,6 +77,9 @@ export default {
       if (this.selected === null || this.title === "") {
         return;
       } else {
+        console.log(this.selected);
+        console.log(this.title);
+        console.log(this.text);
         this.$emit("clicked", this.selected, this.title, this.text);
       }
     }

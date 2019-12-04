@@ -12,12 +12,12 @@
       </b-row>
       <b-row class="justify-content-md-left">
         <b-col>
-          <span sm="0" :v-for="index in this.rating">
+          <span sm="0" :v-for="index in rating">
             <font-awesome-icon icon="star" :fullstar="index" />
           </span>
 
           <span class="ml-3">
-            <span>{{this.title}}</span>
+            <span>{{title}}</span>
           </span>
         </b-col>
       </b-row>
@@ -36,7 +36,7 @@
         </b-col>
       </b-row>-->
       <b-row class="justify-content-md-left">
-        <b-col sm="12">{{this.text}}</b-col>
+        <b-col sm="12">{{comment}}</b-col>
       </b-row>
       <b-row class="justify-content-md-left mt-4">
         <b-col lg="12">
@@ -70,7 +70,7 @@ export default {
   components: {
     Star
   },
-  props: ["star", "text", "title"],
+  props:["comment", "title", "star"],
   data() {
     return {
       // star: 0,
@@ -78,7 +78,6 @@ export default {
       // title: ""
     };
   },
-  created: {}
 };
 </script>
 

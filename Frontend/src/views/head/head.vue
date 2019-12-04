@@ -277,7 +277,6 @@ export default {
         params: {}
       })
         .then(response => {
-          console.log("response");
           console.log(response);
           this.allMenuLabel = response.data.filter(category => !category.is_tab);
         })

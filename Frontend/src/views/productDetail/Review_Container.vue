@@ -41,7 +41,7 @@
         </b-col>
       </b-row>
       <component v-bind:is="comment" v-on:clicked="postComment"></component>
-      <b-row class="justify-content-md-left mt-4 mb-5" v-for="item in this.ratings" :key="item.id">
+      <b-row class="justify-content-md-left mt-4 mb-5" v-for="item in ratings" :key="item.id">
         <b-col lg="12">
           <TextBox :comment="item.comment" :title="item.title" :star="item.star" />
         </b-col>
@@ -58,7 +58,7 @@ import Review from "./Review";
 
 export default {
   name: "ReviewContainer",
-  data() {
+  data: function() {
     return {
       comment: "",
       ratings: [],
@@ -79,9 +79,16 @@ export default {
   },
   methods: {
     postComment(value1, value2, value3) {
+      console.log("POST COMMETN");
+      console.log(this.ratings);
       this.ratings.push({ star: value1, comment: value2, title: value3 });
+      console.log(this.ratings);
       this.comment = "";
     }
+  },
+  updated() {
+    console.log('updated');
+    console.log(this.ratings)
   }
 };
 </script>
