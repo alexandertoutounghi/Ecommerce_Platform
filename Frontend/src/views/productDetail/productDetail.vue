@@ -547,7 +547,8 @@ import ReviewContainer from "./Review_Container";
 
 .detail_bgcolor {
     padding-top:16px;
-    padding-bottom:40px
+    padding-bottom:40px;
+    height: 200px;
 }
 .z-detail-box {
     width:1196px;
