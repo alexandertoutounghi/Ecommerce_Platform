@@ -229,15 +229,6 @@ export default {
       cookie.delCookie("name");
       //Brings user to login page after logging out
       this.$router.push({ name: "login" });
-      // this.$http.get('/getMenu')
-      //     .then((response)=> {
-
-      //跳转到登录
-      // this.$router.push({ name: 'login' })
-      //     })
-      //     .catch(function (error) {
-      //       console.log(error);
-      // });
     },
     overAllmenu() {
       this.showAllmenu = true;

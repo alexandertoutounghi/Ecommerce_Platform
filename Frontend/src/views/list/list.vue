@@ -115,15 +115,16 @@
                     id:this.$route.params.id
                   }).then((response)=> {
                     // this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
-                    this.cateMenu = response.data.sub_cat;
+                    this.cateMenu = response.data;
+                    //this.cateMenu = response.data.sub_cat;
                     this.currentCategoryName = response.data.name
                   }).catch(function (error) {
                     console.log(error);
                   });
-                }else {
+                } else {
                   getCategory({}).then((response)=> {
-                    this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
-                    // this.cateMenu = response.data;
+                    //this.cateMenu = response.data.filter(category => !category.is_tab && category.name.includes("_Test"))
+                    this.cateMenu = response.data;
                     this.isObject = false
                   }).catch(function (error) {
                     console.log(error);
