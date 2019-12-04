@@ -190,22 +190,13 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                     country: this.newInfo.country
                 }
                 console.log(address);
-                axios.post(`${host354}/address/`, address)
-                .then((response) => {
+                addAddress(address).then((response)=> {
+                    alert('Added Sucessfully');
                     console.log(response);
-                })
-                .catch((error) => {
+
+                }).catch(function (error) {
                     console.log(error);
                 });
-                // addAddress(this.newInfo).then((response)=> {
-                //     alert('Added Sucessfully');
-                //     // Reset 
-                //     this.getReceiveInfo();
-                //     this.newInfo = Object.assign({}, this.newInfoEmpty);
-
-                // }).catch(function (error) {
-                //     console.log(error);
-                // });
             },
             confirmUpdate (id, index) {
                 updateAddress(id, this.receiveInfoArr[index]).then((response)=> {
