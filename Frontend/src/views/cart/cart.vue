@@ -37,11 +37,11 @@
       </div>
 
       <div class="fd cle">
-        <div class="fl">
+        <!-- <div class="fl">
           <p class="no1"> <a id="del-all" @click="delAll" :style="{color:'red', float:'right'}">Clear Shopping Cart Contents</a> </p>
-        </div>
-        <div class="fr" id="price-total">
-          <p><span id="selectedCount">{{goods.goods_list.length}}</span> item(s), Total Price: <span class="red align-price"><strong id="totalSkuPrice">${{totalPrice}}</strong></span></p>
+        </div> -->
+        <div class="align-price" id="price-total">
+          <p><span id="selectedCount">{{goods.goods_list.length}}</span> item(s), Total Price: <span class="red"><strong id="totalSkuPrice">${{totalPrice}}</strong></span></p>
         </div>
         <div class="extr">
           <div class="address">
@@ -306,10 +306,6 @@
     font-size: 14px;
     padding: 0 10px;
   }
-
-  .align-price {
-    margin-right: 105px;
-  }
   .address .add {
     width: 100px;
     cursor: pointer;
@@ -425,6 +421,11 @@
     display: block;
   }
 
+  .align-price {
+    margin: 15px 0 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
   .credsField {
     border: none;
     background: #fafafa;
