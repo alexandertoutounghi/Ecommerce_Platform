@@ -118,12 +118,7 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
                     addr: '',
                 },
                 newInfo: {
-                    province: '',
-                    city: '',
-                    area: '',
-                    receiveName: '',
-                    addr: '',
-                    phone:''
+                    country: ''
                 },
                 receiveInfoArr: [
                     // {
@@ -191,15 +186,26 @@ import {getAddress, addAddress, updateAddress, delAddress} from '../../api/api'
             },
 
             addReceive () {
-                addAddress(this.newInfo).then((response)=> {
-                    alert('Added Sucessfully');
-                    // Reset 
-                    this.getReceiveInfo();
-                    this.newInfo = Object.assign({}, this.newInfoEmpty);
-
-                }).catch(function (error) {
+                let address = {
+                    country: this.newInfo.country
+                }
+                console.log(address);
+                axios.post(`${host354}/address/`, address)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
                     console.log(error);
                 });
+                // addAddress(this.newInfo).then((response)=> {
+                //     alert('Added Sucessfully');
+                //     // Reset 
+                //     this.getReceiveInfo();
+                //     this.newInfo = Object.assign({}, this.newInfoEmpty);
+
+                // }).catch(function (error) {
+                //     console.log(error);
+                // });
             },
             confirmUpdate (id, index) {
                 updateAddress(id, this.receiveInfoArr[index]).then((response)=> {

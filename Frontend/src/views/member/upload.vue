@@ -7,7 +7,6 @@
                     <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
                         <h5><span>Add New Item</span></h5>
                         <div class="blank"></div>
-                        <!-- <form name="formEdit" action="" method="post" > -->
                         <form>
                             <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
                                 <tbody>
@@ -49,9 +48,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
-                                            <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
                                             <button class="btn_blue_1" style="border:none;" @click="addItemToStore">Add Item</button>
-                                            <!-- <input name="submit" type="submit" value="" class="btn_blue_1" style="border:none;"> -->
                                         </td>
                                     </tr>
                                 </tbody>
@@ -115,7 +112,7 @@ import axios from 'axios'
                     add_time: this.good.add_time,
                 }
                 console.log(newGood);
-                axios.post('http://142.44.242.138:444/goods/goods/add/', newGood)
+                axios.post('http://142.44.242.138:444/xadmin/goods/goods/add/', newGood)
                 .then((response) => {
                     console.log(response);
                 })
