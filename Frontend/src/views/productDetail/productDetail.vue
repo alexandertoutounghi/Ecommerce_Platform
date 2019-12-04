@@ -201,21 +201,6 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
             }).catch(function (error) {
                 console.log(error);
             });
-
-            // this.$http.post('/shopcart/', {
-            //     params: {
-            //         goods: this.productId, 
-            //         nums: this.proDetail.purNum, 
-            //     }
-            // }).then((response)=> {
-            //     console.log(response.data);
-            //     
-            //     // 更新store数据
-            //     this.$store.dispatch('setShopList');
-
-            // }).catch(function (error) {
-            //     console.log(error);
-            // });
         },
         addCollect () {
           addFav({

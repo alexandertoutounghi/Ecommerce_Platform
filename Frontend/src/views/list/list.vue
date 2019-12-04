@@ -78,9 +78,9 @@
                     this.searchWord = this.$route.params.keyword;
                 }
 
-                this.getCurLoc();
+                //this.getCurLoc();
                 this.getListData();
-                this.getPriceRange();
+                //this.getPriceRange();
             },
             getListData() {
                 if(this.pageType=='search'){
@@ -169,7 +169,7 @@
             },
             changeMenu (id) {
                 this.top_category = id;
-                this.getCurLoc();
+                //this.getCurLoc();
                 this.getMenu(id);
                 this.getListData();
             },
