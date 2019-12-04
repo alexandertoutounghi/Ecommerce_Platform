@@ -104,13 +104,15 @@
 
             },
             deletePro (index, id) { //Delete favourites item
-                alert('Are you sure you want to remove the selected item from your favourites?');
-                delFav(id).then((response)=> {
-                    this.collections.splice(index,1);
-                    alert('Deleted Item!');
-                }).catch(function (error) {
-                    console.log(error);
-                });
+                var ans = confirm('Are you sure you want to remove the selected item from your favourites?');
+                if (ans) {
+                    delFav(id).then((response)=> {
+                        this.collections.splice(index,1);
+                        alert('Deleted Item!');
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
             }
         }
     }
